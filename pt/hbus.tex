@@ -1,6 +1,4 @@
 \documentclass[11pt]{report}
-%\usepackage{mathptmx}
-%\renewcommand{\familydefault}{\rmdefault}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -19,13 +17,13 @@
 
 \begin{document}
 
-\newcommand{\hbus}[1]{\includegraphics[scale=#1]{hbus}}
+\newcommand{\hbus}[1]{\includegraphics[scale=#1]{../media/hbus}}
 \newcommand{\hbuscommand}[1]{\textbf{#1}}
 
 \begin{center}
 \topskip0pt
 \vspace*{\fill}
-\includegraphics[scale=3]{hbuslogo}
+\includegraphics[scale=3]{../media/hbuslogo}
 
 \huge \textbf{Especificação e exemplos de uso}\\
 Versão preliminar 1.1.1
@@ -157,7 +155,7 @@ Este sinal dá aos dispositivos remotos a capacidade de chamar o mestre à aten�
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{hbus_house.ps}
+\includegraphics[scale=0.6]{../media/hbus_house.ps}
 \caption{Ilustração do uso de barramentos HBUS}
 \end{figure}
 
@@ -179,7 +177,7 @@ Um cabo com 6 condutores é então o ideal. Também podem ser usados cabos de 8 
 
 \begin{figure}[H]
 \centering
-\include{hbusphys}
+\input{../media/hbusphys}
 \caption{Cabo para transporte do barramento HBUS}
 \end{figure}
 
@@ -193,7 +191,7 @@ Uma observação muito importante é que por padrão os sinais \textbf{RS485} s�
 
 \begin{figure}[H]
 \centering
-\include{hbusinterconn}
+\input{../media/hbusinterconn}
 \caption{Conexão entre duas portas}
 \end{figure}
 
@@ -205,7 +203,7 @@ O barramento utiliza comunicação RS485 em half-duplex como mencionado. Uma top
 
 \begin{figure}[H]
 \centering
-\includegraphics{485drv}
+\includegraphics{../media/485drv}
 \caption{Driver RS485}
 \end{figure}
 
@@ -250,7 +248,7 @@ Essas estruturas de dados são chamadas em geral de \textbf{Objetos}. São discu
 
 \begin{figure}[h]
 \centering
-\include{hbusdevice}
+\input{../media/hbusdevice}
 \caption{Arquitetura de software de um dispositivo HBUS}
 \end{figure}
 
@@ -719,7 +717,7 @@ A pilha HBUS é inicializada no RESET do dispositivo hóspede e ciclos são exec
 
 \begin{figure}[H]
 \centering
-\include{hbusstack}
+\input{../media/hbusstack}
 \caption{Funcionamento da pilha HBUS}
 \end{figure}
 
@@ -744,7 +742,7 @@ De forma geral as transmissões são realizadas em pacotes que seguem o esquema 
 
 \begin{figure}[H]
 \centering
-\include{hbuspacket}
+\input{../media/hbuspacket}
 \caption{Pacote HBUS}
 \end{figure}
 
@@ -798,7 +796,7 @@ Os parâmetros do comando \hbuscommand{SETCH} são o endereço do objeto no disp
 
 \begin{figure}[H]
 \centering
-\include{setch}
+\input{../media/setch}
 \caption{O comando \hbuscommand{SETCH}}
 \label{fig:setch}
 \end{figure}
@@ -809,7 +807,7 @@ Este comando realiza a leitura de um objeto do dispositivo. Após aceitar o coma
 
 \begin{figure}[H]
 \centering
-\include{getch}
+\input{../media/getch}
 \caption{O comando \hbuscommand{GETCH}}
 \end{figure}
 
@@ -820,7 +818,7 @@ A estrutura parcial da mensagem é vista a seguir.
 
 \begin{figure}[H]
 \centering
-\include{response}
+\input{../media/response}
 \caption{O comando \hbuscommand{RESPONSE}}
 \end{figure}
 
@@ -832,7 +830,7 @@ Os comandos \hbuscommand{QUERY}, \hbuscommand{QUERY\_EP} e \hbuscommand{QUERY\_I
 
 \begin{figure}[H]
 \centering
-\include{query}
+\input{../media/query}
 \caption{Os comandos \hbuscommand{QUERY}}
 \end{figure}
 
@@ -840,7 +838,7 @@ O comando \hbuscommand{QUERY\_RESP} é enviado pelo dispositivo em resposta a re
 
 \begin{figure}[H]
 \centering
-\include{query_resp}
+\input{../media/query_resp}
 \caption{O comando \hbuscommand{QUERY\_RESP}}
 \end{figure}
 
@@ -1003,7 +1001,7 @@ Esta é a função executada ciclicamente. Ela verifica o estado do barramento p
 
 \begin{figure}[H]
 \centering
-\include{serialcycle}
+\input{../media/serialcycle}
 \caption{Máquina de estados na função SERIAL\_CYCLE()}
 \end{figure}
 
@@ -1015,7 +1013,7 @@ Em uma transmissão comum, os bytes são analisados e caso não apresentem algum
 
 \begin{figure}[H]
 \centering
-\include{hbussm}
+\input{../media/hbussm}
 \caption{Máquina de estados de recepção HBUS}
 \label{fig:hbussm}
 \end{figure}
@@ -1030,7 +1028,7 @@ Um fluxograma completo é complicado e redundante por demais, devido a quantidad
 
 \begin{figure}[H]
 \centering
-\include{serialprocess}
+\input{../media/serialprocess}
 \caption{A função SERIAL\_PROCESS() abreviada}
 \end{figure}
 
@@ -1146,11 +1144,11 @@ O ANEM utiliza arquitetura Harvard e tradicionalmente suas palavras tem um taman
 
 Este processador foi inicialmente desenvolvido por alunos do curso de Engenharia Eletrônica da universidade federal de pernambuco, guiados pelo professor João Paulo Cerquinho Cajueiro, como atividade acadêmica.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{anem_mono_schem.ps}
-\caption{O processador ANEM16 versão mono-ciclo}
-\end{figure}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.35]{../media/anem_mono_schem.ps}
+%\caption{O processador ANEM16 versão mono-ciclo}
+%\end{figure}
 
 \subsection{O ANEM-HBUS}
 
@@ -1727,7 +1725,7 @@ A estrutura do bloco contendo os dados do objeto e os dados de verificação é 
 %fazer figura
 \begin{figure}[H]
 \centering
-\include{datablock}
+\input{../media/datablock}
 \caption{Bloco de dados para codificação}
 \end{figure}
 
@@ -2161,7 +2159,7 @@ O bloco de controle PWM é configurado no momento da montagem da placa e pode se
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.75]{LEDCTL2CH}
+\includegraphics[scale=0.75]{../media/LEDCTL2CH}
 \caption{Esquemático Controlador PWM 2 canais}
 \end{figure}
 
