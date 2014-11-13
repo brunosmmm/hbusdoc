@@ -1,0 +1,49 @@
+% XCircuit output "serialprocess.tex" for LaTeX input from serialprocess.ps
+\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
+\begin{center}
+   \scalebox{0.75}{
+   \normalsize
+   \parbox{7.41667in}{
+   \includegraphics[scale=1.33333]{serialprocess.ps}\\
+   % translate x=1472 y=928 scale 0.28
+   \putbox{7.49in}{3.41in}{1.20}{}%
+   \putbox{4.57in}{3.91in}{0.60}{\centbox{\midbox{DISP}}}%
+   \putbox{4.57in}{3.74in}{0.60}{\centbox{\midbox{ENDERECADO?}}}%
+   \putbox{4.66in}{3.07in}{0.60}{\centbox{\midbox{N}}}%
+   \putbox{4.57in}{2.16in}{0.60}{\centbox{\midbox{CMD = BUSLOCK?}}}%
+   \putbox{5.82in}{2.66in}{0.60}{\centbox{\midbox{CMD = BUSUNLOCK?}}}%
+   \putbox{5.16in}{3.32in}{0.60}{\centbox{\midbox{N}}}%
+   \putbox{4.66in}{1.41in}{0.60}{\centbox{\midbox{S}}}%
+   \putbox{4.57in}{0.74in}{0.60}{\centbox{\midbox{BUS STATE = }}}%
+   \putbox{4.57in}{0.57in}{0.60}{\centbox{\midbox{BUS LOCKED }}}%
+   \putbox{4.57in}{0.41in}{0.60}{\centbox{\midbox{(OUTRO DISP)}}}%
+   \putbox{6.32in}{0.99in}{0.60}{\centbox{\midbox{}}}%
+   \putbox{5.91in}{1.91in}{0.60}{\centbox{\midbox{S}}}%
+   \putbox{5.82in}{1.24in}{0.60}{\centbox{\midbox{BUS STATE = }}}%
+   \putbox{5.82in}{0.99in}{0.60}{\centbox{\midbox{BUS FREE }}}%
+   \putbox{3.32in}{2.66in}{0.60}{\centbox{\midbox{CMD = SOFTRESET?}}}%
+   \putbox{3.99in}{3.24in}{0.60}{\centbox{\midbox{N}}}%
+   \putbox{3.32in}{1.07in}{0.60}{\centbox{\midbox{RESET}}}%
+   \putbox{3.41in}{1.91in}{0.60}{\centbox{\midbox{S}}}%
+   \putbox{3.74in}{3.91in}{0.60}{\centbox{\midbox{N}}}%
+   \putbox{2.82in}{3.82in}{0.60}{\centbox{\midbox{CMD = SEARCH?}}}%
+   \putbox{1.82in}{3.32in}{0.60}{\centbox{\midbox{TDID = BROADCAST}}}%
+   \putbox{2.07in}{2.57in}{0.60}{\centbox{\midbox{INICIA}}}%
+   \putbox{2.07in}{2.32in}{0.60}{\centbox{\midbox{ENDERECAMENTO}}}%
+   \putbox{1.74in}{3.16in}{0.60}{\centbox{\midbox{DISP S/ ENDERECO}}}%
+   \putbox{1.74in}{4.16in}{0.60}{\centbox{\midbox{TDID = BROADCAST}}}%
+   \putbox{1.74in}{3.99in}{0.60}{\centbox{\midbox{DISP ENDERECANDO}}}%
+   \putbox{0.57in}{3.99in}{0.60}{\centbox{\midbox{FIM}}}%
+   \putbox{0.57in}{3.74in}{0.60}{\centbox{\midbox{ENDERECAMENTO}}}%
+   \putbox{5.41in}{3.91in}{0.60}{\centbox{\midbox{S}}}%
+   \putbox{6.07in}{3.91in}{0.60}{\centbox{\midbox{}}}%
+   \putbox{6.32in}{3.91in}{0.60}{\centbox{\midbox{PROCESSA}}}%
+   \putbox{6.32in}{3.74in}{0.60}{\centbox{\midbox{BUFFER}}}%
+   } % close 'parbox'
+   } % close 'scalebox'
+   \vspace{-\baselineskip} % this is not necessary, but looks better
+\end{center}

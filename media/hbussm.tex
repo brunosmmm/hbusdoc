@@ -1,0 +1,67 @@
+% XCircuit output "hbussm.tex" for LaTeX input from hbussm.ps
+\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
+\def\rightbox#1{\makebox[0in][r]{#1}}
+\def\centbox#1{\makebox[0in]{#1}}
+\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
+\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
+\begin{center}
+   \scalebox{0.75}{
+   \normalsize
+   \parbox{8in}{
+   \includegraphics[scale=1.33333]{hbussm.ps}\\
+   % translate x=1600 y=896 scale 0.28
+   \putbox{2.24in}{4.91in}{0.72}{Endpoint}%
+   \putbox{2.24in}{4.74in}{0.72}{RX?}%
+   \putbox{1.74in}{4.99in}{0.72}{Novo}%
+   \putbox{1.74in}{4.91in}{0.72}{Byte}%
+   \putbox{5.91in}{3.49in}{0.72}{RX}%
+   \putbox{5.91in}{3.32in}{0.72}{SBID}%
+   \putbox{7.24in}{3.49in}{0.72}{RX}%
+   \putbox{7.24in}{3.32in}{0.72}{SDID}%
+   \putbox{7.24in}{2.24in}{0.72}{RX}%
+   \putbox{7.24in}{2.07in}{0.72}{SDID}%
+   \putbox{7.24in}{0.99in}{0.72}{RX}%
+   \putbox{7.24in}{0.82in}{0.72}{TBID}%
+   \putbox{5.91in}{0.99in}{0.72}{RX}%
+   \putbox{5.91in}{0.82in}{0.72}{TDID}%
+   \putbox{4.57in}{0.99in}{0.72}{RX}%
+   \putbox{4.57in}{0.82in}{0.72}{CMD}%
+   \putbox{5.24in}{2.24in}{0.72}{RX}%
+   \putbox{5.24in}{2.07in}{0.72}{STP}%
+   \putbox{4.32in}{1.82in}{0.72}{BUSLOCK}%
+   \putbox{4.16in}{1.66in}{0.72}{BUSUNLOCK}%
+   \putbox{4.16in}{1.49in}{0.72}{SOFTRESET}%
+   \putbox{4.41in}{1.32in}{0.72}{SEARCH}%
+   \putbox{3.24in}{0.99in}{0.72}{RX}%
+   \putbox{3.24in}{0.82in}{0.72}{ADDR}%
+   \putbox{3.32in}{1.91in}{0.72}{QUERY}%
+   \putbox{3.32in}{1.74in}{0.72}{GETCH}%
+   \putbox{2.91in}{1.82in}{0.72}{CMD =}%
+   \putbox{1.91in}{0.99in}{0.72}{RX}%
+   \putbox{1.91in}{0.82in}{0.72}{PSZ}%
+   \putbox{1.49in}{1.99in}{0.72}{CMD =}%
+   \putbox{1.91in}{2.07in}{0.72}{STREAMW}%
+   \putbox{1.91in}{1.91in}{0.72}{STREAMR}%
+   \putbox{1.57in}{1.82in}{0.72}{ou}%
+   \putbox{1.49in}{1.66in}{0.72}{PSZ = 0}%
+   \putbox{0.57in}{0.99in}{0.72}{RX}%
+   \putbox{0.57in}{0.82in}{0.72}{PRM}%
+   \putbox{2.99in}{3.07in}{0.72}{Process}%
+   \putbox{3.07in}{3.24in}{0.72}{Serial}%
+   \putbox{3.91in}{3.24in}{0.72}{STP = 0xFF}%
+   \putbox{2.57in}{4.24in}{0.72}{N}%
+   \putbox{2.91in}{4.91in}{0.72}{S}%
+   \putbox{3.91in}{4.91in}{0.72}{writeEP}%
+   \putbox{3.99in}{4.74in}{0.72}{Byte}%
+   \putbox{4.91in}{4.91in}{0.72}{FIM}%
+   \putbox{5.57in}{4.91in}{0.72}{BUS}%
+   \putbox{5.57in}{4.74in}{0.72}{UNLOCK}%
+   \putbox{7.07in}{4.91in}{0.72}{EPwrite}%
+   \putbox{7.07in}{4.74in}{0.72}{End}%
+   \putbox{4.91in}{3.49in}{0.72}{RESET}%
+   \putbox{0.16in}{5.57in}{0.72}{SERIAL\_RXBYTE}%
+   \putbox{0.32in}{2.07in}{0.72}{RX CONT = PSZ}%
+   } % close 'parbox'
+   } % close 'scalebox'
+   \vspace{-\baselineskip} % this is not necessary, but looks better
+\end{center}
