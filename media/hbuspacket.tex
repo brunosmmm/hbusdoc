@@ -1,41 +1,54 @@
-% XCircuit output "hbuspacket.tex" for LaTeX input from hbuspacket.ps
-\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
-\def\rightbox#1{\makebox[0in][r]{#1}}
-\def\centbox#1{\makebox[0in]{#1}}
-\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
-\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
-\begin{center}
-   \scalebox{1}{
-   \normalsize
-   \parbox{4.97917in}{
-   \includegraphics[scale=1]{../media/hbuspacket.ps}\\
-   % translate x=448 y=354 scale 0.38
-   \putbox{0.22in}{1.65in}{1.20}{0}%
-   \putbox{0.89in}{1.65in}{1.20}{1}%
-   \putbox{1.56in}{1.65in}{1.20}{2}%
-   \putbox{2.22in}{1.65in}{1.20}{3}%
-   \putbox{2.89in}{1.73in}{1.20}{}%
-   \putbox{2.89in}{1.65in}{1.20}{4}%
-   \putbox{4.22in}{1.65in}{1.20}{n}%
-   \putbox{4.47in}{0.15in}{1.20}{\centbox{\midbox{(0xFF)}}}%
-   \putbox{0.06in}{0.32in}{1.20}{Endereco do}%
-   \putbox{0.14in}{0.15in}{1.20}{}%
-   \putbox{0.06in}{0.15in}{1.20}{}%
-   \putbox{0.06in}{0.15in}{1.20}{disp. fonte}%
-   \putbox{1.47in}{0.32in}{1.20}{Endereco do}%
-   \putbox{1.47in}{0.15in}{1.20}{disp. destino}%
-   \putbox{2.97in}{0.32in}{1.20}{Comando}%
-   \putbox{3.97in}{0.32in}{1.20}{Terminador}%
-   \putbox{3.39in}{1.82in}{1.20}{Dados}%
-   \putbox{3.64in}{1.90in}{1.20}{}%
-   \putbox{0.31in}{1.15in}{0.96}{\centbox{\midbox{SBID}}}%
-   \putbox{0.81in}{1.07in}{0.96}{\centbox{\midbox{}}}%
-   \putbox{0.97in}{1.15in}{0.96}{\centbox{\midbox{SDID}}}%
-   \putbox{1.64in}{1.15in}{0.96}{\centbox{\midbox{TBID}}}%
-   \putbox{2.31in}{1.15in}{0.96}{\centbox{\midbox{TDID}}}%
-   \putbox{2.97in}{1.15in}{0.96}{\centbox{\midbox{CMD}}}%
-   \putbox{4.31in}{1.15in}{0.96}{\centbox{\midbox{STP}}}%
-   } % close 'parbox'
-   } % close 'scalebox'
-   \vspace{-\baselineskip} % this is not necessary, but looks better
-\end{center}
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+
+%Provide default strings for packet field descriptions in english if anything else not set
+
+\providecommand{\SDSTR}{Source device \\ address}
+\providecommand{\TDSTR}{Target device \\ address}
+\providecommand{\CMDSTR}{Command}
+\providecommand{\TERMSTR}{Terminator}
+\providecommand{\DATASTR}{Data}
+
+\usetikzlibrary{positioning,arrows,decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[node distance=45pt,minimum size=1pt,auto]
+
+\tikzstyle{pfield}=[rectangle,minimum width=35pt,minimum height=30pt,draw=black,thick];
+
+\node [pfield] (b0) {SBID};
+\node [pfield] (b1) [right of=b0] {SDID};
+\node [pfield] (b2) [right of=b1] {TBID};
+\node [pfield] (b3) [right of=b2] {TDID};
+\node [pfield] (b4) [right of=b3] {CMD};
+
+\node  (d0) [right of=b4,xshift=-10pt] {$\bullet$};
+\node  (d1) [right of=d0,xshift=-35pt] {$\bullet$};
+\node  (d2) [right of=d1,xshift=-35pt] {$\bullet$};
+
+\node [pfield] (b5) [right of=d2,xshift=-10pt] {STP};
+
+\draw [decorate,decoration={brace,amplitude=10pt,raise=5pt}] (b1.315) -- (b0.225) node [black,midway,align=center,yshift=-15pt] {\SDSTR};
+
+\draw [decorate,decoration={brace,amplitude=10pt,raise=5pt}] (b3.315) -- (b2.225) node (t0) [black,midway,align=center,yshift=-15pt] {\TDSTR};
+
+\node (t1) at (t0 -| b4) {\CMDSTR};
+\node [align=center] (t2) at (t0 -| b5) {\TERMSTR \\ (0xFF)};
+
+\path [-latex,ultra thick, shorten >=2pt] (t1) edge (b4);
+\path [-latex,ultra thick, shorten >=2pt] (t2) edge (b5);
+
+\node (t3) [above of=d1] {\DATASTR};
+
+\path [-latex,ultra thick, shorten >=5pt] (t3) edge (d1);
+
+%field number
+\node [above of=b0] {0};
+\node [above of=b1] {1};
+\node [above of=b2] {2};
+\node [above of=b3] {3};
+\node [above of=b4] {4};
+\node [above of=b5] {n};
+
+\end{tikzpicture}
+\end{document}

@@ -1,4 +1,8 @@
 \documentclass[11pt]{report}
+
+\usepackage{standalone}
+\usepackage{tikz}
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -10,7 +14,6 @@
 \usepackage{amsmath}
 \usepackage{bytefield}
 
-\usepackage{tikz}
 \usepackage{multirow}
 \usepackage{listings}
 \usepackage{minted}
@@ -23,7 +26,7 @@
 \begin{center}
 \topskip0pt
 \vspace*{\fill}
-\includegraphics[scale=3]{../media/hbuslogo}
+\includegraphics[scale=3]{../media/hbuslogo.ps}
 
 \huge \textbf{Especificação e exemplos de uso}\\
 Versão preliminar 1.1.1
@@ -739,6 +742,8 @@ Cada dispositivo no barramento global possui um endereço. Este endereço é com
 \subsection{O pacote HBUS}
 
 De forma geral as transmissões são realizadas em pacotes que seguem o esquema mostrado na figura a seguir. Na figura, cada quadrado representa um byte transmitido.
+
+\newcommand{\SDSTR}{Endereço do \\ disp. fonte}
 
 \begin{figure}[H]
 \centering
