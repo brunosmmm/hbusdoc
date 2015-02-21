@@ -1,33 +1,56 @@
-% XCircuit output "setch.tex" for LaTeX input from setch.ps
-\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
-\def\rightbox#1{\makebox[0in][r]{#1}}
-\def\centbox#1{\makebox[0in]{#1}}
-\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
-\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
-\begin{center}
-   \scalebox{1}{
-   \normalsize
-   \parbox{4.08333in}{
-   \includegraphics[scale=1,trim= 0 0 0 1.5cm]{../media/setch.ps}\\
-   % translate x=544 y=352 scale 0.38
-   \putbox{3.39in}{1.72in}{1.20}{}%
-   \putbox{0.47in}{1.39in}{1.20}{4}%
-   \putbox{3.14in}{1.39in}{1.20}{n}%
-   \putbox{3.22in}{0.89in}{1.20}{\centbox{\midbox{0xFF}}}%
-   \putbox{0.64in}{0.14in}{1.20}{}%
-   \putbox{0.56in}{0.14in}{1.20}{}%
-   \putbox{2.89in}{0.06in}{1.20}{Terminador}%
-   \putbox{2.31in}{1.56in}{1.20}{Dados}%
-   \putbox{4.14in}{1.89in}{1.20}{}%
-   \putbox{0.56in}{0.89in}{1.20}{\centbox{\midbox{0x10}}}%
-   \putbox{1.14in}{1.39in}{1.20}{5}%
-   \putbox{0.39in}{0.06in}{1.20}{Endereco}%
-   \putbox{1.81in}{1.39in}{1.20}{6}%
-   \putbox{1.56in}{0.06in}{1.20}{Tamanho}%
-   \putbox{1.22in}{0.89in}{0.96}{\centbox{\midbox{ADDR}}}%
-   \putbox{1.89in}{0.89in}{0.96}{\centbox{\midbox{PSZ}}}%
-   \putbox{2.56in}{0.72in}{0.96}{\centbox{\midbox{PRM}}}%
-   } % close 'parbox'
-   } % close 'scalebox'
-   \vspace{-\baselineskip} % this is not necessary, but looks better
-\end{center}
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+
+%Provide default strings for packet field descriptions in english if anything else not set
+
+\providecommand{\ADDRSTR}{Address}
+\providecommand{\SIZESTR}{Size}
+\providecommand{\TERMSTR}{Terminator}
+\providecommand{\DATASTR}{Data}
+
+\usetikzlibrary{positioning,arrows,decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}[node distance=45pt,minimum size=1pt,auto]
+
+\tikzstyle{pfield}=[rectangle,minimum width=35pt,minimum height=30pt,draw=black,thick];
+
+\node [pfield] (b0) {0x10};
+\node [pfield] (b1) [right of=b0] {ADDR};
+\node [pfield] (b2) [right of=b1] {PSZ};
+%\node [pfield] (b3) [right of=b2] {ADDR};
+%\node [pfield] (b4) [right of=b3] {PSZ};
+
+\node  (d0) [right of=b2,xshift=-10pt] {$\bullet$};
+\node  (d1) [right of=d0,xshift=-35pt] {$\bullet$};
+\node  (d2) [right of=d1,xshift=-35pt] {$\bullet$};
+
+\node [pfield] (b5) [right of=d2,xshift=-10pt] {0xFF};
+
+%\draw [decorate,decoration={brace,amplitude=10pt,raise=5pt}] (b1.315) -- (b0.225) node [black,midway,align=center,yshift=-15pt] {\SDSTR};
+
+%\draw [decorate,decoration={brace,amplitude=10pt,raise=5pt}] (b3.315) -- (b2.225) node (t0) [black,midway,align=center,yshift=-15pt] {\TDSTR};
+
+%\node (t1) at (t0 -| b4) {\CMDSTR};
+
+\node (t1) [above of=d1] {\DATASTR};
+\node (t2) [below of=b1] {\ADDRSTR};
+\node (t3) at (t2 -| b2) {\SIZESTR};
+
+\node [align=center] (t4) at (t2 -| b5) {\TERMSTR};
+
+\path [-latex,ultra thick, shorten >=5pt] (t1) edge (d1);
+\path [-latex,ultra thick, shorten >=2pt] (t4) edge (b5);
+\path [-latex,ultra thick, shorten >=2pt] (t3) edge (b2);
+\path [-latex,ultra thick, shorten >=2pt] (t2) edge (b1);
+
+%field number
+\node [above of=b0] {4};
+\node [above of=b1] {5};
+\node [above of=b2] {6};
+%\node [above of=b3] {N};
+%\node [above of=b4] {6};
+\node [above of=b5] {n};
+
+\end{tikzpicture}
+\end{document}
