@@ -1,7 +1,7 @@
 \documentclass[11pt]{report}
-
-%\usepackage{standalone}
+\usepackage{standalone}
 \usepackage{tikz}
+\usetikzlibrary{positioning,arrows,decorations.pathreplacing}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -180,7 +180,7 @@ Um cabo com 6 condutores é então o ideal. Também podem ser usados cabos de 8 
 
 \begin{figure}[H]
 \centering
-\input{../media/hbusphys}
+%\input{../media/hbusphys}
 \caption{Cabo para transporte do barramento HBUS}
 \end{figure}
 
@@ -194,7 +194,7 @@ Uma observação muito importante é que por padrão os sinais \textbf{RS485} s�
 
 \begin{figure}[H]
 \centering
-\input{../media/hbusinterconn}
+%\input{../media/hbusinterconn}
 \caption{Conexão entre duas portas}
 \end{figure}
 
@@ -206,7 +206,7 @@ O barramento utiliza comunicação RS485 em half-duplex como mencionado. Uma top
 
 \begin{figure}[H]
 \centering
-\includegraphics{../media/485drv}
+\includegraphics{../media/485drv.pdf}
 \caption{Driver RS485}
 \end{figure}
 
@@ -746,12 +746,15 @@ De forma geral as transmissões são realizadas em pacotes que seguem o esquema 
 \newcommand{\SDSTR}{Endereço do \\ disp. fonte}
 \newcommand{\TDSTR}{Endereço do \\ disp. alvo}
 \newcommand{\CMDSTR}{Comando}
-\newcommand{\TERMSTR}{Terminador}
+\newcommand{\TERMSTR}{Fim}
 \newcommand{\DATASTR}{Dados}
+\newcommand{\ADDRSTR}{Endereço}
+\newcommand{\SIZESTR}{Tamanho}
 
 \begin{figure}[H]
 \centering
 \input{../media/hbuspacket}
+%\import{../media/}{hbuspacket}
 \caption{Pacote HBUS}
 \end{figure}
 
