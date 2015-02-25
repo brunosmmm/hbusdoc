@@ -1,6 +1,6 @@
 \documentclass[11pt]{report}
 
-\usepackage{standalone}
+%\usepackage{standalone}
 \usepackage{tikz}
 
 \usepackage[T1]{fontenc}
@@ -26,7 +26,7 @@
 \begin{center}
 \topskip0pt
 \vspace*{\fill}
-\includegraphics[scale=3]{../media/hbuslogo.ps}
+\includegraphics[scale=3]{../media/hbuslogo.pdf}
 
 \huge \textbf{Especificação e exemplos de uso}\\
 Versão preliminar 1.1.1
@@ -744,6 +744,10 @@ Cada dispositivo no barramento global possui um endereço. Este endereço é com
 De forma geral as transmissões são realizadas em pacotes que seguem o esquema mostrado na figura a seguir. Na figura, cada quadrado representa um byte transmitido.
 
 \newcommand{\SDSTR}{Endereço do \\ disp. fonte}
+\newcommand{\TDSTR}{Endereço do \\ disp. alvo}
+\newcommand{\CMDSTR}{Comando}
+\newcommand{\TERMSTR}{Terminador}
+\newcommand{\DATASTR}{Dados}
 
 \begin{figure}[H]
 \centering
