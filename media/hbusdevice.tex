@@ -1,32 +1,43 @@
-% XCircuit output "hbusdevice.tex" for LaTeX input from hbusdevice.ps
+\documentclass[border=10pt]{standalone}
 
-\providecommand{\HBUSSTACK}{HBUS Stack}
-\providecommand{\USERCODE}{Stack user code}
-\providecommand{\OBJECTS}{Objects}
-\providecommand{\HBUSDEVICE}{HBUS Device}
-\providecommand{\MICROCODE}{Microcode}
+\usepackage{tikz}
+\usetikzlibrary{fit,positioning,calc}
 
-\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
-\def\rightbox#1{\makebox[0in][r]{#1}}
-\def\centbox#1{\makebox[0in]{#1}}
-\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
-\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
-\begin{center}
-   \scalebox{1}{
-   \normalsize
-   \parbox{4.70833in}{
-   \includegraphics[scale=1]{../media/hbusdevice.pdf}\\
-   % translate x=616 y=512 scale 0.38
-   \putbox{0.85in}{1.39in}{1.20}{\HBUSSTACK}%
-   \putbox{0.85in}{2.47in}{1.20}{}%
-   \putbox{2.35in}{2.22in}{1.20}{\USERCODE}%
-   %\putbox{2.60in}{1.97in}{1.20}{do dispositivo}%
-   \putbox{0.93in}{0.81in}{1.20}{\;\;Comunicação}%
-   \putbox{2.51in}{0.81in}{1.20}{\OBJECTS}%
-   \putbox{0.68in}{2.81in}{1.20}{\HBUSDEVICE}%
-   \putbox{3.68in}{0.89in}{1.20}{\MICROCODE}%
-   %\putbox{3.68in}{0.72in}{1.20}{código}%
-   } % close 'parbox'
-   } % close 'scalebox'
-   \vspace{-\baselineskip} % this is not necessary, but looks better
-\end{center}
+
+%default strings
+\providecommand{\tstrcommunication}{Communication\\ protocol}
+\providecommand{\tstrobjects}{Objects}
+\providecommand{\tstrucode}{Microcode}
+\providecommand{\tstrhbusstack}{HBUS Stack}
+\providecommand{\tstrhbusdevice}{HBUS Device}
+\providecommand{\tstrdevicecode}{Device code (firmware)}
+
+\begin{document}
+\begin{tikzpicture}[auto]
+
+\tikzstyle{stackitem}=[rounded corners,thick,rectangle,minimum height=50pt,minimum width=50pt,draw=black, node distance=20pt]
+
+\node [stackitem,align=center] (comm) {\tstrcommunication};
+\node [stackitem,right=20pt of comm] (obj) {\tstrobjects}; 
+\node [stackitem,right=20pt of obj] (ucode) {\tstrucode};
+
+\node [rounded corners,inner sep=10pt,draw=black,dashed,rectangle,fit= (comm) (obj) (ucode),label=120:{\tstrhbusstack}] (stack) {};
+
+%calculate "stack" size
+\path let \p1=($(stack.west)-(stack.east)$),
+          \n1= {veclen(\p1)-0.4pt}
+          in node [stackitem,above=52pt of stack.east ,align=center,anchor=south east,minimum width=\n1] (fw) {\tstrdevicecode};
+
+%device
+\node [dashed,rounded corners,thick,inner sep=10pt,draw=black,fit= (fw) (stack),label=120:{\tstrhbusdevice}] (device) {};
+ 
+%bus
+\node [draw=none,left = of comm.west,xshift=-10pt] (bus) {\includegraphics[scale=0.75]{hbuslogoh}}; 
+
+\path [latex-latex,thick] (comm) edge (obj)
+      [latex-latex,thick] (obj) edge (ucode)
+      [latex-latex,thick] (fw) edge [out=270,in=90] (obj)
+      [latex-latex,thick] (comm) edge (bus);
+
+\end{tikzpicture}
+\end{document}

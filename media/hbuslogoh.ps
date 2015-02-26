@@ -1,10 +1,10 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Title: hbusdevice.ps
-%%Creator: XCircuit v3.7 rev40
-%%CreationDate: Fri Mar 29 12:32:45 2013
+%%Title: hbuslogoh.ps
+%%Creator: XCircuit v3.7 rev57
+%%CreationDate: Thu Feb 26 18:22:02 2015
 %%Pages: 1
-%%BoundingBox: 68 68 415 283
-%%DocumentNeededResources: font Helvetica 
+%%BoundingBox: 68 68 112 136
+%%DocumentNeededResources: font 
 %%EndComments
 %%BeginProlog
 %
@@ -124,7 +124,7 @@
   currentlinewidth mul setlinewidth /style exch def style 2048 and 0 gt
   clipped 1 and 0 eq and {clip newpath /clipped clipped 1 add def} {
   style 1 and 0 gt not {closepath} if
-  style 1024 and 0 gt {2 setlinecap} if
+  style 1024 and 0 gt {2 setlinecap 0 setlinejoin} if
   style 2 and 0 gt {currentlinewidth 4 mul dup 2 array astore 0 setdash} if
   style 4 and 0 gt {0.5 currentlinewidth 4 mul 2 array astore 0 setdash} if
   gsave style 16 and 0 gt { style 224 and -5 bitshift style 256 and 0 gt {
@@ -156,7 +156,7 @@
 /polyc   { {lineto} repeat } bind def
 /beginpath { gsave moveto } bind def
 /endpath { setstyles } bind def
-/bop	 { 1 setlinecap 0 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
+/bop	 { 1 setlinecap 2 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
 	/clipped 0 def} def
 /psinsertion {/PSobj save def /showpage {} def /setpagedevice {pop} def bop
 	rotate translate dup scale} def
@@ -184,50 +184,24 @@ begingate
 endgate
 } def
 
-/generic::arrow {
-% nonetwork
-begingate
-1 0.800 0 -40 0 20 2 polygon
-1.000 0 0 40 generic::arrowhead
-endgate
-} def
-
 
 %%EndSetup
 
-%%Page: hbusdevice 1
+%%Page: hbus 1
 %%PageOrientation: Portrait
 /pgsave save def bop
 1.0000 inchscale
-2.6000 setlinewidth 616 512 translate
+2.6000 setlinewidth 240 272 translate
 
-0 1.000 -320 192 -320 -320 480 -320 480 192 4 polygon
-0 1.000 -288 -32 -288 -288 448 -288 448 -32 4 polygon
-0 1.000 -96 160 -96 0 448 0 448 160 4 polygon
-(Pilha HBUS) {/Helvetica cf} 2 144 0 1.000 -272 -64 label
-{/Helvetica cf} 1 144 0 1.000 -272 144 label
-(Codigo especifico) {/Helvetica cf} 2 144 0 1.000 16 96 label
-(do dispositivo) {/Helvetica cf} 2 144 0 1.000 64 48 label
-0 1.000 16 -96 16 -256 208 -256 208 -96 4 polygon
-0 1.000 -256 -96 -256 -256 -16 -256 -16 -96 4 polygon
-(Comunicacao) {/Helvetica cf} 2 144 0 1.000 -256 -176 label
-1.000 270 -384 -192 generic::arrow
-1 1.000 -256 -192 -352 -192 2 polygon
-1.000 90 -288 -224 generic::arrow
-1 1.000 -320 -224 -416 -224 2 polygon
-(Objetos) {/Helvetica cf} 2 144 0 1.000 48 -176 label
-1.000 360 160 -32 generic::arrow
-1.000 180 128 -64 generic::arrow
-1 1.000 160 -64 160 -96 2 polygon
-1 1.000 128 -32 128 0 2 polygon
-1.000 90 16 -160 generic::arrowhead
-1.000 270 -16 -192 generic::arrowhead
-(Dispositivo HBUS) {/Helvetica cf} 2 144 0 1.000 -304 208 label
-0 1.000 240 -96 240 -256 416 -256 416 -96 4 polygon
-(Micro) {/Helvetica cf} 2 144 0 1.000 272 -160 label
-(codigo) {/Helvetica cf} 2 144 0 1.000 272 -192 label
-1.000 90 240 -160 generic::arrowhead
-1.000 270 208 -192 generic::arrowhead
+1.000 0 -32 80 generic::arrowhead
+1 2.000 -32 64 -32 -64 2 polygon
+1.000 180 -32 -80 generic::arrowhead
+1.000 0 32 80 generic::arrowhead
+1 2.000 32 64 32 -64 2 polygon
+1.000 180 32 -80 generic::arrowhead
+1 2.000 -48 -16 -16 16 2 polygon
+1 2.000 16 -16 48 16 2 polygon
+1 2.000 32 0 -32 0 2 polygon
 pgsave restore showpage
 
 %%Trailer

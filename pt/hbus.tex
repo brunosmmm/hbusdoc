@@ -1,7 +1,7 @@
 \documentclass[11pt]{report}
 \usepackage{standalone}
 \usepackage{tikz}
-\usetikzlibrary{positioning,arrows,decorations.pathreplacing}
+\usetikzlibrary{positioning,arrows,decorations.pathreplacing,calc,fit}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -248,6 +248,13 @@ Neste capítulo é discutida a pilha como um todo e nos próximos são dados mai
 Todo os dispositivos HBUS podem conter entradas e/ou saídas ou ainda variáveis internas que o desenvolvedor deseja que sejam acessíveis ao usuário através do barramento HBUS. Isto é realizado pela pilha, através de uma organização desses recursos em estruturas de dados que são manipuladas pela pilha.
 
 Essas estruturas de dados são chamadas em geral de \textbf{Objetos}. São discutidas a seguir.
+
+\newcommand{\tstrcommunication}{Protocolo de \\ Comunicação}
+\newcommand{\tstrobjects}{Objetos}
+\newcommand{\tstrucode}{Microcódigo}
+\newcommand{\tstrhbusstack}{Pilha HBUS}
+\newcommand{\tstrhbusdevice}{Dispositivo HBUS}
+\newcommand{\tstrdevicecode}{Código do dispositivo (firmware)}
 
 \begin{figure}[h]
 \centering
