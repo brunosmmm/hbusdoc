@@ -1,0 +1,39 @@
+
+Neste capítulo é exposta a definição das operações de interrupção por dispositivos escravos no barramento HBUS.
+
+\section{Necessidade de interrupções}
+
+A necessidade da existência de um mecanismo de interrupções no sentido escravos -> mestres é bem evidente em qualquer sistema computacional que envolve comunicação num barramento que contém um mestre e vários escravos, que dividem o canal de comunicação.
+
+Em especial, o barramento HBUS, tendo como princípio a minimização do uso do canal de comunicação, atingida através da restrição de início de tráfego no canal por parte do mestre, necessita de um mecanismo que possibilite os escravos a iniciar uma comunicação com o mestre em uma ocasião de extrema necessidade ou exceções encontradas.
+
+\section{O processo de interrupção}
+
+Utiliza-se o sinal \textbf{FREEBUS} alocado no barramento exclusivamente para as operações de interrupção.
+
+O processo de interrupção ocorre na sequência exibida a seguir:
+
+\begin{enumerate}
+
+\item O escravo leva o sinal FREEBUS ao valor lógico 0. Isto sinaliza aos demais escravos que as transmissões devem terminar o mais rápido possível.
+
+\item O escravo escuta o canal de comunicação e assim que estiver livre, emite o comando de interrupção no barramento INT, identificando-se no processo.
+
+\item O mestre emite um comando BUSLOCK, direcionado ao escravo emissor da interrupção. O barramento é travado exclusivamente para comunicação do mestre com o escravo.
+
+\item Ao confirmar o travamento do barramento, o escravo libera o sinal FREEBUS, colocando-o em alta impedância.
+
+\item São transferidas informações específicas à interrupção e suas consequências.
+
+\item Ao fim das transmissões específicas, o mestre emite o comando BUSUNLOCK e libera o barramento para outras comunicações.
+
+
+\end{enumerate}
+
+Não é requerido que as interrupções sejam detectadas por hardware exclusivo. A implementação utilizada como padrão é a detecção da interrupção por software.
+
+\section{Autenticação de interrupções}
+
+As interrupções são eventos muitas vezes urgentes e importantes que provavelmente deflagrarão ações pré-programadas. É muito interessante que esse mecanismo também tenha possibilidade de ser seguro.
+
+Surge então o conceito de autenticação de interrupções, que é uma funcionalidade futura do HBUS. Este sistema envolve o processo de interrupção já descrito e o sistema de autenticação de escravo.

@@ -1,0 +1,501 @@
+
+Uma pilha de software que realiza as funções básicas de comunicação e controle é implementada. Este é um componente obrigatório para o dispositivo HBUS.
+
+Esta pilha é composta por módulos que desempenham as funções:
+
+\begin{itemize}
+
+\item Definição de propriedades do dispositivo
+\item Comunicação através do protocolo HBUS
+\item Gerenciamento de interrupções
+\item Gerenciamento do microcódigo HBUS
+
+\end{itemize}
+
+Neste capítulo é discutida a pilha como um todo e nos próximos são dados mais detalhes sobre os componentes da pilha.
+
+Todo os dispositivos HBUS podem conter entradas e/ou saídas ou ainda variáveis internas que o desenvolvedor deseja que sejam acessíveis ao usuário através do barramento HBUS. Isto é realizado pela pilha, através de uma organização desses recursos em estruturas de dados que são manipuladas pela pilha.
+
+Essas estruturas de dados são chamadas em geral de \textbf{Objetos}. São discutidas a seguir.
+
+\newcommand{\tstrcommunication}{Protocolo de \\ Comunicação}
+\newcommand{\tstrobjects}{Objetos}
+\newcommand{\tstrucode}{Microcódigo}
+\newcommand{\tstrhbusstack}{Pilha HBUS}
+\newcommand{\tstrhbusdevice}{Dispositivo HBUS}
+\newcommand{\tstrdevicecode}{Código do dispositivo (firmware)}
+
+\begin{figure}[h]
+\centering
+\input{../media/hbusdevice}
+\caption{Arquitetura de software de um dispositivo HBUS}
+\end{figure}
+
+\section{Objetos de dispositivo}
+
+Os objetos de dispositivo são estruturas de dados que encapsulam os dados a que o usuário do barramento HBUS terá acesso. Esses dados podem ser referentes a entradas, saídas ou outros valores específicos à programação de cada tipo de dispositivo.
+
+Estes objetos são organizados por endereços. É possível ter até 255 objetos no dispositivo. A estrutura de dados que descreve um objeto é reproduzida a seguir.
+
+\begin{minted}[linenos]{c}
+
+typedef struct HBUSOBJECTS
+{
+	HBUSOBJINFO objectInfo;
+	
+	byte * objectData;
+	void * (*getObjectData)(void);
+	void (*setObjectData)(void *, int);
+	
+} HBUSOBJ;
+
+\end{minted}
+
+Os campos da estrutura \textbf{HBUSOBJ} são detalhados na tabela a seguir.
+
+\begin{table}[H]
+\centering
+\caption{Campos da estrutura HBUSOBJ}
+\begin{tabular}{l p{12cm}}
+
+\hline
+Campo			&	Descrição\\
+\hline
+objectInfo		&	Estrutura contendo informações sobre o objeto. É detalhada mais adiante\\
+objectData		&	Ponteiro para localização na memória que contem o valor referente ao objeto\\
+getObjectData	&	Ponteiro para função que realiza leitura do valor do objeto\\
+setObjectData	&	Ponteiro para função que realiza escrita do valor do objeto\\
+\hline
+
+\end{tabular}
+\end{table}
+
+Os dados referentes ao objeto podem ser acessados de duas maneiras:
+
+\begin{enumerate}
+
+\item O objeto fornece o campo objectData e a leitura e escrita são realizadas diretamente na memória.
+\item O objeto fornece os campos get/setObjectData e a leitura e escrita são realizadas através das funções disponibilizadas pelo desenvolvedor para isso.
+
+\end{enumerate}
+
+Em outras palavras, o desenvolvedor tem a possibilidade de escolha se o valor a ser lido/escrito é um valor residente na memória ou se são usadas funções para realizar a tarefa. Note que a utilização de funções permite ao desenvolvedor saber que o objeto está sendo lido ou escrito no momento em que aquela função é chamada. Isto é muito útil em casos em que o valor só está disponível para ser transmitido após algum tipo de processamento.
+
+Seguindo a filosofia de alocação de recursos, não faz sentido calcular constantemente este valor apenas para que no caso de ser requisitado ao dispositivo que envie-o, ele estar disponível. Utilizando-se de funções, o valor pode ser calculado sob demanda e imediatamente submetido.
+
+\vskip1cm
+
+A seguir é mostrada e analisada a estrutura contida no campo \textit{objectInf}o, que descreve as propriedades do objeto.
+
+\pagebreak
+
+\begin{minted}[linenos]{c}
+
+typedef struct HBUSOBJECTINFOS
+{
+	byte objectFlags;
+	byte objectSize;
+	
+	byte objectDataTypeInfo;
+	
+	byte objectDescStringSize;
+	byte * objectDescString;
+	
+} HBUSOBJINFO;
+
+\end{minted}
+
+Os campos e possíveis flags são analisados nas tabelas a seguir.
+
+\begin{table}[H]
+\centering
+\caption{Campos da estrutura HBUSOBJINFO}
+\begin{tabular}{l p{10cm}}
+
+\hline
+Campo					&	Descrição\\
+\hline
+objectFlags				&	Byte contendo flags do objeto\\
+objectSize				&	Tamanho do objeto em bytes\\
+objectDataTypeInfo		&	Informações secundárias sobre a interpretação do tipo de dados do objeto\\
+objetcDescStringSize		&	Tamanho da string descritiva do objeto em bytes\\
+objectDescString			&	Ponteiro para a string descritiva\\
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Possíveis flags para o objeto}
+\begin{tabular}{l c l}
+
+\hline
+Flag						& 	Valor	&	Descrição\\
+\hline
+HBUSOBJ\_READ			&	0x01		&	O barramento tem permissão de leitura do objeto\\
+HBUSOBJ\_WRITE			&	0x02		&	O barramento tem permissão de escrita no objeto\\
+HBUSOBJ\_CRYPTO			&   0x04	    &	Dados do objeto são trafegados criptografados\\
+HBUSOBJ\_HIDDEN			&	0x08		&	Este objeto não é visível para o usuário\\
+\hline
+
+\end{tabular}
+\end{table}
+
+Esses objetos são declarados no arquivo \textit{hbus\_objects.c}. Eles devem ser declarados como do tipo \textbf{const}, para que sejam alocados na memória de programa, já que são informações imutáveis em tempo de execução, liberando assim memória RAM para alocação de variáveis mais importantes.
+
+Os objetos são indexados pela variável \textbf{MCU\_OBJECTS[]}, sendo que o primeiro objeto, com endereço 0 é um objeto obrigatório especial que contem informações sobre o dispositivo. Os objetos implementados pelo desenvolvedor são alocados a partir do índice 1.
+
+\subsection{Os objetos especiais}
+
+São definidos alguns tipos de objetos de dispositivo especiais. É um requerimento obrigatório o suporte a estes objetos. Todos os dispositivos devem suportá-los.
+
+\subsubsection*{O objeto zero}
+
+O objeto de endereço 0 é especial e contem uma estrutura de dados específica que descreve o dispositivo. Além disso, a string descritiva deste objeto deve ser o nome do dispositivo e este objeto é somente para leitura.
+
+O campo \textit{objectData} deve apontar para uma estrutura do tipo \textbf{HBUSOBJLISTINFO}. Esta estrutura é mostrada a seguir.
+
+\begin{minted}[linenos]{c}
+
+typedef struct HBUSOBJECTLISTINFOS
+{
+	byte objectListSize;
+	byte endpointListSize;
+	byte interruptListSize;
+	
+	byte slaveCapabilities;
+	
+	dword uniqueDeviceInfo;
+	
+} HBUSOBJLISTINFO;
+
+\end{minted}
+
+\begin{table}[H]
+\centering
+\caption{Campos da estrutura HBUSOBJLISTINFO}
+\begin{tabular}{l p{13cm}}
+
+\hline
+Campo					&	Descrição\\
+\hline
+objectListSize			&	Tamanho da lista de objetos do dispositivo (quantidade de objetos)\\
+endpointListSize			&	Tamanho da lista de endpoints do dispositivo\\
+interruptListSize		&	Tamanho da lista de interrupções do dispositivo\\
+slaveCapabilities		&	Funções opcionais habilitadas no dispositivo\\
+uniqueDeviceInfo			&	Valor de identificação único do dispositivo (4 bytes)\\
+\hline
+
+\end{tabular}
+\end{table}
+
+Em especial, o campo \textit{uniqueDeviceInfo} deve ser observado. Neste campo é obrigatório colocar um identificador único do dispositivo, como uma espécie de número serial. A recomendação padrão é usar metade do campo para criar um identificador de família do objeto e a outra metade um número serial.
+
+Além disso, a partir da versão 1.1, existe o campo \textit{slaveCapabilities}, que contém informações sobre as funções opcionais HBUS (microcódigo, interrupções, endpoints, criptografia e autenticação) habilitadas no dispositivo em questão.
+
+\begin{table}[H]
+\centering
+\caption{Flags no campo \textit{slaveCapabilities}}
+\begin{tabular}{c p{13cm}}
+\hline
+ID		&	Significado\\
+\hline
+0x01		&	Dispositivo tem suporte a criptografia (privacidade de objetos)\\
+0x02		&	Dispositivo tem suporte a endpoints\\
+0x04		&	Dispositivo tem suporte a emissão de interrupções\\
+0x08		&	Dispositivo tem suporte a autenticação do mestre\\
+0x10		&	Dispositivo tem suporte a microcódigo\\
+0x20		&	Dispositivo tem suporte a autenticação reversa (autenticação de dispositivo)\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{O objeto de broadcast de informações}
+
+Este objeto é na verdade um objeto emulado no número 255 para todos os dispositivos. Não é necessário realizar a declaração deste objeto. No entanto, a máquina de estados do dispositivo deve estar apta a receber dados através deste objeto e é necessário observar alguns detalhes importantes.
+
+O objeto de broadcast existe para que o mestre possa enviar informações periódicas e alertas ao sistema como um todo. Dessa forma, é possível, com uma mensagem apenas, informar todos os dispositivos de alguma condição de alerta no barramento ou realizar sincronização periódica, por exemplo. Este tipo de objeto é somente para escrita.
+
+A transferência de informações é realizada através de um comando \hbuscommand{SETCH} no objeto 255, realizado para todos os dispositivos de um barramento ao mesmo tempo (utilizando o endereço de broadcast). A informação transmitida é identificada por uma subclasse através dos dois primeiros bytes transmitidos na operação. As 128 primeiras subclasses são reservadas ao mestre HBUS e as restantes podem ser implementadas por terceiros.
+
+
+\subsection{Os tipos de dados de objetos}
+
+Os tipos de dados auxiliam o mestre na interpretação dos dados obtidos dos dispositivos. Há duas informações principais para cada objeto do dispositivo: o tipo de dado propriamente dito e uma informação secundária sobre a formatação deste dado.
+
+A informação sobre o tipo de dado que deve ser associado ao objeto na interpretação do mesmo é colocado junto aos flags do objeto no campo \textit{objectFlags}.
+
+\begin{table}[H]
+\centering
+\label{table:datatypes}
+\caption{Flags para o tipo de dados do objeto}
+\begin{tabular}{l c l}
+\hline
+Flag					&	Valor	& Tipo de dado\\
+\hline
+HBUSOBJ\_DTYPE\_INT	&	0x10		& Inteiro\\
+HBUSOBJ\_DTYPE\_UINT	&	0x20		& Inteiro sem sinal\\
+HBUSOBJ\_DTYPE\_FIXP	&	0x40		& Ponto Fixo\\
+HBUSOBJ\_DTYPE\_BYTE	&	0x80		& Vetor de bytes\\
+\hline
+\end{tabular}
+\end{table}
+
+As informações secundárias estão contidas no campo \textit{objectDataTypeInfo}. As opções variam de acordo com os tipos de dados especificados na tabela \ref{table:datatypes} e são discutidas a seguir:
+
+\subsubsection*{O tipo de dados Inteiro}
+
+Os objetos que utilizam este tipo de dados terão seus valores interpretados como sendo inteiros de tamanho padrão (4 bytes). Assim, 4 bytes é o tamanho máximo para estes objetos.
+
+Este tipo de dados não possui opções de formatação definidas.
+
+\subsubsection*{O tipo de dados Inteiro sem sinal}
+
+Os objetos do tipo inteiro sem sinal são tratados como tal. O tamanho máximo é 4 bytes.
+
+Suas possíveis opções de formatação para auxiliar a interpretação:
+
+
+\begin{table}[H]
+\centering
+\caption{Formatação dos objetos do tipo inteiro sem sinal}
+\scalebox{0.75}{
+\begin{tabular}{l c p{10cm}}
+\hline
+ID								&	Valor	&	Descrição\\
+\hline
+HBUSOBJ\_DTYPE\_UINT\_PERCENT		&	0x04		&	O dado é um valor percentual (0-100)\\
+HBUSOBJ\_DTYPE\_UINT\_LIN\_PERCENT	&	0x05		&	O dado é um inteiro sem sinal que deverá ser interpretado como um percentual em uma escala linear\\
+HBUSOBJ\_DTYPE\_UINT\_LOG\_PERCENT	&	0x06		&	O dado é um inteiro sem sinal que deverá ser interpretado como um percentual em uma escala logarítmica\\
+HBUSOBJ\_DTYPE\_UINT\_TIME			&	0x09		&	O dado é um valor temporal no padrão HBUS\\
+HBUSOBJ\_DTYPE\_UINT\_DATE			&	0x0A		&	O dado é um valor de data no padrão HBUS\\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsubsection*{O tipo de dados Ponto Fixo}
+
+Estes objetos deverão ser tratados como inteiros com sinal, porém são fracionários em sua natureza e a localização do ponto decimal é dada pelo valor do campo \textit{objectDataTypeInfo}.
+
+\subsubsection*{O tipo de dados Vetor de bytes}
+
+Estes objetos não possuem tamanho máximo. São interpretados como uma sequência de bytes (os bytes são equivalentes a um número inteiro menor ou igual a 255, sem sinal).
+
+\begin{table}[H]
+\centering
+\caption{Formatação dos objetos do tipo vetor de bytes}
+\scalebox{0.75}{
+\begin{tabular}{l c p{10cm}}
+\hline
+ID								&	Valor	&	Descrição\\
+\hline
+HBUSOBJ\_DTYPE\_BYTE\_BASE\_HEX		&	0x01		&	O dado é exibido na base hexadecimal\\
+HBUSOBJ\_DTYPE\_BYTE\_BASE\_DEC		&	0x02		&	O dado é exibido na base decimal\\
+HBUSOBJ\_DTYPE\_BYTE\_BASE\_OCT		&	0x03		&	O dado é exibido na base octal\\
+HBUSOBJ\_DTYPE\_BYTE\_BASE\_BIN		&	0x07		&	O dado é exibido na base binária\\
+HBUSOBJ\_DTYPE\_BYTE\_STRING			&	0x0B		&	O dado é exibido como sendo um vetor de caracteres ASCII\\
+\hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{Os objetos invisíveis}
+\label{sec:hiddenobj}
+
+Os objetos invisíveis são um novo conceito introduzido na versão 1.1.1. Estes objetos não são visíveis ao usuário do barramento HBUS. No entanto, podem ser usados para trocar informações importantes entre os escravos e o mestre.
+
+Estes objetos não devem conter informações sobre tipos de dados nem também um nome próprio. Podem ser usados para transferência de informações extendidas sobre os objetos como limites de valores ou outras informações extendidas. Todos os objetos invisíveis são relativos a um dos outros objetos do dispositivo.
+
+\subsubsection*{A sintaxe dos objetos invisíveis}
+
+A sintaxe para interpretação dos objetos invisíveis é utilizada no campo de descrição do objeto e é extremamente simples:
+
+\begin{equation*}
+n:CAMPO
+\end{equation*}
+
+Onde \textit{n} é o número do objeto a que este outro objeto se refere e \textit{CAMPO} é o campo associado. Os campos padrão definidos pela especificação HBUS são:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l l}
+\hline
+Campo		&		Uso\\
+\hline
+MIN			&		Especifica valor mínimo possível do objeto\\
+MAX			&		Especifica valor máximo possível do objeto\\
+UNIT			&		Especifica uma unidade de medida para o valor do objeto\\
+STR			&		Associa um texto ao objeto\\
+USR			&		Dados genéricos do usuário\\
+PUBKEY		&		Chave pública do dispositivo quando presente. Deve ser associado ao objeto 0\\
+\hline
+\end{tabular}
+\caption{Campos para objetos invisíveis}
+\end{table}
+
+Os valores que serão associados ao objeto referido são os valores contidos no objeto invisível declarado para tal fim.
+
+\subsubsection*{Exemplos de utilização}
+
+Seja um objeto que implementa a escrita e leitura de um valor X, que é um inteiro sem sinal sem formatação específica. Assuma que este é o objeto número 1 do dispositivo:
+
+\begin{minted}[linenos]{c}
+
+const HBUSOBJ VALOR_X = {{HBUSOBJ_WRITE|HBUSOBJ_READ|HBUSOBJ_DTYPE_UINT,2,
+			0x00,12,"VALOR X"},0x00,LE_X,ESCREVE_X};
+
+\end{minted}
+
+Imagine que se queira atribuir uma faixa de valores válidos para este objeto, em outras palavras um valor máximo e um mínimo. Dois objetos invisíveis podem solucionar o problema:
+
+\begin{minted}[linenos,fontsize=\small]{c}
+
+const word VALOR_MINIMO = 0x0010;
+const word VALOR_MAXIMO = 0xF000;
+
+const HBUSOBJ VALOR_X_MIN = {{HBUSOBJ_READ|HBUSOBJ_HIDDEN,2,0x00,12,"1:MIN"},
+				(byte*)&VALOR_MINIMO,0x00,0x00};
+								
+const HBUSOBJ VALOR_X_MAX = {{HBUSOBJ_READ|HBUSOBJ_HIDDEN,2,0x00,12,"1:MAX"},
+				(byte*)&VALOR_MAXIMO,0x00,0x00};
+
+\end{minted}
+
+Isto indicará com sucesso ao mestre como interpretar os dados e quais são valores válidos para escrita e leitura do objeto.
+
+\section{Endpoints de dispositivo}
+
+Os endpoints são um tipo especial de objeto que tem uma forma de acesso diferenciada. Eles são indexados em um espaço de endereçamento diferente dos objetos de dispositivo. O uso de endpoints é opcional e inclusive é possível compilar a pilha HBUS sem suporte a endpoints se for necessário por questões de economia de espaço.
+
+A função de um endpoint é realizar a leitura ou escrita de um grande volume de bytes em uma única transmissão.
+
+Sua implementação é muito parecida com a dos objetos de dispositivo. A estrutura de dados que define um endpoint é mostrada a seguir:
+
+\begin{minted}[linenos]{c}
+
+typedef struct HBUSENDPOINTS
+{
+	HBUSEPINFO endpointInfo;
+	
+	byte * dataStart;
+	
+	byte (*readEPByte)(void);
+	byte (*writeEPByte)(byte);
+	
+	void (*EPwriteBegin)(void);
+	void (*EPwriteEnd)(void);
+	
+	void (*EPreadBegin)(void);
+	void (*EPreadEnd)(void);
+	
+} HBUSEP;
+
+\end{minted}
+
+\begin{table}[H]
+\centering
+\caption{Campos da estrutura HBUSEP}
+\begin{tabular}{l p{12cm}}
+
+\hline
+Campo					&	Descrição\\
+\hline
+endpointInfo				&	Estrutura contendo informações sobre o endpoint\\
+dataStart				&	Ponteiro para localização na memória do início dos dados\\
+readEPByte				&	Ponteiro para uma função que escreve um byte na memória do endpoint\\
+writeEPByte				&	Ponteiro para uma função que lê um byte da memória do endpoint\\
+EPwriteBegin				&	Ponteiro para uma função que é chamada assim que começa a escrita do endpoint\\
+EPwriteEnd				&	Ponteiro para uma função que é chamada assim que termina a escrita do endpoint\\
+EPreadBegin				&	Ponteiro para uma função que é chamada assim que começa a leitura do endpoint\\
+EPreadEnd				&	Ponteiro para uma função que é chamada assim que termina a leitura do endpoint\\
+\hline
+
+\end{tabular}
+\end{table}
+
+De maneira análoga a implementação de objetos do dispositivo, os campos dataStart e readEPByte e writeEPByte são intercambiáveis.
+
+Todas os demais ponteiros para funções são opcionais. Seguindo a análise, será vista a estrutura \textbf{HBUSEPINFO}.
+
+\begin{minted}[linenos]{c}
+
+typedef struct HBUSENDPOINTINFOS
+{
+	byte endpointFlags;
+	byte endpointBlockSize;
+	
+	byte endpointDescStringSize;
+	byte * endpointDescString;
+	
+} HBUSEPINFO;
+
+\end{minted}
+
+Mais uma vez a implementação é análoga a de objetos de dispositivo. A maior diferença nesse caso é o campo \textit{endpointBlockSize}, que descreve o tamanho do bloco de dados que é representado no barramento HBUS pelo endpoint.
+
+\section{Interrupções de dispositivo}
+
+As interrupções também são descritas por um tipo especial de objeto que assim como no caso dos endpoints, são endereçados e acessados de forma diferente dos objetos comuns. Todos os objetos de interrupção são por definição somente de leitura, uma vez que sua única funcionalidade é descrever uma interrupção que o dispositivo pode vir a disparar no barramento.
+
+Os objetos de interrupção são definidos pelas estruturas mostradas:
+
+\begin{minted}[linenos]{c}
+
+typedef struct HBUSINTERRUPTINFOS
+{
+	byte interruptFlags;
+	
+	byte interruptDescStringSize;
+	byte * interruptDescString;
+	
+} HBUSINTINFO;
+
+typedef struct HBUSINTERRUPTS
+{
+	
+	HBUSINTINFO interruptInfo;
+	
+	byte interruptNumber;
+	
+} HBUSINT;
+
+\end{minted}
+
+Mais uma vez a implementação é claramente análoga a dos objetos de dispositivo. Observações:
+
+
+\begin{itemize}
+
+\item Cada interrupção possui um número de identificação.
+\item Os flags da interrupção não foram implementados até o momento
+\item A emissão de interrupções e seu código na pilha HBUS é opcional e a sua compilação pode ser desativada. No entanto, a monitoração do sinal FREEBUS é obrigatória.
+
+\end{itemize}
+
+\section{Objetos especiais do mestre}
+
+Os objetos especiais do mestre são objetos requeridos que contém dados como data/hora e outros.
+
+Como não é permitido aos dispositivos iniciarem comunicações que não são interrupções, a leitura destes objetos especiais é feita da seguinte maneira:
+
+\begin{enumerate}
+\item O dispositivo envia uma interrupção do tipo \textbf{INFOREQUEST} ao mestre.
+\item O mestre responde com um comando do tipo \hbuscommand{ACK}, informando ao dispositivo que o pedido de informações foi aceito
+\item O mestre realiza um \hbuscommand{BUSLOCK} com o dispositivo.
+\item O dispositivo, usando o barramento travado, executa um comando \hbuscommand{GETCH} para ler o objeto especial do mestre.
+\end{enumerate}
+
+
+
+\section{O ciclo e inicialização da pilha HBUS}
+
+A pilha HBUS é inicializada no RESET do dispositivo hóspede e ciclos são executados repetidamente durante toda o tempo de execução.
+
+\begin{figure}[H]
+\centering
+\input{../media/hbusstack}
+\caption{Funcionamento da pilha HBUS}
+\end{figure}

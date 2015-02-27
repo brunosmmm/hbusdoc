@@ -1,0 +1,41 @@
+Neste capítulo são apresentados alguns dispositivos experimentais que foram projetados e sua possível utilização.
+
+\section{Controlador de PWM de 2 canais}
+
+Este é um dos dispositivos sobre o qual foi realizado boa parte do desenvolvimento de todas as especificações HBUS.
+
+O controlador de PWM de 2 canais foi concebido para realizar o controle de intensidade de até 2 fitas de LEDs de comprimento pequeno (até 1m), sendo possíveis as opções de controle por tensão constante ou corrente constante.
+
+Além dos dois canais de saída, o dispositivo possui como entrada um LDR para detecção do nível de luminosidade na região vizinha a placa de circuito impresso e também três chaves de duas posições para uso livre.
+
+O dispositivo é analisado a fundo num capítulo dedicado.
+
+\section{Controlador de PWM com TLC5940}
+
+Este controlador foi desenvolvido juntamente ao controlador de PWM de 2 canais. Sua função é controlar leds ou fitas de leds individuais ou RGB, possibilitando a formação de cores arbitrárias.
+
+O TLC5940 é um circuito integrado fabricado pela Texas Instruments. Ele possui uma interface serial similar à SPI para controle, porém com alguns sinais a mais, sendo necessária a geração de um clock no microcontrolador que implementa a pilha HBUS.
+
+São, no total, 12 saídas de PWM utilizando controle de corrente constante gerenciadas pelo TLC5940.
+
+O software específico a este dispositivo implementa algumas funções interessantes, como controle absoluto ou relativo da luminosidade dos leds e também suporte a mudanças de luminosidades graduais programadas pelo usuário.
+
+\section{Array de sensores}
+
+O dispositivo array de sensores é pertencente a segunda rodada de desenvolvimento. Este dispositivo já incorpora algumas modificações estéticas no desenho da placa de circuito.
+
+O seu objetivo é a captação de variáveis do ambiente em que está localizado para disponibilização ao barramento. Isto pode ser muito interessante e até vital para a automação de um ambiente.
+
+O array de sensores é constituído de sensores de luminosidade ambiente, temperatura e umidade relativa do ar.
+
+\section{Ponte HUB HBUS}
+
+Este é um dispositivo que funciona como ponte entre uma conexão serial comum e o barramento HBUS. É altamente recomendado o uso do mesmo conectado a um computador como o mestre do sistema.
+
+Além da interface de ponte, também é um dispositivo, sendo acessível. Possui algumas entradas e saídas digitais e analógicas.
+
+Na sua segunda versão, o dispositivo é implementado de forma a facilitar a conexão com um computador Raspberry Pi servindo como mestre do barramento HBUS.
+
+As entradas e saídas disponíveis ao mestre do barramento são: 8 entradas/saídas digitais (5 V), 3 entradas analógicas e 4 saídas de PWM. Além disso, através do dispositivo é possível acessar portas de expansão I2C e SPI, para comunicação com dispositivos externos.
+
+A segunda versão do dispositivo contém também um circuito integrado de relógio em tempo real, com bateria para backup, além de monitoramento do consumo do barramento e circuito de proteção e limitação de corrente de saída.

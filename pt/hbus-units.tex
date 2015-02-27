@@ -1,0 +1,44 @@
+A especificação HBUS, através do uso de objetos invisíveis e utilizando a sintaxe da seção \ref{sec:hiddenobj}, através do campo UNIT, implementa algumas unidades padrão do SI, para melhor visualização dos dados disponibilizados pelos dispositivos.
+
+\section{Unidades de medidas}
+
+As unidades suportadas pelo sistema são um conjunto de reduzido de unidades comuns utilizadas no SI.
+
+\begin{table}[H]
+\centering
+\caption{unidades padrão no HBUS}
+\begin{tabular}{l l l}
+\hline
+Unidade		&	Símbolo SI	&	String HBUS\\
+\hline
+\textit{volt} & V			&	V\\
+\textit{ampère} & A			&   A\\
+\textit{watt}   & W			&   W\\
+\textit{pascal} & Pa			&   Pa\\
+\textit{graus Celsius} & $^{\circ} C$ & C\\
+\textit{ohm}		& $\Omega$	&	R\\
+\end{tabular}
+\end{table}
+
+\section{Prefixos suportados}
+
+Vários prefixos são suportados para uso conjunto com as unidades. Estes prefixos devem vir antes da unidade, sem espaços.
+
+A tabela abaixo lista os prefixos suportados e o caractere para uso nos dispositivos.
+
+\begin{table}[H]
+\centering
+\caption{prefixos suportados no HBUS}
+\begin{tabular}{l c c l}
+\hline
+Prefixo		&	Símbolo SI	&	Caractere HBUS	&	Potência\\
+\hline
+%pico			&	p			&	p				&	$10^{-12}$\\
+%nano			&	n			&	n				&	$10^{-9}$\\
+micro		&	$\mu$		&	u				&	$10^{-6}$\\
+mili			&	m			&	m				&	$10^{-3}$\\
+kilo			&	k			&	k				&	$10^3$\\
+mega			&	M			&	M				&	$10^6$\\
+\hline
+\end{tabular}
+\end{table}
