@@ -37,7 +37,7 @@ Os objetos de dispositivo são estruturas de dados que encapsulam os dados a que
 
 Estes objetos são organizados por endereços. É possível ter até 255 objetos no dispositivo. A estrutura de dados que descreve um objeto é reproduzida a seguir.
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 typedef struct HBUSOBJECTS
 {
@@ -89,7 +89,7 @@ A seguir é mostrada e analisada a estrutura contida no campo \textit{objectInf}
 
 \pagebreak
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 typedef struct HBUSOBJECTINFOS
 {
@@ -156,7 +156,7 @@ O objeto de endereço 0 é especial e contem uma estrutura de dados específica 
 
 O campo \textit{objectData} deve apontar para uma estrutura do tipo \textbf{HBUSOBJLISTINFO}. Esta estrutura é mostrada a seguir.
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 typedef struct HBUSOBJECTLISTINFOS
 {
@@ -342,7 +342,7 @@ Os valores que serão associados ao objeto referido são os valores contidos no 
 
 Seja um objeto que implementa a escrita e leitura de um valor X, que é um inteiro sem sinal sem formatação específica. Assuma que este é o objeto número 1 do dispositivo:
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 const HBUSOBJ VALOR_X = {{HBUSOBJ_WRITE|HBUSOBJ_READ|HBUSOBJ_DTYPE_UINT,2,
 			0x00,12,"VALOR X"},0x00,LE_X,ESCREVE_X};
@@ -351,7 +351,7 @@ const HBUSOBJ VALOR_X = {{HBUSOBJ_WRITE|HBUSOBJ_READ|HBUSOBJ_DTYPE_UINT,2,
 
 Imagine que se queira atribuir uma faixa de valores válidos para este objeto, em outras palavras um valor máximo e um mínimo. Dois objetos invisíveis podem solucionar o problema:
 
-\begin{minted}[linenos,fontsize=\small]{c}
+\begin{minted}[linenos,fontsize=\small,bgcolor=bg]{c}
 
 const word VALOR_MINIMO = 0x0010;
 const word VALOR_MAXIMO = 0xF000;
@@ -374,7 +374,7 @@ A função de um endpoint é realizar a leitura ou escrita de um grande volume d
 
 Sua implementação é muito parecida com a dos objetos de dispositivo. A estrutura de dados que define um endpoint é mostrada a seguir:
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 typedef struct HBUSENDPOINTS
 {
@@ -420,7 +420,7 @@ De maneira análoga a implementação de objetos do dispositivo, os campos dataS
 
 Todas os demais ponteiros para funções são opcionais. Seguindo a análise, será vista a estrutura \textbf{HBUSEPINFO}.
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 typedef struct HBUSENDPOINTINFOS
 {
@@ -442,7 +442,7 @@ As interrupções também são descritas por um tipo especial de objeto que assi
 
 Os objetos de interrupção são definidos pelas estruturas mostradas:
 
-\begin{minted}[linenos]{c}
+\begin{minted}[linenos,bgcolor=bg]{c}
 
 typedef struct HBUSINTERRUPTINFOS
 {
