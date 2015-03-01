@@ -1,67 +1,71 @@
-% XCircuit output "hbussm.tex" for LaTeX input from hbussm.ps
-\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
-\def\rightbox#1{\makebox[0in][r]{#1}}
-\def\centbox#1{\makebox[0in]{#1}}
-\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
-\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
-\begin{center}
-   \scalebox{0.75}{
-   \normalsize
-   \parbox{8in}{
-   \includegraphics[scale=1.33333]{../media/hbussm.ps}\\
-   % translate x=1600 y=896 scale 0.28
-   \putbox{2.24in}{4.91in}{0.72}{Endpoint}%
-   \putbox{2.24in}{4.74in}{0.72}{RX?}%
-   \putbox{1.74in}{4.99in}{0.72}{Novo}%
-   \putbox{1.74in}{4.91in}{0.72}{Byte}%
-   \putbox{5.91in}{3.49in}{0.72}{RX}%
-   \putbox{5.91in}{3.32in}{0.72}{SBID}%
-   \putbox{7.24in}{3.49in}{0.72}{RX}%
-   \putbox{7.24in}{3.32in}{0.72}{SDID}%
-   \putbox{7.24in}{2.24in}{0.72}{RX}%
-   \putbox{7.24in}{2.07in}{0.72}{SDID}%
-   \putbox{7.24in}{0.99in}{0.72}{RX}%
-   \putbox{7.24in}{0.82in}{0.72}{TBID}%
-   \putbox{5.91in}{0.99in}{0.72}{RX}%
-   \putbox{5.91in}{0.82in}{0.72}{TDID}%
-   \putbox{4.57in}{0.99in}{0.72}{RX}%
-   \putbox{4.57in}{0.82in}{0.72}{CMD}%
-   \putbox{5.24in}{2.24in}{0.72}{RX}%
-   \putbox{5.24in}{2.07in}{0.72}{STP}%
-   \putbox{4.32in}{1.82in}{0.72}{BUSLOCK}%
-   \putbox{4.16in}{1.66in}{0.72}{BUSUNLOCK}%
-   \putbox{4.16in}{1.49in}{0.72}{SOFTRESET}%
-   \putbox{4.41in}{1.32in}{0.72}{SEARCH}%
-   \putbox{3.24in}{0.99in}{0.72}{RX}%
-   \putbox{3.24in}{0.82in}{0.72}{ADDR}%
-   \putbox{3.32in}{1.91in}{0.72}{QUERY}%
-   \putbox{3.32in}{1.74in}{0.72}{GETCH}%
-   \putbox{2.91in}{1.82in}{0.72}{CMD =}%
-   \putbox{1.91in}{0.99in}{0.72}{RX}%
-   \putbox{1.91in}{0.82in}{0.72}{PSZ}%
-   \putbox{1.49in}{1.99in}{0.72}{CMD =}%
-   \putbox{1.91in}{2.07in}{0.72}{STREAMW}%
-   \putbox{1.91in}{1.91in}{0.72}{STREAMR}%
-   \putbox{1.57in}{1.82in}{0.72}{ou}%
-   \putbox{1.49in}{1.66in}{0.72}{PSZ = 0}%
-   \putbox{0.57in}{0.99in}{0.72}{RX}%
-   \putbox{0.57in}{0.82in}{0.72}{PRM}%
-   \putbox{2.99in}{3.07in}{0.72}{Process}%
-   \putbox{3.07in}{3.24in}{0.72}{Serial}%
-   \putbox{3.91in}{3.24in}{0.72}{STP = 0xFF}%
-   \putbox{2.57in}{4.24in}{0.72}{N}%
-   \putbox{2.91in}{4.91in}{0.72}{S}%
-   \putbox{3.91in}{4.91in}{0.72}{writeEP}%
-   \putbox{3.99in}{4.74in}{0.72}{Byte}%
-   \putbox{4.91in}{4.91in}{0.72}{FIM}%
-   \putbox{5.57in}{4.91in}{0.72}{BUS}%
-   \putbox{5.57in}{4.74in}{0.72}{UNLOCK}%
-   \putbox{7.07in}{4.91in}{0.72}{EPwrite}%
-   \putbox{7.07in}{4.74in}{0.72}{End}%
-   \putbox{4.91in}{3.49in}{0.72}{RESET}%
-   \putbox{0.16in}{5.57in}{0.72}{SERIAL\_RXBYTE}%
-   \putbox{0.32in}{2.07in}{0.72}{RX CONT = PSZ}%
-   } % close 'parbox'
-   } % close 'scalebox'
-   \vspace{-\baselineskip} % this is not necessary, but looks better
-\end{center}
+
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{fit,positioning,calc}
+
+
+%default strings
+
+\begin{document}
+\begin{tikzpicture}[auto]
+
+\tikzstyle{stackitem}=[rounded corners,align=center,thick,circle,minimum size=60pt,draw=black, node distance=40pt]
+\tikzstyle{process}=[rounded corners,align=center,thick,rectangle,minimum size=60pt,draw=black, node distance=20pt]
+
+\node [stackitem] (eprx) {Endpoint \\ RX?};
+
+\node [process,right= of eprx, xshift=40pt] (ep1) {writeEP \\ byte};
+\node [process,right= of ep1,xshift=20pt] (ep2) {\textbf{BUSUNLOCK}};
+\node [process,right= of ep2,xshift=20pt] (ep3) {EP Write \\ end};
+
+\path [dashed] (ep1) edge node {END} (ep2)
+      (ep2) edge (ep3);
+
+\node [draw=black,rounded corners,dashed,fit= (ep1) (ep2) (ep3),inner sep=5pt] (epx) {};
+
+\path [-latex,thick] (eprx) edge node {Y} (epx);
+
+\node [dashed,rounded corners,draw=black,left= of eprx,xshift=-20pt,align=center] (newbyte) {New \\ byte};
+\path [-latex,thick] (newbyte) edge (eprx);
+
+
+\node [process,below= of eprx.south east,yshift=-80pt] (sproc) {Serial \\ Process};
+\node [stackitem] (sdid) at (sproc -| ep3) {RX \\ SDID};
+\node [stackitem,left= of sdid] (sbid) {RX \\ SBID};
+\node [stackitem,below= of sdid,yshift=-40pt] (tbid) {RX \\ TBID};
+\node [stackitem,below= of tbid,yshift=-40pt] (tdid) {RX \\ TDID};
+
+\node [stackitem,left= of tdid] (cmd) {RX \\ CMD};
+\node [stackitem,left= of cmd,xshift=-80pt] (addr) {RX \\ ADDR};
+\node [stackitem,left= of addr] (psz) {RX \\ PSZ};
+\node [stackitem,left= of psz] (prm) {RX\\ PRM};
+
+\node [stackitem,above= of addr.east,yshift=70pt,xshift=20pt] (stp) {RX \\ STP};
+
+\node [draw=black,rounded corners,dashed, left= of sbid,xshift=-20pt] (reset) {RESET};
+
+\path [-latex,thick] (reset) edge (sbid)
+      (sbid) edge (sdid)
+      (sdid) edge (tbid)
+      (tbid) edge (tdid)
+      (tdid) edge (cmd)
+      (cmd) edge (addr)
+      (addr) edge (psz)
+      (psz) edge (prm)
+      (prm) edge [out=260,in=225,looseness=4] (prm)
+      (cmd) edge [out=90,in=0] node [align=center,font=\bf] {BUSLOCK \\ BUSUNLOCK \\ SOFTRESET \\ SEARCH} (stp)
+      (addr) edge [out=90,in=270] node [align=center,font=\bf] {QUERY \\ GETCH} (stp)
+      (psz) edge [out=90,in=180] node [align=center] {\bfseries STREAMW \\ \bfseries STREAMR \\ OR \\ PSZ = 0} (stp)
+      (stp) edge [out=60,in=270] (sbid)
+      (prm) edge [out=90,in=120,looseness=1.25] node {RX COUNT = PSZ} (stp);
+
+\path [dashed] (sproc) edge [out=0,in=90] node {STP = 0xFF} (stp);
+
+\node [dashed,rounded corners,draw=black,fit= (sproc) (prm) (tdid),inner sep=20pt] (states) {};
+\path [-latex,thick] (eprx) edge [out=270,in=90] node {N} (states);
+
+\node [draw=black,rounded corners, fit= (states) (epx),inner sep=5pt] {};
+
+\end{tikzpicture}
+\end{document}
