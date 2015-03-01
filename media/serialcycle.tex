@@ -1,67 +1,77 @@
-% XCircuit output "serialcycle.tex" for LaTeX input from serialcycle.ps
-\def\putbox#1#2#3#4{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{\scalebox{#3}{#4}}}}}
-\def\rightbox#1{\makebox[0in][r]{#1}}
-\def\centbox#1{\makebox[0in]{#1}}
-\def\topbox#1{\raisebox{-0.60\baselineskip}[0in][0in]{#1}}
-\def\midbox#1{\raisebox{-0.20\baselineskip}[0in][0in]{#1}}
-\begin{center}
-   \scalebox{0.6}{
-   \normalsize
-   \parbox{4.02083in}{
-   \includegraphics[scale=1.66667]{../media/serialcycle.ps}\\
-   % translate x=643 y=991 scale 0.23
-   \putbox{0.94in}{4.67in}{0.72}{\centbox{\midbox{SERIAL}}}%
-   \putbox{0.94in}{4.50in}{0.72}{\centbox{\midbox{IDLE?}}}%
-   \putbox{1.44in}{4.67in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{2.11in}{4.67in}{0.72}{\centbox{\midbox{TX}}}%
-   \putbox{2.19in}{4.50in}{0.72}{\centbox{\midbox{PEND?}}}%
-   \putbox{3.69in}{4.67in}{0.72}{\centbox{\midbox{PROCESS}}}%
-   \putbox{3.61in}{4.50in}{0.72}{\centbox{\midbox{TX}}}%
-   \putbox{2.86in}{4.67in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{0.86in}{3.84in}{0.72}{\centbox{\midbox{RX}}}%
-   \putbox{0.94in}{3.67in}{0.72}{\centbox{\midbox{SBID?}}}%
-   \putbox{2.19in}{3.84in}{0.72}{\centbox{\midbox{TIME}}}%
-   \putbox{2.19in}{3.67in}{0.72}{\centbox{\midbox{OUT?}}}%
-   \putbox{1.44in}{3.84in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{3.69in}{3.84in}{0.72}{\centbox{\midbox{RX = SBID}}}%
-   \putbox{3.61in}{3.67in}{0.72}{\centbox{\midbox{STATE}}}%
-   \putbox{2.86in}{3.84in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{0.86in}{3.00in}{0.72}{\centbox{\midbox{BUS}}}%
-   \putbox{0.94in}{2.84in}{0.72}{\centbox{\midbox{LOCKED?}}}%
-   \putbox{4.11in}{5.42in}{0.72}{\centbox{\midbox{}}}%
-   \putbox{2.19in}{3.00in}{0.72}{\centbox{\midbox{TIME}}}%
-   \putbox{2.19in}{2.84in}{0.72}{\centbox{\midbox{OUT?}}}%
-   \putbox{2.86in}{3.00in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{1.44in}{3.00in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{3.69in}{2.92in}{0.72}{\centbox{\midbox{BUS FREE}}}%
-   \putbox{0.94in}{2.17in}{0.72}{\centbox{\midbox{ENDE.}}}%
-   \putbox{0.94in}{2.00in}{0.72}{\centbox{\midbox{STATUS}}}%
-   \putbox{0.94in}{2.00in}{0.72}{\centbox{\midbox{}}}%
-   \putbox{1.03in}{1.34in}{0.72}{\centbox{\midbox{ENDERECANDO}}}%
-   \putbox{1.53in}{2.42in}{0.72}{\centbox{\midbox{SEARCH}}}%
-   \putbox{1.61in}{2.25in}{0.72}{\centbox{\midbox{RECEBIDO}}}%
-   \putbox{3.69in}{2.17in}{0.72}{\centbox{\midbox{BUS}}}%
-   \putbox{3.69in}{2.00in}{0.72}{\centbox{\midbox{LOCK}}}%
-   \putbox{2.28in}{2.17in}{0.72}{\centbox{\midbox{TEMPO}}}%
-   \putbox{2.28in}{2.00in}{0.72}{\centbox{\midbox{GUARDA}}}%
-   \putbox{3.69in}{1.34in}{0.72}{\centbox{\midbox{ENDERE}}}%
-   \putbox{3.69in}{1.17in}{0.72}{\centbox{\midbox{CANDO}}}%
-   \putbox{2.86in}{2.17in}{0.72}{\centbox{\midbox{OK}}}%
-   \putbox{1.86in}{1.17in}{0.72}{\centbox{\midbox{TIME}}}%
-   \putbox{1.86in}{1.00in}{0.72}{\centbox{\midbox{OUT?}}}%
-   \putbox{2.44in}{1.09in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{3.69in}{0.50in}{0.72}{\centbox{\midbox{SEM}}}%
-   \putbox{3.69in}{0.34in}{0.72}{\centbox{\midbox{ENDE.}}}%
-   \putbox{0.36in}{1.59in}{0.72}{\centbox{\midbox{S/ ENDE.}}}%
-   \putbox{2.69in}{4.25in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{2.69in}{3.34in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{2.69in}{2.50in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{2.69in}{1.59in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{0.44in}{4.17in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{0.44in}{3.34in}{0.72}{\centbox{\midbox{S}}}%
-   \putbox{0.44in}{2.42in}{0.72}{\centbox{\midbox{N}}}%
-   \putbox{2.28in}{0.59in}{0.72}{\centbox{\midbox{N}}}%
-   } % close 'parbox'
-   } % close 'scalebox'
-   \vspace{-\baselineskip} % this is not necessary, but looks better
-\end{center}
+
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{fit,positioning,calc}
+
+
+%default strings
+
+\begin{document}
+\begin{tikzpicture}[auto]
+
+\tikzstyle{stackitem}=[rounded corners,align=center,thick,circle,minimum size=60pt,draw=black, node distance=20pt]
+\tikzstyle{process}=[rounded corners,align=center,thick,rectangle,minimum size=60pt,draw=black, node distance=20pt]
+
+
+\node [stackitem] (sidle) {Serial \\ idle?};
+\node [stackitem, right= of sidle,xshift=30pt] (txpend) {TX \\ pending?};
+
+\node[stackitem,below= of sidle] (rxsbid) {RX \\ SBID?};
+\node[stackitem,below= of txpend] (timeout) {Time \\ out?};
+
+\node[stackitem,below= of rxsbid] (buslock) {Bus \\ locked?};
+\node[stackitem,below= of timeout] (timeout2) {Time\\ out?}; 
+
+\node[stackitem,below= of buslock] (addrstat) {Addressing \\ status};
+\node[stackitem,below= of timeout2] (guard) {Guard\\ interval};
+
+\path [-latex,thick] (sidle) edge node {Y} (txpend)
+      [-latex,thick] (rxsbid) edge node {N} (timeout) 
+      [-latex,thick] (buslock) edge node {Y} (timeout2) 
+      [-latex,thick] (addrstat) edge node [align=center] {\textbf{SEARCH} \\ received} (guard);
+
+\path [-latex,thick] (sidle) edge [out=260, in=225,looseness=4] node {N} (sidle)
+ [-latex,thick] (rxsbid) edge [out=260, in=225,looseness=4] node {Y} (rxsbid)
+ [-latex,thick] (buslock) edge [out=260, in=225,looseness=4] node {N} (buslock)
+ [-latex,thick] (addrstat) edge [out=260, in=225,looseness=4] node {No ADDR} (addrstat);
+
+\path [-latex,thick] (txpend) edge [out=315, in=280,looseness=4] node {N} (txpend)
+ [-latex,thick] (timeout) edge [out=315, in=280,looseness=4] node {N} (timeout)
+ [-latex,thick] (timeout2) edge [out=315, in=280,looseness=4] node {N} (timeout2)
+ [-latex,thick] (guard) edge [out=315, in=280,looseness=4] node {Waiting} (guard);
+
+\node[process,right= of txpend,xshift=30pt] (proctx) {Process\\ TX};
+\node[process,below= of proctx] (proc2) {RX = SBID \\ State};
+\node[process,below= of proc2] (proc3) {BUS FREE};
+\node[process,below= of proc3] (proc4) {BUS \\ LOCK};
+\node[process,below= of proc4] (proc5) {Addressing};
+\node[process,below= of proc5] (proc6) {No \\ address};
+
+\path [dashed,thick] (txpend) edge node {Y} (proctx)
+[dashed,thick] (timeout) edge node {Y} (proc2)
+[dashed,thick] (timeout2) edge node {Y} (proc3)
+[dashed,thick] (guard) edge node {Done} (proc4)
+[-latex,dashed,thick] (proc4) edge (proc5);
+
+\node[stackitem,below= of addrstat.south east,xshift=30pt] (timeout3) {Time \\ out?};
+
+\path [-latex,thick] (addrstat) edge node {Addressing} (timeout3)
+      [-latex,thick] (timeout3) edge [out=315,in=280,looseness=4] node {N} (timeout3);
+\path [dashed,thick] (timeout3) edge [out=0,in=180] node {Y} (proc6);
+
+\node [draw=none,left= of sidle] (invis1) {};
+\node [draw=none,left= of rxsbid] (invis2) {};
+\node [draw=none,left= of buslock] (invis3) {};
+\node [draw=none,left= of addrstat] (invis4) {};
+\path [-latex,thick] (invis1) edge (sidle)
+      (invis2) edge (rxsbid)
+      (invis3) edge (buslock)
+      (invis4) edge (addrstat);
+
+\path [dashed,thick] (invis1) edge (invis4);
+
+
+
+\end{tikzpicture}
+\end{document}
