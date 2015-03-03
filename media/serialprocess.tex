@@ -1,0 +1,49 @@
+
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{fit,positioning,calc}
+
+
+%default strings
+
+\begin{document}
+\begin{tikzpicture}[auto]
+
+\tikzstyle{stackitem}=[rounded corners,align=center,thick,circle,minimum size=100pt,draw=black, node distance=40pt]
+\tikzstyle{process}=[rounded corners,align=center,thick,rectangle,minimum size=80pt,draw=black, node distance=40pt]
+
+\node [stackitem,font=\large] (daddr) {Device \\ enumerated?};
+\node [stackitem,left= of daddr] (search) {CMD == \\ \bfseries SEARCH?};
+\node [stackitem,right= of daddr,font=\large] (procbuf) {Process \\ Buffer};
+\node [stackitem,below= of daddr] (buslock) {CMD == \\ \bfseries BUSLOCK?};
+\node [stackitem,below left= of daddr] (softrst) {CMD == \\ \bfseries SOFTRESET?};
+\node [stackitem,below right= of daddr] (busunlock) {CMD == \\ \bfseries BUSUNLOCK?};
+
+%start point, invisible
+\node [above= of daddr] (invis1) {};
+
+\path [-latex,thick] (invis1) edge (daddr);
+
+\path [-latex,thick] (daddr) edge node {N} (search)
+                     (daddr) edge node {Y} (procbuf)
+                     (daddr) edge node {N} (softrst)
+                     (daddr) edge node {N} (buslock)
+                     (daddr) edge node {N} (busunlock);
+
+\node [process,below= of buslock] (blocked) {Bus state: \\ locked --- \bfseries other};
+\node [process,below= of busunlock] (bfree) {Bus state: \\ \bfseries free};
+\node [process,below= of softrst] (rst) {\bfseries RESET};
+\node [process,below left= of search,yshift=-20pt] (addrinit) {Enumeration \\ init};
+\node [process,left= of search,xshift=-80pt] (addrend) {Enumeration \\ end};
+
+\path [-latex,thick] (buslock) edge node {Y} (blocked)
+                     (busunlock) edge node {Y} (bfree)
+                     (softrst) edge node {Y} (rst)
+                     (search)  edge node [align=center,anchor=east] {TDID == BROADCAST \\ \bfseries No address yet} (addrinit)
+                     (search) edge node [align=center,anchor=south] {TDID == BROADCAST \\ \bfseries Addressing} (addrend);
+                  
+
+
+\end{tikzpicture}
+\end{document}

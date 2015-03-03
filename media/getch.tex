@@ -1,16 +1,16 @@
 \documentclass[border=10pt]{standalone}
 \usepackage{tikz}
 
+\usetikzlibrary{positioning,arrows,decorations.pathreplacing}
+
+\begin{document}
+
 %Provide default strings for packet field descriptions in english if anything else not set
 
 \providecommand{\ADDRSTR}{Address}
 %\providecommand{\SIZESTR}{Size}
 \providecommand{\TERMSTR}{Terminator}
 %\providecommand{\DATASTR}{Data}
-
-\usetikzlibrary{positioning,arrows,decorations.pathreplacing}
-
-\begin{document}
 \begin{tikzpicture}[node distance=50pt,minimum size=1pt,auto]
 
 \tikzstyle{pfield}=[rectangle,minimum width=40pt,minimum height=35pt,draw=black,thick];

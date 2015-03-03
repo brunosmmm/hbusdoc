@@ -3,6 +3,7 @@
 \usepackage{tikz}
 \usetikzlibrary{fit,positioning,calc}
 
+\begin{document}
 
 %default strings
 \providecommand{\tstrcommunication}{Communication\\ protocol}
@@ -12,8 +13,14 @@
 \providecommand{\tstrhbusdevice}{HBUS Device}
 \providecommand{\tstrdevicecode}{Device code (firmware)}
 
-\begin{document}
 \begin{tikzpicture}[auto]
+
+%see if file is being included
+\ifdefined\HBUSDOCMASTER
+\newcommand{\smalllogo}{../media/hbuslogoh}
+\else
+\newcommand{\smalllogo}{hbuslogoh}
+\fi
 
 \tikzstyle{stackitem}=[rounded corners,thick,rectangle,minimum height=50pt,minimum width=50pt,draw=black, node distance=20pt]
 
@@ -32,7 +39,7 @@
 \node [dashed,rounded corners,thick,inner sep=10pt,draw=black,fit= (fw) (stack),label=120:{\tstrhbusdevice}] (device) {};
  
 %bus
-\node [draw=none,left = of comm.west,xshift=-10pt] (bus) {\includegraphics[scale=0.75]{hbuslogoh}}; 
+\node [draw=none,left = of comm.west,xshift=-10pt] (bus) {\includegraphics[scale=0.75]{\smalllogo}}; 
 
 \path [latex-latex,thick] (comm) edge (obj)
       [latex-latex,thick] (obj) edge (ucode)
