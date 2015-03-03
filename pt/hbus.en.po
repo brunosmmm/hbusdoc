@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "POT-Creation-Date: 2015-03-03 10:09-0500\n"
-"PO-Revision-Date: 2015-03-03 10:22-0500\n"
+"PO-Revision-Date: 2015-03-03 12:26-0500\n"
 "Last-Translator: Bruno Morais <brunosmmm@gmail.com>\n"
 "Language: English\n"
 "MIME-Version: 1.0\n"
@@ -18,30 +18,30 @@ msgstr ""
 #. type: Plain text
 #: hbus.tex:5
 msgid "\\usetikzlibrary{positioning,arrows,decorations.pathreplacing,calc,fit}"
-msgstr ""
+msgstr "\\usetikzlibrary{positioning,arrows,decorations.pathreplacing,calc,fit}"
 
 #. type: Plain text
 #: hbus.tex:18
 msgid ""
 "\\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=3cm,"
 "columnsep=0.8cm}"
-msgstr ""
+msgstr "\\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=3cm,columnsep=0.8cm}"
 
 #. type: newcommand{#4}
 #: hbus.tex:37
 msgid "\\textbf{#1}"
-msgstr ""
+msgstr "\\textbf{#1}"
 
 #. define a dummy command so included files can know that they are being included by master document
 #. type: newcommand{#4}
 #: hbus.tex:40
 msgid "YES"
-msgstr ""
+msgstr "YES"
 
 #. type: center
 #: hbus.tex:45
 msgid "\\topskip0pt"
-msgstr ""
+msgstr "\\topskip0pt"
 
 #. type: center
 #: hbus.tex:49
@@ -56,12 +56,12 @@ msgstr "Preliminar version 1.1.1"
 #. type: center
 #: hbus.tex:51
 msgid "Bruno Morais"
-msgstr ""
+msgstr "Bruno Morais"
 
 #. type: center
 #: hbus.tex:53
 msgid "brunosmmm@gmail.com"
-msgstr ""
+msgstr "brunosmmm@gmail.com"
 
 #. type: section{#2}
 #: hbus.tex:61
@@ -81,7 +81,7 @@ msgstr "Broadcast object information definition"
 #. type: subsubsection{#2}
 #: changelog.tex :10
 msgid "Versão 1.2"
-msgstr ""
+msgstr "Version 1.2"
 
 #. type: itemize
 #: changelog.tex :14
@@ -91,60 +91,60 @@ msgstr "Introducing special master objects"
 #. type: subsubsection{#2}
 #: changelog.tex :18
 msgid "Versão 1.1.1"
-msgstr ""
+msgstr "Version 1.1.1"
 
 #. type: itemize
 #: changelog.tex :25
 msgid "Modificações para guiar mestre na interpretação dos dados de objetos"
-msgstr ""
+msgstr "Modifications for master interpretation of device object data"
 
 #. type: itemize
 #: changelog.tex :25
 msgid ""
 "Novas flags para os objetos de escravo, incluindo a introdução de objetos "
 "escondidos (invisíveis) e declaração do tipo de dados contido no objeto"
-msgstr ""
+msgstr "New flags for device objects including hidden objects and object data type"
 
 #. type: itemize
 #: changelog.tex :25
 msgid ""
 "Implementação inicial do sistema de eventos internos HBUS para o escravo"
-msgstr ""
+msgstr "Initial implementation of device stack events"
 
 #. type: itemize
 #: changelog.tex :25
 msgid "Re-estruturação das pastas e arquivos padrão"
-msgstr ""
+msgstr "Restructuring of file / folder structure"
 
 #. type: subsubsection{#2}
 #: changelog.tex :29
 msgid "Versão 1.1"
-msgstr ""
+msgstr "Version 1.1"
 
 #. type: itemize
 #: changelog.tex :35
 msgid "Introduzidas medidas para garantir autenticidade do mestre"
-msgstr ""
+msgstr "Introducing improvements to ensure master's identity"
 
 #. type: itemize
 #: changelog.tex :35
 msgid "Introduzido o conceito de privacidade do objeto"
-msgstr ""
+msgstr "Introducing object privacy (crypto)"
 
 #. type: itemize
 #: changelog.tex :35
 msgid "Adicionadas novas instruções para o ANEM-HBUS"
-msgstr ""
+msgstr "Modified ANEM-HBUS instruction set"
 
 #. type: subsubsection{#2}
 #: changelog.tex :38
 msgid "Versão 1.0"
-msgstr ""
+msgstr "Version 1.0"
 
 #. type: itemize
 #: changelog.tex :40
 msgid "Versão inicial"
-msgstr ""
+msgstr "Initial specifications"
 
 #. type: part{#2}
 #: hbus.tex:65
@@ -326,7 +326,7 @@ msgid ""
 "Levando em consideração os requisitos apontados anteriormente, realizou-se "
 "uma pesquisa para selecionar as tecnologias a serem utilizadas nesta "
 "aplicação."
-msgstr ""
+msgstr "Considering the necessary requirements, the platform and technlogies used to develop the application were selected."
 
 #. type: document
 #: hw-hbus.tex :41
@@ -615,7 +615,7 @@ msgstr ""
 #. type: part{#2}
 #: hbus.tex:75
 msgid "Software"
-msgstr ""
+msgstr "Software"
 
 #. type: chapter{#2}
 #: hbus.tex:77
@@ -671,59 +671,59 @@ msgid ""
 "usuário através do barramento HBUS. Isto é realizado pela pilha, através de "
 "uma organização desses recursos em estruturas de dados que são manipuladas "
 "pela pilha."
-msgstr ""
+msgstr "All HBUS devices may contain input / output peripherals or internal variables that can be accessible to the user by means of the bus. The retrieval and exchange of data is managed by the stack, which accesses the data organized in predetermined data structures."
 
 #. type: document
 #: sw-stack.tex :20
 msgid ""
 "Essas estruturas de dados são chamadas em geral de \\textbf{Objetos}. São "
 "discutidas a seguir."
-msgstr ""
+msgstr "These structures are called \\textbf{objects} in general. They are discussed further next."
 
 #. type: newcommand{#4}
 #: sw-stack.tex :27
 msgid "Protocolo de \\\\ Comunicação"
-msgstr ""
+msgstr "Communications \\\\ Protocol"
 
 #. type: newcommand{#4}
 #: sw-stack.tex :27
 msgid "Objetos"
-msgstr ""
+msgstr "Objects"
 
 #. type: newcommand{#4}
 #: sw-stack.tex :27
 msgid "Microcódigo"
-msgstr ""
+msgstr "Microcode"
 
 #. type: newcommand{#4}
 #: sw-stack.tex :27
 msgid "Pilha HBUS"
-msgstr ""
+msgstr "The HBUS Stack"
 
 #. type: newcommand{#4}
 #: sw-stack.tex :27
 msgid "Dispositivo HBUS"
-msgstr ""
+msgstr "HBUS Device"
 
 #. type: newcommand{#4}
 #: sw-stack.tex :27
 msgid "Código do dispositivo (firmware)"
-msgstr ""
+msgstr "Device Application (firmware)"
 
 #. type: figure
 #: sw-stack.tex :33
 msgid "\\dtinput{../media/hbusdevice}"
-msgstr ""
+msgstr "\\dtinput{../media/hbusdevice}"
 
 #. type: caption{#2}
 #: sw-stack.tex :33
 msgid "Arquitetura de software de um dispositivo HBUS"
-msgstr ""
+msgstr "Software architecture of a HBUS device"
 
 #. type: section{#2}
 #: sw-stack.tex :35
 msgid "Objetos de dispositivo"
-msgstr ""
+msgstr "Device objects"
 
 #. type: document
 #: sw-stack.tex :37
@@ -732,7 +732,7 @@ msgid ""
 "que o usuário do barramento HBUS terá acesso. Esses dados podem ser "
 "referentes a entradas, saídas ou outros valores específicos à programação de "
 "cada tipo de dispositivo."
-msgstr ""
+msgstr "The device objects are data structures that encapsulate the bus-accessible data. This data can be linked to inputs, outputs or other values specific to each device inner workings."
 
 #. type: document
 #: sw-stack.tex :39
@@ -741,6 +741,9 @@ msgid ""
 "no dispositivo. A estrutura de dados que descreve um objeto é reproduzida a "
 "seguir."
 msgstr ""
+"The objects are indexed by addresses. It is possible to have up to 255 objects in a device. Note that it is possible to implement sub-objects, increasing the total number of available object addresses in a device. This technique is further discussed later in the document.\n"
+"\n"
+"The data structure used to represent an object is as follows: "
 
 #. type: minted
 #: sw-stack.tex :51
@@ -748,88 +751,94 @@ msgid ""
 "typedef struct HBUSOBJECTS { HBUSOBJINFO objectInfo; byte * objectData; void "
 "* (*getObjectData)(void); void (*setObjectData)(void *, int); } HBUSOBJ;"
 msgstr ""
+"typedef struct HBUSOBJECTS { \n"
+"        HBUSOBJINFO objectInfo; \n"
+"        byte * objectData; \n"
+"        void * (*getObjectData)(void); \n"
+"        void (*setObjectData)(void *, int); \n"
+"} HBUSOBJ;"
 
 #. type: document
 #: sw-stack.tex :55
 msgid ""
 "Os campos da estrutura \\textbf{HBUSOBJ} são detalhados na tabela a seguir."
-msgstr ""
+msgstr "The structure \\textbf{HBUSOBJ}'s fields are detailed:"
 
 #. type: caption{#2}
 #: sw-stack.tex :60
 msgid "Campos da estrutura HBUSOBJ"
-msgstr ""
+msgstr "HBUSOBJ structure fields"
 
 #. type: tabular
 #: sw-stack.tex :69 :124 :189 :338 :415 sw-ucode.tex :157 :228 :310
 msgid "Campo"
-msgstr ""
+msgstr "Field"
 
 #. type: tabular
 #: sw-stack.tex :69 :124 :141 :189 :277 :304 :415 sw-comm.tex sw-ucode.tex
 #: :122 :278 :329 :385 :401 sample-pwmctl.tex :38 :168
 msgid "Descrição"
-msgstr ""
+msgstr "Description"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "objectInfo"
-msgstr ""
+msgstr "objectInfo"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "Estrutura contendo informações sobre o objeto. É detalhada mais adiante"
-msgstr ""
+msgstr "Structure that contains object informations. Details are provided next"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "objectData"
-msgstr ""
+msgstr "objectData"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid ""
 "Ponteiro para localização na memória que contem o valor referente ao objeto"
-msgstr ""
+msgstr "Pointer to location in memory that contains value"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "getObjectData"
-msgstr ""
+msgstr "getObjectData"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "Ponteiro para função que realiza leitura do valor do objeto"
-msgstr ""
+msgstr "Pointer to a function that reads object value"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "setObjectData"
-msgstr ""
+msgstr "setObjectData"
 
 #. type: tabular
 #: sw-stack.tex :69
 msgid "Ponteiro para função que realiza escrita do valor do objeto"
-msgstr ""
+msgstr "Pointer to a function that writes object value"
 
 #. type: document
 #: sw-stack.tex :74
 msgid "Os dados referentes ao objeto podem ser acessados de duas maneiras:"
-msgstr ""
+msgstr "Data related to the object can be accessed in two ways:"
 
 #. type: enumerate
 #: sw-stack.tex :79
 msgid ""
 "O objeto fornece o campo objectData e a leitura e escrita são realizadas "
 "diretamente na memória."
-msgstr ""
+msgstr "The object provides the objectData field and read/write procedures are done directly in memory."
 
 #. type: enumerate
 #: sw-stack.tex :79
 msgid ""
 "O objeto fornece os campos get/setObjectData e a leitura e escrita são "
 "realizadas através das funções disponibilizadas pelo desenvolvedor para isso."
-msgstr ""
+msgstr "The object description provides function pointers and the read/write procedures are performed by these functions, which must be implemented by the device developer."
 
 #. type: document
 #: sw-stack.tex :83
