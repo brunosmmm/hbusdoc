@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2015-03-02 23:02-0500\n"
-"PO-Revision-Date: 2015-03-02 22:21-0500\n"
+"POT-Creation-Date: 2015-03-03 10:09-0500\n"
+"PO-Revision-Date: 2015-03-03 10:22-0500\n"
 "Last-Translator: Bruno Morais <brunosmmm@gmail.com>\n"
 "Language: English\n"
 "MIME-Version: 1.0\n"
@@ -46,12 +46,12 @@ msgstr ""
 #. type: center
 #: hbus.tex:49
 msgid "\\huge \\textbf{Especificação e exemplos de uso}"
-msgstr ""
+msgstr "\\huge \\textbf{Specification and usage}"
 
 #. type: center
 #: hbus.tex:49
 msgid "Versão preliminar 1.1.1"
-msgstr ""
+msgstr "Preliminar version 1.1.1"
 
 #. type: center
 #: hbus.tex:51
@@ -69,90 +69,90 @@ msgid "Log de mudanças"
 msgstr "Changelog"
 
 #. type: subsubsection{#2}
-#: hbus.tex:63
+#: changelog.tex :2
 msgid "Versão 1.2.1"
-msgstr ""
+msgstr "Version 1.2.1"
 
 #. type: itemize
-#: hbus.tex:67
+#: changelog.tex :6
 msgid "Definição do objeto de broadcast de informações"
 msgstr "Broadcast object information definition"
 
 #. type: subsubsection{#2}
-#: hbus.tex:71
+#: changelog.tex :10
 msgid "Versão 1.2"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:75
+#: changelog.tex :14
 msgid "Introdução do conceito de objetos especiais do mestre"
 msgstr "Introducing special master objects"
 
 #. type: subsubsection{#2}
-#: hbus.tex:79
+#: changelog.tex :18
 msgid "Versão 1.1.1"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:86
+#: changelog.tex :25
 msgid "Modificações para guiar mestre na interpretação dos dados de objetos"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:86
+#: changelog.tex :25
 msgid ""
 "Novas flags para os objetos de escravo, incluindo a introdução de objetos "
 "escondidos (invisíveis) e declaração do tipo de dados contido no objeto"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:86
+#: changelog.tex :25
 msgid ""
 "Implementação inicial do sistema de eventos internos HBUS para o escravo"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:86
+#: changelog.tex :25
 msgid "Re-estruturação das pastas e arquivos padrão"
 msgstr ""
 
 #. type: subsubsection{#2}
-#: hbus.tex:90
+#: changelog.tex :29
 msgid "Versão 1.1"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:96
+#: changelog.tex :35
 msgid "Introduzidas medidas para garantir autenticidade do mestre"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:96
+#: changelog.tex :35
 msgid "Introduzido o conceito de privacidade do objeto"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:96
+#: changelog.tex :35
 msgid "Adicionadas novas instruções para o ANEM-HBUS"
 msgstr ""
 
 #. type: subsubsection{#2}
-#: hbus.tex:99
+#: changelog.tex :38
 msgid "Versão 1.0"
 msgstr ""
 
 #. type: itemize
-#: hbus.tex:101
+#: changelog.tex :40
 msgid "Versão inicial"
 msgstr ""
 
 #. type: part{#2}
-#: hbus.tex:105
+#: hbus.tex:65
 msgid "Concepção e hardware"
 msgstr "Hardware and concepts"
 
 #. type: chapter{#2}
-#: hbus.tex:107
+#: hbus.tex:67
 msgid "O barramento HBUS"
 msgstr "The HBUS bus"
 
@@ -313,12 +313,12 @@ msgid ""
 "porém esse número muito dificilmente chega à casa das centenas, visto que "
 "diferentemente de um ambiente industrial, uma residência tem um tamanho "
 "apenas suficiente às necessidades de conforto dos habitantes."
-msgstr ""
+msgstr "It is also necessary to consider the size of the overall system. A home can need a big number of devices for its automation. However, this number will rarely reach the hundreds."
 
 #. type: section{#2}
 #: hw-hbus.tex :37
 msgid "Adequação à realidade e tecnologias disponíveis"
-msgstr ""
+msgstr "Use of available technologies and real applications"
 
 #. type: document
 #: hw-hbus.tex :39
@@ -455,7 +455,7 @@ msgid ""
 msgstr ""
 
 #. type: document
-#: hbus.tex:109
+#: hbus.tex:69
 msgid ""
 "Na área externa pode ser controlado o acesso a residência, na forma dos "
 "portões para carros e social. Também podem ser instalados diversos tipos de "
@@ -464,7 +464,7 @@ msgid ""
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:111
+#: hbus.tex:71
 msgid "Definições de Hardware"
 msgstr ""
 
@@ -605,7 +605,7 @@ msgid ""
 msgstr ""
 
 #. type: document
-#: hbus.tex:113
+#: hbus.tex:73
 msgid ""
 "Esta especificação não pretende definir limites extremamente rígidos para a "
 "tensão de alimentação no barramento, porém por questão de segurança todos os "
@@ -613,14 +613,14 @@ msgid ""
 msgstr ""
 
 #. type: part{#2}
-#: hbus.tex:115
+#: hbus.tex:75
 msgid "Software"
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:117
+#: hbus.tex:77
 msgid "A pilha de software HBUS"
-msgstr ""
+msgstr "The HBUS software stack"
 
 #. type: document
 #: sw-stack.tex :3
@@ -628,39 +628,40 @@ msgid ""
 "Uma pilha de software que realiza as funções básicas de comunicação e "
 "controle é implementada. Este é um componente obrigatório para o dispositivo "
 "HBUS."
-msgstr ""
+msgstr "A software stack that manages basic communication and control functions is implemented. This is a mandatory HBUS device component."
 
 #. type: document
 #: sw-stack.tex :5
 msgid "Esta pilha é composta por módulos que desempenham as funções:"
-msgstr ""
+msgstr "The stack is made up of modules that serve the following purposes:"
 
 #. type: itemize
 #: sw-stack.tex :12
 msgid "Definição de propriedades do dispositivo"
-msgstr ""
+msgstr "Device property definition"
 
 #. type: itemize
 #: sw-stack.tex :12
 msgid "Comunicação através do protocolo HBUS"
-msgstr ""
+msgstr "Communications using the HBUS protocol"
 
 #. type: itemize
 #: sw-stack.tex :12
 msgid "Gerenciamento de interrupções"
-msgstr ""
+msgstr "Management of interrupts"
 
+# Management of HBUS microcode
 #. type: itemize
 #: sw-stack.tex :12
 msgid "Gerenciamento do microcódigo HBUS"
-msgstr ""
+msgstr "Management of HBUS microcode functions"
 
 #. type: document
 #: sw-stack.tex :16
 msgid ""
 "Neste capítulo é discutida a pilha como um todo e nos próximos são dados "
 "mais detalhes sobre os componentes da pilha."
-msgstr ""
+msgstr "In this chapter the stack is discussed as a whole and subsequently its components are analyzed in further detail."
 
 #. type: document
 #: sw-stack.tex :18
@@ -1262,7 +1263,7 @@ msgstr ""
 #. type: tabular
 #: sw-stack.tex :244
 msgid "Tipo de dado"
-msgstr ""
+msgstr "Data type"
 
 #. type: tabular
 #: sw-stack.tex :244
@@ -1272,7 +1273,7 @@ msgstr ""
 #. type: tabular
 #: sw-stack.tex :244
 msgid "Inteiro"
-msgstr ""
+msgstr "Integer"
 
 #. type: tabular
 #: sw-stack.tex :244
@@ -1282,7 +1283,7 @@ msgstr ""
 #. type: tabular
 #: sw-stack.tex :244
 msgid "Inteiro sem sinal"
-msgstr ""
+msgstr "Unsigned integer"
 
 #. type: tabular
 #: sw-stack.tex :244
@@ -1297,7 +1298,7 @@ msgstr ""
 #. type: tabular
 #: sw-stack.tex :244
 msgid "Ponto Fixo"
-msgstr ""
+msgstr "Fixed point"
 
 #. type: tabular
 #: sw-stack.tex :244
@@ -1312,7 +1313,7 @@ msgstr ""
 #. type: tabular
 #: sw-stack.tex :244
 msgid "Vetor de bytes"
-msgstr ""
+msgstr "Byte vector"
 
 #. type: document
 #: sw-stack.tex :246
@@ -1991,17 +1992,17 @@ msgid ""
 msgstr ""
 
 #. type: figure
-#: hbus.tex:119
+#: hbus.tex:79
 msgid "\\dtinput{../media/hbusstack}"
 msgstr ""
 
 #. type: caption{#2}
-#: hbus.tex:119
+#: hbus.tex:79
 msgid "Funcionamento da pilha HBUS"
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:121
+#: hbus.tex:81
 msgid "O protocolo de comunicação HBUS"
 msgstr ""
 
@@ -3267,14 +3268,14 @@ msgid ""
 msgstr ""
 
 #. type: document
-#: hbus.tex:123
+#: hbus.tex:83
 msgid ""
 "Estes procedimentos são discutidos em maior detalhe num capítulo dedicado. "
 "No entanto, estão inseridos no escopo do protocolo de comunicação HBUS."
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:125
+#: hbus.tex:85
 msgid "Interrupções HBUS"
 msgstr ""
 
@@ -3390,7 +3391,7 @@ msgid ""
 msgstr ""
 
 #. type: document
-#: hbus.tex:127
+#: hbus.tex:87
 msgid ""
 "Surge então o conceito de autenticação de interrupções, que é uma "
 "funcionalidade futura do HBUS. Este sistema envolve o processo de "
@@ -3398,7 +3399,7 @@ msgid ""
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:129
+#: hbus.tex:89
 msgid "Microcódigo HBUS"
 msgstr ""
 
@@ -3899,7 +3900,7 @@ msgid "MFHI"
 msgstr ""
 
 #. type: tabular
-#: sw-ucode.tex :122 hbus.tex:150
+#: sw-ucode.tex :122 hbus.tex:110
 msgid "M"
 msgstr ""
 
@@ -4849,7 +4850,7 @@ msgid ""
 msgstr ""
 
 #. type: document
-#: hbus.tex:131
+#: hbus.tex:91
 msgid ""
 "A operação pode ser realizada sem a necessidade de reinicialização do "
 "dispositivo, possibilitando a atualização sob demanda do microcódigo, com "
@@ -4857,7 +4858,7 @@ msgid ""
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:133
+#: hbus.tex:93
 msgid "Segurança HBUS"
 msgstr ""
 
@@ -5283,19 +5284,19 @@ msgid "Bloco de dados para codificação"
 msgstr ""
 
 #. type: document
-#: hbus.tex:135
+#: hbus.tex:95
 msgid ""
 "No caso de o objeto não ter o número total de bytes (4), os bytes faltantes "
 "devem ser preenchidos com zeros."
 msgstr ""
 
 #. type: part{#2}
-#: hbus.tex:137
+#: hbus.tex:97
 msgid "Exemplos de implementação e uso"
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:139
+#: hbus.tex:99
 msgid "Dispositivos projetados e aplicações"
 msgstr ""
 
@@ -5442,7 +5443,7 @@ msgid ""
 msgstr ""
 
 #. type: document
-#: hbus.tex:141
+#: hbus.tex:101
 msgid ""
 "A segunda versão do dispositivo contém também um circuito integrado de "
 "relógio em tempo real, com bateria para backup, além de monitoramento do "
@@ -5451,7 +5452,7 @@ msgid ""
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:143
+#: hbus.tex:103
 msgid "Análise detalhada do Controlador de PWM de 2 canais"
 msgstr ""
 
@@ -6080,12 +6081,12 @@ msgid ""
 msgstr ""
 
 #. type: caption{#2}
-#: hbus.tex:145
+#: hbus.tex:105
 msgid "Esquemático Controlador PWM 2 canais"
 msgstr ""
 
 #. type: chapter{#2}
-#: hbus.tex:148
+#: hbus.tex:108
 msgid "Unidades padrão no HBUS"
 msgstr ""
 
@@ -6121,7 +6122,7 @@ msgid "Unidade"
 msgstr ""
 
 #. type: tabular
-#: hbus-units.tex :22 hbus.tex:150
+#: hbus-units.tex :22 hbus.tex:110
 msgid "Símbolo SI"
 msgstr ""
 
@@ -6205,81 +6206,81 @@ msgid ""
 msgstr ""
 
 #. type: caption{#2}
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "prefixos suportados no HBUS"
 msgstr ""
 
 #. pico			&	p			&	p				&	$10^{-12}$\#. nano			&	n			&	n				&	$10^{-9}$\#. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "Prefixo"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "Caractere HBUS"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "Potência"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "micro"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "$\\mu$"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "u"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "$10^{-6}$"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "mili"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "m"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "$10^{-3}$"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "kilo"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "k"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "$10^3$"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "mega"
 msgstr ""
 
 #. type: tabular
-#: hbus.tex:150
+#: hbus.tex:110
 msgid "$10^6$"
 msgstr ""
