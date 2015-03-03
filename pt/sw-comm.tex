@@ -26,7 +26,7 @@ De forma geral as transmissões são realizadas em pacotes que seguem o esquema 
 
 \begin{figure}[H]
 \centering
-\input{../media/hbuspacket}
+\dtinput{../media/hbuspacket}
 %\import{../media/}{hbuspacket}
 \caption{Pacote HBUS}
 \end{figure}
@@ -81,7 +81,7 @@ Os parâmetros do comando \hbuscommand{SETCH} são o endereço do objeto no disp
 
 \begin{figure}[H]
 \centering
-\input{../media/setch}
+\dtinput{../media/setch}
 \caption{O comando \hbuscommand{SETCH}}
 \label{fig:setch}
 \end{figure}
@@ -92,7 +92,7 @@ Este comando realiza a leitura de um objeto do dispositivo. Após aceitar o coma
 
 \begin{figure}[H]
 \centering
-\input{../media/getch}
+\dtinput{../media/getch}
 \caption{O comando \hbuscommand{GETCH}}
 \end{figure}
 
@@ -103,7 +103,7 @@ A estrutura parcial da mensagem é vista a seguir.
 
 \begin{figure}[H]
 \centering
-\input{../media/response}
+\dtinput{../media/response}
 \caption{O comando \hbuscommand{RESPONSE}}
 \end{figure}
 
@@ -115,7 +115,7 @@ Os comandos \hbuscommand{QUERY}, \hbuscommand{QUERY\_EP} e \hbuscommand{QUERY\_I
 
 \begin{figure}[H]
 \centering
-\input{../media/query}
+\dtinput{../media/query}
 \caption{Os comandos \hbuscommand{QUERY}}
 \end{figure}
 
@@ -123,7 +123,7 @@ O comando \hbuscommand{QUERY\_RESP} é enviado pelo dispositivo em resposta a re
 
 \begin{figure}[H]
 \centering
-\input{../media/query_resp}
+\dtinput{../media/query_resp}
 \caption{O comando \hbuscommand{QUERY\_RESP}}
 \end{figure}
 
@@ -286,7 +286,7 @@ Esta é a função executada ciclicamente. Ela verifica o estado do barramento p
 
 \begin{figure}[H]
 \centering
-\input{../media/serialcycle}
+\dtinput{../media/serialcycle}
 \caption{Máquina de estados na função SERIAL\_CYCLE()}
 \end{figure}
 
@@ -298,7 +298,9 @@ Em uma transmissão comum, os bytes são analisados e caso não apresentem algum
 
 \begin{figure}[H]
 \centering
-\scalebox{0.75}{\input{../media/hbussm}}
+\scalebox{0.75}{
+\dtinput{../media/hbussm}
+}
 \caption{Máquina de estados de recepção HBUS}
 \label{fig:hbussm}
 \end{figure}
@@ -313,7 +315,9 @@ Um fluxograma completo é complicado e redundante por demais, devido a quantidad
 
 \begin{figure}[H]
 \centering
-\scalebox{0.75}{\input{../media/serialprocess}}
+\scalebox{0.75}{
+\dtinput{../media/serialprocess}
+}
 \caption{A função SERIAL\_PROCESS() abreviada}
 \end{figure}
 

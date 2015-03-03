@@ -1,0 +1,6285 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: 2015-03-02 23:02-0500\n"
+"PO-Revision-Date: 2015-03-02 22:21-0500\n"
+"Last-Translator: Bruno Morais <brunosmmm@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: hbus.tex:5
+msgid "\\usetikzlibrary{positioning,arrows,decorations.pathreplacing,calc,fit}"
+msgstr ""
+
+#. type: Plain text
+#: hbus.tex:18
+msgid ""
+"\\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=3cm,"
+"columnsep=0.8cm}"
+msgstr ""
+
+#. type: newcommand{#4}
+#: hbus.tex:37
+msgid "\\textbf{#1}"
+msgstr ""
+
+#. define a dummy command so included files can know that they are being included by master document
+#. type: newcommand{#4}
+#: hbus.tex:40
+msgid "YES"
+msgstr ""
+
+#. type: center
+#: hbus.tex:45
+msgid "\\topskip0pt"
+msgstr ""
+
+#. type: center
+#: hbus.tex:49
+msgid "\\huge \\textbf{Especificação e exemplos de uso}"
+msgstr ""
+
+#. type: center
+#: hbus.tex:49
+msgid "Versão preliminar 1.1.1"
+msgstr ""
+
+#. type: center
+#: hbus.tex:51
+msgid "Bruno Morais"
+msgstr ""
+
+#. type: center
+#: hbus.tex:53
+msgid "brunosmmm@gmail.com"
+msgstr ""
+
+#. type: section{#2}
+#: hbus.tex:61
+msgid "Log de mudanças"
+msgstr "Changelog"
+
+#. type: subsubsection{#2}
+#: hbus.tex:63
+msgid "Versão 1.2.1"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:67
+msgid "Definição do objeto de broadcast de informações"
+msgstr "Broadcast object information definition"
+
+#. type: subsubsection{#2}
+#: hbus.tex:71
+msgid "Versão 1.2"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:75
+msgid "Introdução do conceito de objetos especiais do mestre"
+msgstr "Introducing special master objects"
+
+#. type: subsubsection{#2}
+#: hbus.tex:79
+msgid "Versão 1.1.1"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:86
+msgid "Modificações para guiar mestre na interpretação dos dados de objetos"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:86
+msgid ""
+"Novas flags para os objetos de escravo, incluindo a introdução de objetos "
+"escondidos (invisíveis) e declaração do tipo de dados contido no objeto"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:86
+msgid ""
+"Implementação inicial do sistema de eventos internos HBUS para o escravo"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:86
+msgid "Re-estruturação das pastas e arquivos padrão"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: hbus.tex:90
+msgid "Versão 1.1"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:96
+msgid "Introduzidas medidas para garantir autenticidade do mestre"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:96
+msgid "Introduzido o conceito de privacidade do objeto"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:96
+msgid "Adicionadas novas instruções para o ANEM-HBUS"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: hbus.tex:99
+msgid "Versão 1.0"
+msgstr ""
+
+#. type: itemize
+#: hbus.tex:101
+msgid "Versão inicial"
+msgstr ""
+
+#. type: part{#2}
+#: hbus.tex:105
+msgid "Concepção e hardware"
+msgstr "Hardware and concepts"
+
+#. type: chapter{#2}
+#: hbus.tex:107
+msgid "O barramento HBUS"
+msgstr "The HBUS bus"
+
+#. type: document
+#: hw-hbus.tex :3
+msgid "Detalhes do barramento e processo de concepção."
+msgstr "Bus details and design process"
+
+#. type: section{#2}
+#: hw-hbus.tex :5
+msgid "O que é HBUS e o seu objetivo"
+msgstr "What is HBUS and it's objectives"
+
+#. type: document
+#: hw-hbus.tex :7
+msgid ""
+"O barramento HBUS é uma especificação desenvolvida para explorar "
+"possibilidades de automação doméstica, daí seu nome, derivado de "
+"\\textit{Home Bus}."
+msgstr ""
+"HBUS is a set of specifications designed to explore possibilities in the "
+"field of home automation, hence its name, derived from \\textit{Home Bus}"
+
+#. type: document
+#: hw-hbus.tex :9
+msgid ""
+"A especificação contém definições tanto de hardware e software para acomodar "
+"a troca de informações entre os dispositivos que participam de uma rede de "
+"automação doméstica."
+msgstr ""
+"The specifications contain both hardware and software definitions to "
+"accomodate data exchange between devices that make part of a home automation "
+"network"
+
+#. type: document
+#: hw-hbus.tex :11
+msgid ""
+"Além de ser uma ferramenta desenvolvida para a exploração e aquisição de "
+"conhecimento na área de automação, o conjunto de soluções aplicadas mostrou-"
+"se muito capaz de funcionar de forma coerente."
+msgstr ""
+"Besides being a tool developed for the exploration and learning into the "
+"automation field, the solution set showed to be very functional."
+
+#. type: section{#2}
+#: hw-hbus.tex :13
+msgid "O processo de concepção inicial"
+msgstr "Initial design process"
+
+#. type: document
+#: hw-hbus.tex :15
+msgid ""
+"Antes de mais nada, é necessário pensar um pouco para que o projeto tenha "
+"sentido e seja realizável."
+msgstr ""
+"It is necessary to give it some thought at first, so the project is coherent "
+"and feasible."
+
+#. type: subsection{#2}
+#: hw-hbus.tex :17
+msgid "A filosofia de alocação de recursos"
+msgstr "Resource allocation philosophy"
+
+#. type: document
+#: hw-hbus.tex :19
+msgid ""
+"Todo o projeto foi pensado de forma a ser flexível e as especificações podem "
+"ser atendidas por uma gama enorme de plataformas e meios físicos de "
+"transporte de dados."
+msgstr ""
+"The project as a whole aims to be flexible and the specifications can be "
+"honored by a number of development plataforms and physical data layers."
+
+#. type: document
+#: hw-hbus.tex :21
+msgid ""
+"No entanto, as definições de operação, tanto em termos de software quanto em "
+"escolha de hardware voltaram-se sempre para a economia de recursos. Isto "
+"reflete em pouco uso do canal de comunicação, pouco uso de memória nos "
+"dispositivos hóspedes do software e etc."
+msgstr ""
+"However, the operation definitions, both in hardware and software always aim "
+"to be lean in resources. this reflects in a minimal use of the communication "
+"channel, minimal memory use in the host devices and so on."
+
+#. type: subsection{#2}
+#: hw-hbus.tex :23
+msgid "Análise de requisitos"
+msgstr "Analyzing needs"
+
+#. type: document
+#: hw-hbus.tex :25
+msgid ""
+"O projeto é voltado para uso em ambiente residencial. A automação "
+"residencial pode englobar muitos dispositivos, mas consiste principalmente "
+"em controlar aplicações utilizadas no dia-a-dia, como iluminação ambiente "
+"outros."
+msgstr ""
+"This project is oriented towards a home environment. Home automation can at "
+"times involve a high number of devices but consists mainly in controlling "
+"daily used applications like lighting and others."
+
+#. type: document
+#: hw-hbus.tex :27
+msgid ""
+"Além do controle, muitas vezes também é desejável a obtenção de informações "
+"sobre o estado físico do ambiente, como temperatura, nível de luminosidade, "
+"umidade relativa e etc."
+msgstr ""
+"Besides control, it is also desirable to obtain informations about the "
+"physical properties of an envinronment such as temperature, light levels, "
+"humidity and others."
+
+#. type: document
+#: hw-hbus.tex :29
+msgid ""
+"Muitas vezes deseja-se controlar e/ou obter informações em pontos bastante "
+"distantes entre si. Por isso é necessário selecionar um canal de comunicação "
+"que seja capaz de enviar e receber dados de forma robusta considerando essa "
+"possível distância entre os dispositivos de controle."
+msgstr ""
+"At times one desires to control and/or obtain data remotely located. This is "
+"a reason to select a communications channel that is capable of trasmitting "
+"and receiving data in a robust way, considering the possible distance "
+"between the devices."
+
+#. type: document
+#: hw-hbus.tex :31
+msgid ""
+"Um outro ponto a se considerar é que muitas vezes esses dispositivos "
+"realizam tarefas que apresentam baixo consumo de potência. O barramento "
+"então deve ser capaz de fornecer essa potência remotamente, eliminando a "
+"necessidade de alimentação do dispositivo de controle no local. Isto elimina "
+"uma série de problemas e simplifica o processo."
+msgstr ""
+"Another thing to be kept in mind is that many times these devices perform "
+"tasks that only require low power to be done. The bus should then be capable "
+"of supplying this power remotely, eliminating the necessity for a local "
+"power supply, simplifying the system overall,"
+
+#. type: document
+#: hw-hbus.tex :33
+msgid ""
+"No entanto, não é eliminada a possibilidade de necessidade de uma potência "
+"que o barramento não pode suportar e o desenvolvedor do dispositivo é livre "
+"para realizar a alimentação local, mas devem ser tomados cuidados para "
+"garantir o isolamento e segurança."
+msgstr ""
+"However, the possibility that the device needs a local power source is not "
+"eliminated totally, and the developer of the device is free to use a local "
+"source, but must ensure bus isolation and security."
+
+#. type: document
+#: hw-hbus.tex :35
+msgid ""
+"Também é necessário levar em consideração o dimensionamento do sistema. Uma "
+"residência pode conter um número alto de dispositivos para a sua automação, "
+"porém esse número muito dificilmente chega à casa das centenas, visto que "
+"diferentemente de um ambiente industrial, uma residência tem um tamanho "
+"apenas suficiente às necessidades de conforto dos habitantes."
+msgstr ""
+
+#. type: section{#2}
+#: hw-hbus.tex :37
+msgid "Adequação à realidade e tecnologias disponíveis"
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :39
+msgid ""
+"Levando em consideração os requisitos apontados anteriormente, realizou-se "
+"uma pesquisa para selecionar as tecnologias a serem utilizadas nesta "
+"aplicação."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :41
+msgid ""
+"Este documento tornaria-se extenso e cansativo caso apresentasse todas as "
+"alternativas que foram pesadas e numa sincera tentativa de fazer com que o "
+"leitor não abandone-o nem salte aleatoriamente pelo texto para chegar ao fim "
+"mais rapidamente, essas informações redundantes foram suprimidas."
+msgstr ""
+
+#. type: subsection{#2}
+#: hw-hbus.tex :43
+msgid "O canal de comunicação"
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :45
+msgid ""
+"A importância da seleção de um canal de comunicação adequado já foi "
+"mencionada."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :47
+msgid ""
+"O barramento HBUS trafega todos os seus dados sobre um par trançado de fios "
+"de cobre, seguindo o padrão \\textbf{TIA-485}, mais conhecido como "
+"\\textbf{RS-485}."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :49
+msgid ""
+"Este é um padrão que especifica as características elétricas dos "
+"dispositivos de transmissão e recepção, em uma rede multiponto com até 32 "
+"dispositivos conectados. É possível alcançar distâncias de até 1,2km com uma "
+"velocidade de transmissão de 100 kbits/s."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: hw-hbus.tex :51
+msgid "HBUS e RS-485"
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :53
+msgid ""
+"O padrão HBUS utiliza um canal \\textit{half-duplex} com velocidade de 100 "
+"kbits/s. A velocidade é mantida baixa por questão de maior resistência a "
+"ruído e interferências externas, além de facilitar o uso de dispositivos com "
+"baixa performance."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :55
+msgid ""
+"A escolha do padrão define o comportamento da comunicação entre os "
+"dispositivos. Este é um sistema multi-ponto, ou seja, todos os dispositivos "
+"estarão conectados em paralelo escutando e transmitindo no mesmo canal."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :57
+msgid ""
+"A arquitetura mais óbvia é a adotada pelo padrão HBUS: há um mestre de "
+"barramento e todos os dispositivos remotos são escravos."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :59
+msgid ""
+"Procurando fazer com que o canal de comunicação esteja livre o maior período "
+"de tempo possível, uma vez que o sistema é \\textit{half-duplex}, por "
+"definição os escravos não podem iniciar comunicação no barramento, embora "
+"isto seja possível e previsto pelo protocolo de comunicação, como será visto "
+"mais adiante. Apenas o mestre deve inciar as comunicações e a única exceção "
+"para este comportamento é a ocorrência de interrupção por parte do escravo."
+msgstr ""
+
+#. type: subsection{#2}
+#: hw-hbus.tex :61
+msgid "Sinais no barramento físico"
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :63
+msgid ""
+"O barramento HBUS contém os sinais para a comunicação e também alimentação "
+"remota dos dispositivos como já discutido. Além disso, o barramento contém "
+"mais um sinal, que é o sinal de interrupção."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :65
+msgid ""
+"Este sinal dá aos dispositivos remotos a capacidade de chamar o mestre à "
+"atenção devido à algum tipo de evento especial. O procedimento é discutido "
+"em detalhes mais adiante."
+msgstr ""
+
+#. type: section{#2}
+#: hw-hbus.tex :67
+msgid "Exemplo de uso em ambiente residencial"
+msgstr ""
+
+#. type: caption{#2}
+#: hw-hbus.tex :73
+msgid "Ilustração do uso de barramentos HBUS"
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :75
+msgid ""
+"O barramento HBUS pode ser utilizado para controlar muitas aplicações de uso "
+"diário em um ambiente residencial. O esquema mostra o uso de vários "
+"barramentos para o controle de uma residência de tamanho médio. No entanto, "
+"os barramentos podem ser tanto separados quanto unificados em um só, devido "
+"a natureza do sistema que será discutida neste documento."
+msgstr ""
+
+#. type: document
+#: hw-hbus.tex :77
+msgid ""
+"Na área interna pode ser controlada a iluminação e outros dispositivos "
+"quaisquer, podendo incluir interação com o usuário."
+msgstr ""
+
+#. type: document
+#: hbus.tex:109
+msgid ""
+"Na área externa pode ser controlado o acesso a residência, na forma dos "
+"portões para carros e social. Também podem ser instalados diversos tipos de "
+"sensores que utilizando o barramento HBUS, disponibilizarão informações ao "
+"usuário"
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:111
+msgid "Definições de Hardware"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :2
+msgid ""
+"Tendo selecionado o canal de comunicação e sabendo os sinais que compõem o "
+"barramento físico, é necessário então fazer algumas determinações sobre os "
+"requisitos de hardware dos dispositivos HBUS."
+msgstr ""
+
+#. type: section{#2}
+#: hw-def.tex :4
+msgid "O meio de transporte"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :6
+msgid ""
+"Como o barramento trabalha com um sinal diferencial (RS485) é natural a "
+"escolha de um cabo com pares de fios trançados. São necessários 5 condutores "
+"para acomodar os sinais do barramento HBUS, incluindo alimentação."
+msgstr ""
+
+#. type: document
+#: hw-def.tex :8
+msgid ""
+"Um cabo com 6 condutores é então o ideal. Também podem ser usados cabos de 8 "
+"condutores, que são muito comuns no comércio devido ao uso em larga escala "
+"em redes de computadores."
+msgstr ""
+
+#. \input{../media/hbusphys}
+#. type: caption{#2}
+#: hw-def.tex :14
+msgid "Cabo para transporte do barramento HBUS"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :16
+msgid ""
+"No caso do uso de um cabo com 8 condutores, utiliza-se um par a mais para a "
+"alimentação. Note que o sinal FREEBUS não é diferencial. Ele vai trançado "
+"com um condutor ligado ao terra dos circuitos."
+msgstr ""
+
+#. type: document
+#: hw-def.tex :18
+msgid ""
+"O conector também é padronizado para evitar complicações futuras. Os "
+"conectores e plugues utilizados são do tipo RJ-12, também conhecidos como "
+"6P6C."
+msgstr ""
+
+#. type: document
+#: hw-def.tex :20
+msgid ""
+"Recomenda-se fortemente que o dispositivo seja projetado com duas portas "
+"para conexão de cabos, abrindo a possibilidade de conectar muitos "
+"dispositivos em cadeia."
+msgstr ""
+
+#. type: document
+#: hw-def.tex :22
+msgid ""
+"Uma observação muito importante é que por padrão os sinais \\textbf{RS485} "
+"são conectados de forma cruzada, ou seja, o s sinais positivo e negativo são "
+"invertidos na conexão entre dois dispositivos, resultado numa conexão entre "
+"duas portas como a ilustrada abaixo:"
+msgstr ""
+
+#. type: caption{#2}
+#: hw-def.tex :28
+msgid "Conexão entre duas portas"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :30
+msgid ""
+"A recomendação anterior de que o dispositivo possua duas portas deve seguir "
+"a regra da conexão cruzada resultando num dispositivo que tem uma porta com "
+"o sinal RS485 invertido em relação a outra."
+msgstr ""
+
+#. type: section{#2}
+#: hw-def.tex :32
+msgid "RS485"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :34
+msgid ""
+"O barramento utiliza comunicação RS485 em half-duplex como mencionado. Uma "
+"topologia muito comum para drivers é mostrada na figura."
+msgstr ""
+
+#. type: caption{#2}
+#: hw-def.tex :40
+msgid "Driver RS485"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :42
+msgid ""
+"É recomendado o uso de um driver integrado deste tipo para a comunicação "
+"half-duplex. Há diversas opções de grandes fabricantes de semicondutores. No "
+"desenvolvimento foram usados drivers DS75176B."
+msgstr ""
+
+#. type: section{#2}
+#: hw-def.tex :44
+msgid "Alimentação"
+msgstr ""
+
+#. type: document
+#: hw-def.tex :46
+msgid ""
+"A alimentação destinada aos dispositivos conectados ao barramento é de baixa "
+"potência devido a limitação imposta pelos condutores. O dispositivo deve ter "
+"o consumo mais econômico possível."
+msgstr ""
+
+#. type: document
+#: hw-def.tex :48
+msgid ""
+"No caso de haver necessidade de uma maior potência, o dispositivo deve ser "
+"projetado para receber alimentação externa, sendo obrigatório o isolamento "
+"do barramento hbus através de soluções como os isoladores de RS-485 da "
+"Analog Devices."
+msgstr ""
+
+#. type: document
+#: hw-def.tex :50
+msgid ""
+"Um outro caso é o uso de um repetidor de barramento. Isto é previsto e como "
+"é necessária a injeção de corrente, cai na mesma classificação do caso "
+"anterior."
+msgstr ""
+
+#. type: document
+#: hbus.tex:113
+msgid ""
+"Esta especificação não pretende definir limites extremamente rígidos para a "
+"tensão de alimentação no barramento, porém por questão de segurança todos os "
+"dispositivos devem suportar uma tensão mínima de 24 Volts."
+msgstr ""
+
+#. type: part{#2}
+#: hbus.tex:115
+msgid "Software"
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:117
+msgid "A pilha de software HBUS"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :3
+msgid ""
+"Uma pilha de software que realiza as funções básicas de comunicação e "
+"controle é implementada. Este é um componente obrigatório para o dispositivo "
+"HBUS."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :5
+msgid "Esta pilha é composta por módulos que desempenham as funções:"
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :12
+msgid "Definição de propriedades do dispositivo"
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :12
+msgid "Comunicação através do protocolo HBUS"
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :12
+msgid "Gerenciamento de interrupções"
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :12
+msgid "Gerenciamento do microcódigo HBUS"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :16
+msgid ""
+"Neste capítulo é discutida a pilha como um todo e nos próximos são dados "
+"mais detalhes sobre os componentes da pilha."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :18
+msgid ""
+"Todo os dispositivos HBUS podem conter entradas e/ou saídas ou ainda "
+"variáveis internas que o desenvolvedor deseja que sejam acessíveis ao "
+"usuário através do barramento HBUS. Isto é realizado pela pilha, através de "
+"uma organização desses recursos em estruturas de dados que são manipuladas "
+"pela pilha."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :20
+msgid ""
+"Essas estruturas de dados são chamadas em geral de \\textbf{Objetos}. São "
+"discutidas a seguir."
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-stack.tex :27
+msgid "Protocolo de \\\\ Comunicação"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-stack.tex :27
+msgid "Objetos"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-stack.tex :27
+msgid "Microcódigo"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-stack.tex :27
+msgid "Pilha HBUS"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-stack.tex :27
+msgid "Dispositivo HBUS"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-stack.tex :27
+msgid "Código do dispositivo (firmware)"
+msgstr ""
+
+#. type: figure
+#: sw-stack.tex :33
+msgid "\\dtinput{../media/hbusdevice}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :33
+msgid "Arquitetura de software de um dispositivo HBUS"
+msgstr ""
+
+#. type: section{#2}
+#: sw-stack.tex :35
+msgid "Objetos de dispositivo"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :37
+msgid ""
+"Os objetos de dispositivo são estruturas de dados que encapsulam os dados a "
+"que o usuário do barramento HBUS terá acesso. Esses dados podem ser "
+"referentes a entradas, saídas ou outros valores específicos à programação de "
+"cada tipo de dispositivo."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :39
+msgid ""
+"Estes objetos são organizados por endereços. É possível ter até 255 objetos "
+"no dispositivo. A estrutura de dados que descreve um objeto é reproduzida a "
+"seguir."
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :51
+msgid ""
+"typedef struct HBUSOBJECTS { HBUSOBJINFO objectInfo; byte * objectData; void "
+"* (*getObjectData)(void); void (*setObjectData)(void *, int); } HBUSOBJ;"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :55
+msgid ""
+"Os campos da estrutura \\textbf{HBUSOBJ} são detalhados na tabela a seguir."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :60
+msgid "Campos da estrutura HBUSOBJ"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69 :124 :189 :338 :415 sw-ucode.tex :157 :228 :310
+msgid "Campo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69 :124 :141 :189 :277 :304 :415 sw-comm.tex sw-ucode.tex
+#: :122 :278 :329 :385 :401 sample-pwmctl.tex :38 :168
+msgid "Descrição"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "objectInfo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "Estrutura contendo informações sobre o objeto. É detalhada mais adiante"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "objectData"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid ""
+"Ponteiro para localização na memória que contem o valor referente ao objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "getObjectData"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "Ponteiro para função que realiza leitura do valor do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "setObjectData"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :69
+msgid "Ponteiro para função que realiza escrita do valor do objeto"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :74
+msgid "Os dados referentes ao objeto podem ser acessados de duas maneiras:"
+msgstr ""
+
+#. type: enumerate
+#: sw-stack.tex :79
+msgid ""
+"O objeto fornece o campo objectData e a leitura e escrita são realizadas "
+"diretamente na memória."
+msgstr ""
+
+#. type: enumerate
+#: sw-stack.tex :79
+msgid ""
+"O objeto fornece os campos get/setObjectData e a leitura e escrita são "
+"realizadas através das funções disponibilizadas pelo desenvolvedor para isso."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :83
+msgid ""
+"Em outras palavras, o desenvolvedor tem a possibilidade de escolha se o "
+"valor a ser lido/escrito é um valor residente na memória ou se são usadas "
+"funções para realizar a tarefa. Note que a utilização de funções permite ao "
+"desenvolvedor saber que o objeto está sendo lido ou escrito no momento em "
+"que aquela função é chamada. Isto é muito útil em casos em que o valor só "
+"está disponível para ser transmitido após algum tipo de processamento."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :85
+msgid ""
+"Seguindo a filosofia de alocação de recursos, não faz sentido calcular "
+"constantemente este valor apenas para que no caso de ser requisitado ao "
+"dispositivo que envie-o, ele estar disponível. Utilizando-se de funções, o "
+"valor pode ser calculado sob demanda e imediatamente submetido."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :87
+msgid "\\vskip1cm"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :89
+msgid ""
+"A seguir é mostrada e analisada a estrutura contida no campo "
+"\\textit{objectInf}o, que descreve as propriedades do objeto."
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :105
+msgid ""
+"typedef struct HBUSOBJECTINFOS { byte objectFlags; byte objectSize; byte "
+"objectDataTypeInfo; byte objectDescStringSize; byte * objectDescString; } "
+"HBUSOBJINFO;"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :109
+msgid "Os campos e possíveis flags são analisados nas tabelas a seguir."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :114
+msgid "Campos da estrutura HBUSOBJINFO"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "objectFlags"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "Byte contendo flags do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "objectSize"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "Tamanho do objeto em bytes"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "objectDataTypeInfo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid ""
+"Informações secundárias sobre a interpretação do tipo de dados do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "objetcDescStringSize"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "Tamanho da string descritiva do objeto em bytes"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "objectDescString"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :124
+msgid "Ponteiro para a string descritiva"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :132
+msgid "Possíveis flags para o objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141 :244
+msgid "Flag"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141 :244 :277 :304 sw-ucode.tex :178 :242
+msgid "Valor"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "HBUSOBJ\\_READ"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141 :213 :304 sw-comm.tex :69 sample-pwmctl.tex :38
+msgid "0x01"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "O barramento tem permissão de leitura do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "HBUSOBJ\\_WRITE"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141 :213 :304 sample-pwmctl.tex :38
+msgid "0x02"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "O barramento tem permissão de escrita no objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "HBUSOBJ\\_CRYPTO"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141 :213 :277 sw-comm.tex :69 sample-pwmctl.tex :38
+msgid "0x04"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "Dados do objeto são trafegados criptografados"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "HBUSOBJ\\_HIDDEN"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141 :213 sw-comm.tex :69
+msgid "0x08"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :141
+msgid "Este objeto não é visível para o usuário"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :146
+msgid ""
+"Esses objetos são declarados no arquivo \\textit{hbus\\_objects.c}. Eles "
+"devem ser declarados como do tipo \\textbf{const}, para que sejam alocados "
+"na memória de programa, já que são informações imutáveis em tempo de "
+"execução, liberando assim memória RAM para alocação de variáveis mais "
+"importantes."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :148
+msgid ""
+"Os objetos são indexados pela variável \\textbf{MCU\\_OBJECTS[]}, sendo que "
+"o primeiro objeto, com endereço 0 é um objeto obrigatório especial que "
+"contem informações sobre o dispositivo. Os objetos implementados pelo "
+"desenvolvedor são alocados a partir do índice 1."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-stack.tex :150
+msgid "Os objetos especiais"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :152
+msgid ""
+"São definidos alguns tipos de objetos de dispositivo especiais. É um "
+"requerimento obrigatório o suporte a estes objetos. Todos os dispositivos "
+"devem suportá-los."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :154 sample-pwmctl.tex :54
+msgid "O objeto zero"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :156
+msgid ""
+"O objeto de endereço 0 é especial e contem uma estrutura de dados específica "
+"que descreve o dispositivo. Além disso, a string descritiva deste objeto "
+"deve ser o nome do dispositivo e este objeto é somente para leitura."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :158
+msgid ""
+"O campo \\textit{objectData} deve apontar para uma estrutura do tipo "
+"\\textbf{HBUSOBJLISTINFO}. Esta estrutura é mostrada a seguir."
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :172
+msgid ""
+"typedef struct HBUSOBJECTLISTINFOS { byte objectListSize; byte "
+"endpointListSize; byte interruptListSize; byte slaveCapabilities; dword "
+"uniqueDeviceInfo; } HBUSOBJLISTINFO;"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :179
+msgid "Campos da estrutura HBUSOBJLISTINFO"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "objectListSize"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "Tamanho da lista de objetos do dispositivo (quantidade de objetos)"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "endpointListSize"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "Tamanho da lista de endpoints do dispositivo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "interruptListSize"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "Tamanho da lista de interrupções do dispositivo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "slaveCapabilities"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "Funções opcionais habilitadas no dispositivo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "uniqueDeviceInfo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :189
+msgid "Valor de identificação único do dispositivo (4 bytes)"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :194
+msgid ""
+"Em especial, o campo \\textit{uniqueDeviceInfo} deve ser observado. Neste "
+"campo é obrigatório colocar um identificador único do dispositivo, como uma "
+"espécie de número serial. A recomendação padrão é usar metade do campo para "
+"criar um identificador de família do objeto e a outra metade um número "
+"serial."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :196
+msgid ""
+"Além disso, a partir da versão 1.1, existe o campo "
+"\\textit{slaveCapabilities}, que contém informações sobre as funções "
+"opcionais HBUS (microcódigo, interrupções, endpoints, criptografia e "
+"autenticação) habilitadas no dispositivo em questão."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :213
+msgid "Flags no campo \\textit{slaveCapabilities}"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213 :277 :304
+msgid "ID"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid "Significado"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid "Dispositivo tem suporte a criptografia (privacidade de objetos)"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid "Dispositivo tem suporte a endpoints"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid "Dispositivo tem suporte a emissão de interrupções"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid "Dispositivo tem suporte a autenticação do mestre"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213 :244 sw-comm.tex :69
+msgid "0x10"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid "Dispositivo tem suporte a microcódigo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213 :244 sw-comm.tex :69
+msgid "0x20"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :213
+msgid ""
+"Dispositivo tem suporte a autenticação reversa (autenticação de dispositivo)"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :215
+msgid "O objeto de broadcast de informações"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :217
+msgid ""
+"Este objeto é na verdade um objeto emulado no número 255 para todos os "
+"dispositivos. Não é necessário realizar a declaração deste objeto. No "
+"entanto, a máquina de estados do dispositivo deve estar apta a receber dados "
+"através deste objeto e é necessário observar alguns detalhes importantes."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :219
+msgid ""
+"O objeto de broadcast existe para que o mestre possa enviar informações "
+"periódicas e alertas ao sistema como um todo. Dessa forma, é possível, com "
+"uma mensagem apenas, informar todos os dispositivos de alguma condição de "
+"alerta no barramento ou realizar sincronização periódica, por exemplo. Este "
+"tipo de objeto é somente para escrita."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :221
+msgid ""
+"A transferência de informações é realizada através de um comando "
+"\\hbuscommand{SETCH} no objeto 255, realizado para todos os dispositivos de "
+"um barramento ao mesmo tempo (utilizando o endereço de broadcast). A "
+"informação transmitida é identificada por uma subclasse através dos dois "
+"primeiros bytes transmitidos na operação. As 128 primeiras subclasses são "
+"reservadas ao mestre HBUS e as restantes podem ser implementadas por "
+"terceiros."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-stack.tex :224
+msgid "Os tipos de dados de objetos"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :226
+msgid ""
+"Os tipos de dados auxiliam o mestre na interpretação dos dados obtidos dos "
+"dispositivos. Há duas informações principais para cada objeto do "
+"dispositivo: o tipo de dado propriamente dito e uma informação secundária "
+"sobre a formatação deste dado."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :228
+msgid ""
+"A informação sobre o tipo de dado que deve ser associado ao objeto na "
+"interpretação do mesmo é colocado junto aos flags do objeto no campo "
+"\\textit{objectFlags}."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :244
+msgid "Flags para o tipo de dados do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "Tipo de dado"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "HBUSOBJ\\_DTYPE\\_INT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "Inteiro"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "HBUSOBJ\\_DTYPE\\_UINT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "Inteiro sem sinal"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "HBUSOBJ\\_DTYPE\\_FIXP"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244 sw-comm.tex :69
+msgid "0x40"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "Ponto Fixo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "HBUSOBJ\\_DTYPE\\_BYTE"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "0x80"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :244
+msgid "Vetor de bytes"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :246
+msgid ""
+"As informações secundárias estão contidas no campo "
+"\\textit{objectDataTypeInfo}. As opções variam de acordo com os tipos de "
+"dados especificados na tabela \\ref{table:datatypes} e são discutidas a "
+"seguir:"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :248
+msgid "O tipo de dados Inteiro"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :250
+msgid ""
+"Os objetos que utilizam este tipo de dados terão seus valores interpretados "
+"como sendo inteiros de tamanho padrão (4 bytes). Assim, 4 bytes é o tamanho "
+"máximo para estes objetos."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :252
+msgid "Este tipo de dados não possui opções de formatação definidas."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :254
+msgid "O tipo de dados Inteiro sem sinal"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :256
+msgid ""
+"Os objetos do tipo inteiro sem sinal são tratados como tal. O tamanho máximo "
+"é 4 bytes."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :258
+msgid "Suas possíveis opções de formatação para auxiliar a interpretação:"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :277
+msgid "Formatação dos objetos do tipo inteiro sem sinal"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "HBUSOBJ\\_DTYPE\\_UINT\\_PERCENT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "O dado é um valor percentual (0-100)"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "HBUSOBJ\\_DTYPE\\_UINT\\_LIN\\_PERCENT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277 sample-pwmctl.tex :38
+msgid "0x05"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid ""
+"O dado é um inteiro sem sinal que deverá ser interpretado como um percentual "
+"em uma escala linear"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "HBUSOBJ\\_DTYPE\\_UINT\\_LOG\\_PERCENT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277 sw-comm.tex :69
+msgid "0x06"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid ""
+"O dado é um inteiro sem sinal que deverá ser interpretado como um percentual "
+"em uma escala logarítmica"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "HBUSOBJ\\_DTYPE\\_UINT\\_TIME"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "0x09"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "O dado é um valor temporal no padrão HBUS"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "HBUSOBJ\\_DTYPE\\_UINT\\_DATE"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "0x0A"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :277
+msgid "O dado é um valor de data no padrão HBUS"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :280
+msgid "O tipo de dados Ponto Fixo"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :282
+msgid ""
+"Estes objetos deverão ser tratados como inteiros com sinal, porém são "
+"fracionários em sua natureza e a localização do ponto decimal é dada pelo "
+"valor do campo \\textit{objectDataTypeInfo}."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :284
+msgid "O tipo de dados Vetor de bytes"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :286
+msgid ""
+"Estes objetos não possuem tamanho máximo. São interpretados como uma "
+"sequência de bytes (os bytes são equivalentes a um número inteiro menor ou "
+"igual a 255, sem sinal)."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :304
+msgid "Formatação dos objetos do tipo vetor de bytes"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "HBUSOBJ\\_DTYPE\\_BYTE\\_BASE\\_HEX"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "O dado é exibido na base hexadecimal"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "HBUSOBJ\\_DTYPE\\_BYTE\\_BASE\\_DEC"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "O dado é exibido na base decimal"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "HBUSOBJ\\_DTYPE\\_BYTE\\_BASE\\_OCT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304 sw-comm.tex :69 sample-pwmctl.tex :38
+msgid "0x03"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "O dado é exibido na base octal"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "HBUSOBJ\\_DTYPE\\_BYTE\\_BASE\\_BIN"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304 sw-comm.tex :69
+msgid "0x07"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "O dado é exibido na base binária"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "HBUSOBJ\\_DTYPE\\_BYTE\\_STRING"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "0x0B"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :304
+msgid "O dado é exibido como sendo um vetor de caracteres ASCII"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-stack.tex :307
+msgid "Os objetos invisíveis"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :309
+msgid ""
+"Os objetos invisíveis são um novo conceito introduzido na versão 1.1.1. "
+"Estes objetos não são visíveis ao usuário do barramento HBUS. No entanto, "
+"podem ser usados para trocar informações importantes entre os escravos e o "
+"mestre."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :311
+msgid ""
+"Estes objetos não devem conter informações sobre tipos de dados nem também "
+"um nome próprio. Podem ser usados para transferência de informações "
+"extendidas sobre os objetos como limites de valores ou outras informações "
+"extendidas. Todos os objetos invisíveis são relativos a um dos outros "
+"objetos do dispositivo."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :313
+msgid "A sintaxe dos objetos invisíveis"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :315
+msgid ""
+"A sintaxe para interpretação dos objetos invisíveis é utilizada no campo de "
+"descrição do objeto e é extremamente simples:"
+msgstr ""
+
+#. type: equation*
+#: sw-stack.tex :319
+msgid "n:CAMPO"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :321
+msgid ""
+"Onde \\textit{n} é o número do objeto a que este outro objeto se refere e "
+"\\textit{CAMPO} é o campo associado. Os campos padrão definidos pela "
+"especificação HBUS são:"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "Uso"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "MIN"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "Especifica valor mínimo possível do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "MAX"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "Especifica valor máximo possível do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "UNIT"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "Especifica uma unidade de medida para o valor do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "STR"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "Associa um texto ao objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "USR"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "Dados genéricos do usuário"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid "PUBKEY"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :338
+msgid ""
+"Chave pública do dispositivo quando presente. Deve ser associado ao objeto 0"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :338
+msgid "Campos para objetos invisíveis"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :340
+msgid ""
+"Os valores que serão associados ao objeto referido são os valores contidos "
+"no objeto invisível declarado para tal fim."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-stack.tex :342
+msgid "Exemplos de utilização"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :344
+msgid ""
+"Seja um objeto que implementa a escrita e leitura de um valor X, que é um "
+"inteiro sem sinal sem formatação específica. Assuma que este é o objeto "
+"número 1 do dispositivo:"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :349
+msgid ""
+"const HBUSOBJ VALOR_X = {{HBUSOBJ_WRITE|HBUSOBJ_READ|HBUSOBJ_DTYPE_UINT,2, "
+"0x00,12,\"VALOR X\"},0x00,LE_X,ESCREVE_X};"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :353
+msgid ""
+"Imagine que se queira atribuir uma faixa de valores válidos para este "
+"objeto, em outras palavras um valor máximo e um mínimo. Dois objetos "
+"invisíveis podem solucionar o problema:"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :358
+msgid "const word VALOR_MINIMO = 0x0010; const word VALOR_MAXIMO = 0xF000;"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :361
+msgid ""
+"const HBUSOBJ VALOR_X_MIN = {{HBUSOBJ_READ|HBUSOBJ_HIDDEN,2,0x00,12,\"1:MIN"
+"\"}, (byte*)&VALOR_MINIMO,0x00,0x00};"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :364
+msgid ""
+"const HBUSOBJ VALOR_X_MAX = {{HBUSOBJ_READ|HBUSOBJ_HIDDEN,2,0x00,12,\"1:MAX"
+"\"}, (byte*)&VALOR_MAXIMO,0x00,0x00};"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :368
+msgid ""
+"Isto indicará com sucesso ao mestre como interpretar os dados e quais são "
+"valores válidos para escrita e leitura do objeto."
+msgstr ""
+
+#. type: section{#2}
+#: sw-stack.tex :370
+msgid "Endpoints de dispositivo"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :372
+msgid ""
+"Os endpoints são um tipo especial de objeto que tem uma forma de acesso "
+"diferenciada. Eles são indexados em um espaço de endereçamento diferente dos "
+"objetos de dispositivo. O uso de endpoints é opcional e inclusive é possível "
+"compilar a pilha HBUS sem suporte a endpoints se for necessário por questões "
+"de economia de espaço."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :374
+msgid ""
+"A função de um endpoint é realizar a leitura ou escrita de um grande volume "
+"de bytes em uma única transmissão."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :376
+msgid ""
+"Sua implementação é muito parecida com a dos objetos de dispositivo. A "
+"estrutura de dados que define um endpoint é mostrada a seguir:"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :395
+msgid ""
+"typedef struct HBUSENDPOINTS { HBUSEPINFO endpointInfo; byte * dataStart; "
+"byte (*readEPByte)(void); byte (*writeEPByte)(byte); void (*EPwriteBegin)"
+"(void); void (*EPwriteEnd)(void); void (*EPreadBegin)(void); void "
+"(*EPreadEnd)(void); } HBUSEP;"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-stack.tex :402
+msgid "Campos da estrutura HBUSEP"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "endpointInfo"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "Estrutura contendo informações sobre o endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "dataStart"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "Ponteiro para localização na memória do início dos dados"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "readEPByte"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "Ponteiro para uma função que escreve um byte na memória do endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "writeEPByte"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "Ponteiro para uma função que lê um byte da memória do endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "EPwriteBegin"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid ""
+"Ponteiro para uma função que é chamada assim que começa a escrita do endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "EPwriteEnd"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid ""
+"Ponteiro para uma função que é chamada assim que termina a escrita do "
+"endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "EPreadBegin"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid ""
+"Ponteiro para uma função que é chamada assim que começa a leitura do endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid "EPreadEnd"
+msgstr ""
+
+#. type: tabular
+#: sw-stack.tex :415
+msgid ""
+"Ponteiro para uma função que é chamada assim que termina a leitura do "
+"endpoint"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :420
+msgid ""
+"De maneira análoga a implementação de objetos do dispositivo, os campos "
+"dataStart e readEPByte e writeEPByte são intercambiáveis."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :422
+msgid ""
+"Todas os demais ponteiros para funções são opcionais. Seguindo a análise, "
+"será vista a estrutura \\textbf{HBUSEPINFO}."
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :434
+msgid ""
+"typedef struct HBUSENDPOINTINFOS { byte endpointFlags; byte "
+"endpointBlockSize; byte endpointDescStringSize; byte * endpointDescString; } "
+"HBUSEPINFO;"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :438
+msgid ""
+"Mais uma vez a implementação é análoga a de objetos de dispositivo. A maior "
+"diferença nesse caso é o campo \\textit{endpointBlockSize}, que descreve o "
+"tamanho do bloco de dados que é representado no barramento HBUS pelo "
+"endpoint."
+msgstr ""
+
+#. type: section{#2}
+#: sw-stack.tex :440
+msgid "Interrupções de dispositivo"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :442
+msgid ""
+"As interrupções também são descritas por um tipo especial de objeto que "
+"assim como no caso dos endpoints, são endereçados e acessados de forma "
+"diferente dos objetos comuns. Todos os objetos de interrupção são por "
+"definição somente de leitura, uma vez que sua única funcionalidade é "
+"descrever uma interrupção que o dispositivo pode vir a disparar no "
+"barramento."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :444
+msgid "Os objetos de interrupção são definidos pelas estruturas mostradas:"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :455
+msgid ""
+"typedef struct HBUSINTERRUPTINFOS { byte interruptFlags; byte "
+"interruptDescStringSize; byte * interruptDescString; } HBUSINTINFO;"
+msgstr ""
+
+#. type: minted
+#: sw-stack.tex :464
+msgid ""
+"typedef struct HBUSINTERRUPTS { HBUSINTINFO interruptInfo; byte "
+"interruptNumber; } HBUSINT;"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :468
+msgid ""
+"Mais uma vez a implementação é claramente análoga a dos objetos de "
+"dispositivo. Observações:"
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :475
+msgid "Cada interrupção possui um número de identificação."
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :475
+msgid "Os flags da interrupção não foram implementados até o momento"
+msgstr ""
+
+#. type: itemize
+#: sw-stack.tex :475
+msgid ""
+"A emissão de interrupções e seu código na pilha HBUS é opcional e a sua "
+"compilação pode ser desativada. No entanto, a monitoração do sinal FREEBUS é "
+"obrigatória."
+msgstr ""
+
+#. type: section{#2}
+#: sw-stack.tex :479
+msgid "Objetos especiais do mestre"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :481
+msgid ""
+"Os objetos especiais do mestre são objetos requeridos que contém dados como "
+"data/hora e outros."
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :483
+msgid ""
+"Como não é permitido aos dispositivos iniciarem comunicações que não são "
+"interrupções, a leitura destes objetos especiais é feita da seguinte maneira:"
+msgstr ""
+
+#. type: enumerate
+#: sw-stack.tex :490
+msgid ""
+"O dispositivo envia uma interrupção do tipo \\textbf{INFOREQUEST} ao mestre."
+msgstr ""
+
+#. type: enumerate
+#: sw-stack.tex :490
+msgid ""
+"O mestre responde com um comando do tipo \\hbuscommand{ACK}, informando ao "
+"dispositivo que o pedido de informações foi aceito"
+msgstr ""
+
+#. type: enumerate
+#: sw-stack.tex :490
+msgid "O mestre realiza um \\hbuscommand{BUSLOCK} com o dispositivo."
+msgstr ""
+
+#. type: enumerate
+#: sw-stack.tex :490
+msgid ""
+"O dispositivo, usando o barramento travado, executa um comando "
+"\\hbuscommand{GETCH} para ler o objeto especial do mestre."
+msgstr ""
+
+#. type: section{#2}
+#: sw-stack.tex :494
+msgid "O ciclo e inicialização da pilha HBUS"
+msgstr ""
+
+#. type: document
+#: sw-stack.tex :496
+msgid ""
+"A pilha HBUS é inicializada no RESET do dispositivo hóspede e ciclos são "
+"executados repetidamente durante toda o tempo de execução."
+msgstr ""
+
+#. type: figure
+#: hbus.tex:119
+msgid "\\dtinput{../media/hbusstack}"
+msgstr ""
+
+#. type: caption{#2}
+#: hbus.tex:119
+msgid "Funcionamento da pilha HBUS"
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:121
+msgid "O protocolo de comunicação HBUS"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :4
+msgid ""
+"A especificação HBUS define um protocolo de comunicação ponto-a-ponto. Este "
+"protocolo é explorado em detalhes neste capítulo."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :6
+msgid "Estrutura de uma mensagem HBUS"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :8
+msgid ""
+"Os quadros de mensagem HBUS são constituídos de vários campos, onde se "
+"identificam os dispositivos fonte e destino da mensagem, além do conteúdo da "
+"mensagem."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :10
+msgid "Alocação de endereços para os dispositivos"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :12
+msgid ""
+"Será usado a partir de agora o conceito de barramento local e barramento "
+"global. A especificação HBUS permite um ou mais barramento HBUS seja "
+"conectado a outro barramento por meio de um repetidor. Isto é feito para "
+"aumentar a capacidade de conexão de dispositivos no sistema como um todo. "
+"Note que ainda continuará existindo apenas um mestre. A ação da repetição do "
+"barramento gera um novo barramento com endereço diferente do originário. O "
+"barramento global é o sistema composto por todos os dispositivos HBUS "
+"conectados a todos os sub barramentos interconectados."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :14
+msgid ""
+"Cada dispositivo no barramento global possui um endereço. Este endereço é "
+"composto por dois bytes, sendo um referente ao número do barramento local no "
+"qual o dispositivo está conectado e o outro é o endereço do dispositivo "
+"dentro deste barramento."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :16
+msgid "O pacote HBUS"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :18
+msgid ""
+"De forma geral as transmissões são realizadas em pacotes que seguem o "
+"esquema mostrado na figura a seguir. Na figura, cada quadrado representa um "
+"byte transmitido."
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-comm.tex :26
+msgid "Endereço do \\\\ disp. fonte"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-comm.tex :26
+msgid "Endereço do \\\\ disp. alvo"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :26 :69
+msgid "Comando"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-comm.tex :26
+msgid "Fim"
+msgstr ""
+
+#. type: newcommand{#4}
+#: sw-comm.tex :26
+msgid "Dados"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :26 sample-pwmctl.tex :38
+msgid "Endereço"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :26 sw-ucode.tex :157 :228 :310 sample-pwmctl.tex :38
+msgid "Tamanho"
+msgstr ""
+
+#. \import{../media/}{hbuspacket}
+#. type: figure
+#: sw-comm.tex :33
+msgid "\\dtinput{../media/hbuspacket}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :33
+msgid "Pacote HBUS"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :35
+msgid ""
+"Dependendo do comando, a seção de dados do pacote pode conter um número "
+"diferente de bytes. Para alguns comandos este número pode ser inclusive zero."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :37
+msgid "O byte terminador tem valor obrigatório de 0xFF."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :39
+msgid "Os comandos HBUS"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :41
+msgid ""
+"O conjunto de comandos padrão do barramento HBUS é discutido. A tabela "
+"mostra a lista de comando disponíveis."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :69
+msgid "Comandos HBUS"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Código"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Parâmetros"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-comm.tex :69 :77
+msgid "SETCH"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço\t do objeto e tamanho em bytes"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Escreve no objeto do dispositivo se o mesmo tem permissão de escrita"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-comm.tex :69 :90
+msgid "GETCH"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço do objeto"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Lê objeto do dispositivo caso tenha permissão de leitura"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-comm.tex :69 :100
+msgid "RESPONSE"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço do objeto origem e tamanho em bytes"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Envia o valor do objeto que foi requisitado pelo comando GETCH"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "SEARCH"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "---"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid ""
+"Inicia o processo de endereçamento dos dispositivos ou verifica presença de "
+"um dispositivo já endereçado"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "ACK"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid ""
+"Comando para indicar que mestre ou dispositivo confirmaram algum processo "
+"anterior."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "ERROR"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Código de erro"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Comando para retorno de códigos de erro. Opcional."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "QUERY"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid ""
+"Lê informações sobre o objeto. O dispositivo envia a estrutura HBUSOBJINFO."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "QUERY\\_EP"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0x11"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço do endpoint"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Análogo ao comando QUERY, porém voltado aos endpoints."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "QUERY\\_INT"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0x12"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço da interrupção"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Funcionamento similar aos dois comandos anteriores."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "QUERY\\_RESP"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço do objeto origem"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid ""
+"As informações do objeto, endpoints e interrupções são retornadas através "
+"deste comando."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "STREAMW"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Endereço do endpoint e tamanho do bloco"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Realiza escrita no endpoint selecionado se houver permissão."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "STREAMR"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0x41"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Realiza leitura no endpoint."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "BUSLOCK"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0xF0"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid ""
+"Causa o travamento exclusivo do barramento para comunicações entre os dois "
+"dispositivos envolvidos na mensagem."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "BUSUNLOCK"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0xF1"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Finaliza o travamento exclusivo do barramento, liberando-o."
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "SOFTRESET"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0xF2"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Ocasiona um RESET por software no dispositivo."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-comm.tex :69 :183
+msgid "KEYSET"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0xA0"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Chave pública do mestre"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Registra chave pública do mestre no dispositivo."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-comm.tex :69 :199
+msgid "KEYRESET"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "0xA1"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Bloco de assinatura"
+msgstr ""
+
+#. type: tabular
+#: sw-comm.tex :69
+msgid "Remove registro de chave pública do dispositivo."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :71
+msgid "A seguir uma análise mais detalhada é feita."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :73
+msgid "Os comandos SETCH, GETCH e RESPONSE"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :75
+msgid ""
+"Esses três comandos estão envolvidos com a tarefa de escrita e leitura em "
+"objetos do dispositivo."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :79
+msgid ""
+"O comando \\hbuscommand{SETCH} realiza a escrita em um objeto do "
+"dispositivo. O dispositivo deve, após aceitar o comando, verificar se o "
+"objeto possui permissão de escrita. Caso possua, o novo valor enviado é "
+"escrito no objeto. Caso contrário o dispositivo pode enviar de volta uma "
+"mensagem utilizando o comando \\hbuscommand{ERROR} ou não enviar nada."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :81
+msgid ""
+"Os parâmetros do comando \\hbuscommand{SETCH} são o endereço do objeto no "
+"dispositivo e o tamanho em bytes a ser escrito. A figura \\ref{fig:setch} "
+"mostra a estrutura de uma mensagem usando o comando \\hbuscommand{SETCH}. "
+"Não é mostrada a parte inicial de endereçamento para simplicidade."
+msgstr ""
+
+#. type: figure
+#: sw-comm.tex :88
+msgid "\\dtinput{../media/setch}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :88
+msgid "O comando \\hbuscommand{SETCH}"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :92
+msgid ""
+"Este comando realiza a leitura de um objeto do dispositivo. Após aceitar o "
+"comando, se o objeto tem permissão de leitura, o dispo sito enviará um "
+"comando \\hbuscommand{RESPONSE} contendo os dados do objeto. Caso contrário "
+"pode enviar ou não uma mensagem com o comando \\hbuscommand{ERROR}."
+msgstr ""
+
+#. type: figure
+#: sw-comm.tex :98
+msgid "\\dtinput{../media/getch}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :98
+msgid "O comando \\hbuscommand{GETCH}"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :103
+msgid ""
+"Após a utilização do comando \\hbuscommand{GETCH}, o dispositivo deve "
+"retornar a informação através do comando \\hbuscommand{RESPONSE}.  A "
+"estrutura parcial da mensagem é vista a seguir."
+msgstr ""
+
+#. type: figure
+#: sw-comm.tex :109
+msgid "\\dtinput{../media/response}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :109
+msgid "O comando \\hbuscommand{RESPONSE}"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :111
+msgid "Os comandos QUERY, QUERY\\_EP, QUERY\\_INT e QUERY\\_RESP"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :113
+msgid ""
+"Estes comandos são relacionados a obtenção de informações sobre os objetos "
+"de dispositivo e suas variações: endpoints e interrupções. O mestre não "
+"precisa ter conhecimento prévio sobre um dispositivo qualquer que é "
+"conectado ao barramento. Através deste mecanismo, ele pode obter todas as "
+"informações através do próprio barramento."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :115
+msgid ""
+"Os comandos \\hbuscommand{QUERY}, \\hbuscommand{QUERY\\_EP} e "
+"\\hbuscommand{QUERY\\_INT} buscam informações dos objetos de dispositivo, "
+"endpoints e interrupções, respectivamente."
+msgstr ""
+
+#. type: figure
+#: sw-comm.tex :121
+msgid "\\dtinput{../media/query}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :121
+msgid "Os comandos \\hbuscommand{QUERY}"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :123
+msgid ""
+"O comando \\hbuscommand{QUERY\\_RESP} é enviado pelo dispositivo em resposta "
+"a recepção de um comando tipo \\hbuscommand{QUERY($\\cdots$)}. Junto a este "
+"comando é enviada a estrutura do tipo \\textbf{HBUSOBJINFO}, "
+"\\textbf{HBUSEPINFO} ou \\textbf{HBUSINTINFO} correspondente ao objeto no "
+"dispositivo."
+msgstr ""
+
+#. type: figure
+#: sw-comm.tex :129
+msgid "\\dtinput{../media/query_resp}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :129
+msgid "O comando \\hbuscommand{QUERY\\_RESP}"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :131
+msgid "Os comandos STREAMW e STREAMR"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :133
+msgid ""
+"Estes comandos tem como finalidade o início de escrita e leitura de um bloco "
+"de bytes em um dos endpoints do dispositivo. Seu funcionamento é descrito a "
+"seguir."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :135
+msgid "Os comandos BUSLOCK e BUSUNLOCK"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :137
+msgid ""
+"Utilizados como peça chave em algumas operações do barramento, além de "
+"poderem ser usados livremente pelo mestre, esses comandos tem como "
+"finalidade o travamento exclusivo do barramento para tráfego de dados entre "
+"dois dispositivos."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :139
+msgid ""
+"Todos os dispositivos escutam o barramento constantemente. Ao detectar a "
+"emissão de um comando \\hbuscommand{BUSLOCK} no barramento, o dispositivo "
+"deve verificar se aquele comando é endereçado a ele. Caso seja, ele aceitará "
+"as transmissões posteriores. Caso contrário, deve ignorar todas as "
+"transmissões até que seja emitido no barramento o comando "
+"\\hbuscommand{BUSUNLOCK}."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :141
+msgid ""
+"É uma definição obrigatória que o período máximo de duração de um "
+"\\hbuscommand{BUSLOCK} é de 1 minuto. Se esse tempo for atingido sem a "
+"emissão de um comando \\hbuscommand{BUSUNLOCK}, os dispositivos devem "
+"automaticamente sair do estado travado e aceitar transmissões."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :143
+msgid "O comando SEARCH"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :145
+msgid ""
+"O comando \\hbuscommand{SEARCH} é utilizado para duas finalidades diferentes:"
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :155
+msgid "Utilizado no processo de endereçamento dos dispositivos;"
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :155
+msgid ""
+"Utilizado para monitorar a presença de um dispositivo já endereçado no "
+"barramento. Este procedimento é simples e tem dois passos:"
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :155
+msgid "O mestre envia o comando \\hbuscommand{SEARCH}."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :155
+msgid ""
+"O dispositivo, se ainda está presente no barramento, é obrigado a enviar o "
+"comando \\hbuscommand{ACK}."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :155
+msgid ""
+"O mestre aguarda. Se receber o comando \\hbuscommand{ACK}, sabe que o "
+"dispositivo está ativo. Se se passar um tempo especificado e não for "
+"recebido o comando, sabe-se que o dispositivo se desconectou do barramento."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-comm.tex :159
+msgid "Recomendação de implementação"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :161
+msgid ""
+"É recomendado que o mestre monitore o barramento com uma frequência "
+"dependente da natureza da rede implantada utilizando-se do barramento HBUS. "
+"Na grande maioria das vezes a rede é fixa e não sofre mudanças, de forma que "
+"geralmente esse monitoramento ocorrerá em um período relaxado."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :164
+msgid ""
+"As principais razões para realizar o monitoramento periódico da rede com o "
+"comando \\hbuscommand{SEARCH} são óbvias: detecção de novos dispositivos e "
+"detecção da desconexão (ou falha) de dispositivos."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :166
+msgid "Os comandos ACK e ERROR"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :168
+msgid ""
+"Os comandos \\hbuscommand{ACK} e \\hbuscommand{ERROR} servem para enviar "
+"respostas positivas e negativas, respectivamente, ao mestre. São usados em "
+"situações específicas descritas neste documento."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :170
+msgid "O comando INT"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :172
+msgid ""
+"O comando \\hbuscommand{INT} é enviado pelo dispositivo no processo de "
+"interrupção. Este processo é discutido num capítulo próximo."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :174
+msgid "O comando SOFTRESET"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :177
+msgid ""
+"Este comando, quando recebido pelo dispositivo, requer que o mesmo execute "
+"um reset por software nele mesmo.  Na plataforma utilizada para o "
+"desenvolvimento, isto é alcançado realizando-se a execução proposital de uma "
+"instrução ilegal."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :179
+msgid "Os comandos KEYSET E KEYRESET"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :181
+msgid ""
+"Presentes a partir da versão 1.1, estes comandos são reconhecidos apenas por "
+"dispositivos que possuem suporte a autenticação de mestre."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :185
+msgid ""
+"O comando \\hbuscommand{KEYSET} é executado no processo de endereçamento "
+"apenas no caso de o dispositivo em questão suportar a autenticação de "
+"mestre. Através deste comando é informada ao dispositivo a chave pública do "
+"mestre, utilizada para assinar as mensagens de escrita e garantir a "
+"autenticidade das mesmas."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :187
+msgid ""
+"Este comando somente grava uma nova chave no dispositivo caso o mesmo não "
+"tenha sido previamente associado a nenhum mestre. Neste caso, ao receber o "
+"comando, o dispositivo automaticamente grava de forma permanente a chave e "
+"torna-se associado ao mestre que enviou o comando. A única maneira de o "
+"dispositivo ser desassociado deste mestre é a emissão de um comando "
+"\\hbuscommand{KEYRESET}, assinado corretamente."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :189
+msgid ""
+"Caso o dispositivo já esteja associado a um mestre e receber o comando "
+"\\hbuscommand{KEYSET} no processo de endereçamento, o dispositivo compara a "
+"chave recebida com a sua chave previamente gravada e duas situações são "
+"possíveis:"
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :193
+msgid ""
+"As chaves são iguais e o dispositivo está sendo endereçado pelo mestre "
+"correto. O dispositivo entra em operação normal."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :195
+msgid ""
+"As chaves são diferentes e o dispositivo está sendo endereçado por um outro "
+"mestre. Neste caso o dispositivo tem a escolha de recusar o endereçamento ou "
+"entrar em modo de operação somente leitura."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :201
+msgid ""
+"Este comando realiza a desassociação do dispositivo com o mestre. É "
+"necessário que este comando contenha uma assinatura válida."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :203
+msgid ""
+"Esta ação libera o dispositivo para ser utilizado em outros barramentos, com "
+"outro mestre."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :205
+msgid "O processo de endereçamento do dispositivo"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :207
+msgid ""
+"Todos os dispositivos, quando conectados ao barramento, necessitam esperar "
+"que o mestre realize o processo de endereçamento. Mais uma vez é seguida a "
+"filosofia de não-ocupação do canal."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :209
+msgid ""
+"O dispositivo, na sua inicialização assume o endereço 255 no barramento. "
+"Este é um endereço especial reservado."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :211
+msgid "O endereço de broadcast"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :213
+msgid ""
+"O endereço reservado 255 é chamado de endereço de broadcast, porque todos os "
+"dispositivos ainda não-endereçados são obrigados a escutar o barramento "
+"neste endereço e obedecer quaisquer mensagens que sejam direcionadas ao "
+"endereço de broadcast."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :215
+msgid ""
+"É através deste endereço, que é iniciado o processo de endereçamento do "
+"dispositivo."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :217
+msgid "Endereçamento passo a passo"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :219
+msgid ""
+"Uma descrição passo a passo do processo de endereçamento do dispositivo:"
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"O dispositivo completa sua inicialização e aguarda, escutando o barramento "
+"no endereço 255."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"O mestre dá início ao processo de endereçamento através do envio de um "
+"comando \\textbf{SEARCH} para o endereço de broadcast."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"O dispositivo aguarda um período de guarda de alguns milissegundos que é "
+"definido aleatoriamente. A razão para isto é discutida em seguida."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"Após passado o período de guarda, o dispositivo envia um comando "
+"\\hbuscommand{BUSLOCK} para o mestre. O barramento está então travado. O "
+"dispositivo aguarda o mestre."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"O mestre deve enviar um comando \\hbuscommand{GETCH}, requisitando o objeto "
+"0 do dispositivo, para obter suas funcionalidades."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid "O dispositivo envia o conteúdo do objeto 0 ao mestre."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"Se o dispositivo tem suporte a autenticação, o mestre envia o comando "
+"\\hbuscommand{KEYSET}, acompanhado da sua chave pública, endereçado ao "
+"endereço que será atribuído."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"Caso o dispositivo não possua suporte a autenticação, o mestre envia "
+"novamente o comando \\hbuscommand{SEARCH}, porém desta vez para o endereço "
+"que será atribuído ao dispositivo."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid "O dispositivo recebe o comando e assume o endereço contido no pacote."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :232
+msgid ""
+"O dispositivo envia o comando \\hbuscommand{BUSUNLOCK} e o barramento é "
+"destravado. Chega ao fim o processo de endereçamento."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :236
+msgid "Prevenção de colisões no endereçamento"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :238
+msgid ""
+"Quando um barramento desenergizado com vários dispositivos já conectados é "
+"alimentado, todos os dispositivos estão no estado não-endereçado. Quando o "
+"mestre emitir o comando \\hbuscommand{SEARCH}, é preciso que haja algum "
+"esquema para impedir a colisão de dispositivos que tem inicialmente o mesmo "
+"endereço (broadcast) ao tentar realizar o endereçamento."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :240
+msgid ""
+"Para isso é estabelecido o período de guarda aleatório mencionado "
+"anteriormente. Sendo o período aleatório, fatalmente um dispositivo irá "
+"travar o barramento antes dos demais, garantindo que só ele está realizando "
+"o processo de endereçamento nesta etapa, uma vez que os outros dispositivos, "
+"sabendo do estado ocupado do barramento não podem tentar realizar "
+"transmissões."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :242
+msgid ""
+"Quando o barramento estiver livre novamente, os outros dispositivos podem "
+"iniciar seu processo de endereçamento, aplicando sempre o período de guarda "
+"aleatório. Dessa maneira, os dispositivos vão completando o processo de "
+"endereçamento sucessivamente até que todos estejam endereçados no barramento."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :244
+msgid "Recomendações"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :246
+msgid ""
+"É recomendado que assim que o processo de endereçamento for terminado, o "
+"mestre realize a identificação dos objetos através dos comandos "
+"\\hbuscommand{QUERY}, obtendo assim informações sobre todos os objetos de "
+"todos os dispositivos conectados. Essas informações devem ser guardadas para "
+"facilitar o acesso aos dispositivos durante a execução."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :248
+msgid "O acesso aos objetos do tipo endpoint"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :250
+msgid ""
+"O acesso a estes objetos é feito através dos comandos \\hbuscommand{STREAMW} "
+"e \\hbuscommand{STREAMR}. No entanto, estes comandos apenas iniciam o "
+"processo de acesso, que é feito em algumas etapas:"
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :258
+msgid ""
+"O mestre envia um comando \\hbuscommand{STREAMW} ou \\hbuscommand{STREAMR} "
+"ao dispositivo."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :258
+msgid ""
+"O dispositivo recebe o comando e se as permissões do endpoints forem "
+"coerentes com o comando recebido, o dispositivo executa um comando "
+"\\hbuscommand{BUSLOCK}, travando o uso do barramento entre ele e o mestre."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :258
+msgid ""
+"No ato da recepção do \\textbf{BUSLOCK}, o mestre assume que a transmissão "
+"será realizada. No caso de uma transmissão de escrita, o mestre envia os "
+"dados ao barramento travado, não sendo nenhum tipo de formatação requerida.  "
+"No caso de uma transmissão de leitura, o escravo, após executar o "
+"\\hbuscommand{BUSLOCK}, começa a enviar imediatamente os dados."
+msgstr ""
+
+#. type: enumerate
+#: sw-comm.tex :258
+msgid ""
+"Após a transmissão ser concluída, o escravo emite o comando "
+"\\hbuscommand{BUSUNLOCK}, liberando o barramento para as comunicações."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :262
+msgid "A importância e expansibilidade dos endpoints"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :264
+msgid ""
+"Pode não ser aparente a primeira vista, porém o sistema de endpoints tem uma "
+"importância chave."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :266
+msgid ""
+"Devido a natureza da transmissão, que é realizada sobre o barramento travado "
+"exclusivamente para os dois dispositivos envolvidos e ainda o detalhe que "
+"durante a transmissão, os dispositivos não processam os dados da forma usual "
+"mostrada até agora, deixa-se aberta a possibilidade de implementação de "
+"protocolo secundários sobre o protocolo de comunicação HBUS através do uso "
+"de endpoints."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :268
+msgid ""
+"Esses protocolos secundários podem ser muito importantes para o dispositivo "
+"específico e variar desde sistemas para correção de erros até protocolos de "
+"comunicação complexos e desconhecidos ao barramento HBUS."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :270
+msgid "Interrupções"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :272
+msgid ""
+"O sistema de interrupções tem um capítulo dedicado exclusivamente a sua "
+"discussão."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :274
+msgid "O conjunto de máquinas de estados de comunicação HBUS"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :276
+msgid ""
+"O protocolo de comunicação no dispositivo é implementado por uma máquina de "
+"estados que recebe byte a byte a transmissão e dependendo dos valores "
+"detectados, seleciona a ação apropriada."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :278
+msgid ""
+"O comportamento é como descrito até agora, observando cada tipo de comando "
+"enviado ao dispositivo. A máquina de estados também gerencia o endereçamento "
+"e eventos de travamento do barramento, além de timeouts que ocorrem se a "
+"comunicação for abandonada em meio a um pacote. Isto é necessário para "
+"garantir que o barramento não seja travado por um dispositivo operando "
+"erroneamente."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :280
+msgid "A função SERIAL\\_IDLE()"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :282
+msgid ""
+"A função SERIAL\\_IDLE() verifica se está ocorrendo alguma transmissão no "
+"barramento e retorna um valor informando a situação atual. É necessário "
+"utilizar esta função todas as vezes que o dispositivo transmite alguma "
+"informação no barramento, uma vez que o canal de comunicação é half-duplex."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :284
+msgid "A função SERIAL\\_CYCLE()"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :286
+msgid ""
+"Esta é a função executada ciclicamente. Ela verifica o estado do barramento "
+"para decidir o momento de realização de transmissões e também gerencia os "
+"timeouts de comunicação."
+msgstr ""
+
+#. type: figure
+#: sw-comm.tex :292
+msgid "\\dtinput{../media/serialcycle}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :292
+msgid "Máquina de estados na função SERIAL\\_CYCLE()"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :294
+msgid "A função SERIAL\\_RXBYTE()"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :296
+msgid ""
+"A figura \\ref{fig:hbussm} mostra o funcionamento da função que recebe os "
+"bytes da comunicação, SERIAL\\_RXBYTE. Os círculos representam decisões ou "
+"estados e os quadrados funções que são executadas. Na recepção é verificado "
+"se o dispositivo está realizando escrita num endpoint ou é uma transmissão "
+"comum. No caso de recepção para endpoint, os bytes não são processados."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :298
+msgid ""
+"Em uma transmissão comum, os bytes são analisados e caso não apresentem "
+"alguma incoerência, são armazenados num buffer interno para processamento ao "
+"final da recepção pela função SERIAL\\_PROCESS(). Esta é a função que "
+"determina as ações a serem realizadas devido ao recebimento do comando."
+msgstr ""
+
+#. type: scalebox{#2}
+#: sw-comm.tex :307
+msgid "\\dtinput{../media/hbussm}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :307
+msgid "Máquina de estados de recepção HBUS"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :309
+msgid "A função SERIAL\\_PROCESS()"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :311
+msgid ""
+"Esta função analisa o conteúdo do buffer local após a recepção com sucesso "
+"de um pacote. Note que são analisados todos os pacotes recebidos, "
+"independente se o destinatário é o dispositivo em questão ou não. Isto é "
+"necessário para que sejam detectados os eventos de travamento do barramento "
+"e endereçamento de dispositivos da maneira correta, atualizando a máquina de "
+"estados local."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :313
+msgid ""
+"Para resumir, é suficiente afirmar que esta função verifica os estados "
+"atuais do dispositivo: se o mesmo está ou não endereçado e se o barramento "
+"está travado para si próprio ou para outros dispositivos ou ainda livre e "
+"atua segundo o conjunto de informações."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :315
+msgid ""
+"Um fluxograma completo é complicado e redundante por demais, devido a "
+"quantidade de informação já discutida no documento até o momento. A figura a "
+"seguir limita-se a mostrar uma visão simplificada do que acontece quando o "
+"dispositivo não está endereçado."
+msgstr ""
+
+#. type: scalebox{#2}
+#: sw-comm.tex :323
+msgid "\\dtinput{../media/serialprocess}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-comm.tex :323
+msgid "A função SERIAL\\_PROCESS() abreviada"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :325
+msgid "O envio de dados"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :327
+msgid ""
+"O envio de dados, como já discutido exaustivamente, não ocorre de forma "
+"espontânea, a não ser em caso de interrupção do dispositivo."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :329
+msgid ""
+"Logo, todos os envios de dados são dependentes dos estados do sistema. A "
+"maioria dos envios são realizados a partir da função SERIAL\\_PROCESS(), que "
+"deve enviar vários dados em respostas a comandos emitidos pelo mestre."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :331
+msgid ""
+"Na revisão atual do barramento HBUS, o envio de dados é realizado "
+"manualmente colocando-se nas estruturas de dados as informações necessárias: "
+"tamanho em bytes do envio, endereço alvo e conteúdo da mensagem. Após isso, "
+"a variável de estado dos envios é colocada num estado que indica transmissão "
+"pendente. A função SERIAL\\_CYCLE() verifica as pendências e se encarrega de "
+"realizar o envio. As estruturas de dados presentes relacionadas ao envio de "
+"dados:"
+msgstr ""
+
+#. type: itemize
+#: sw-comm.tex :338
+msgid "S\\_TX\\_SIZE : tamanho do envio em bytes"
+msgstr ""
+
+#. type: itemize
+#: sw-comm.tex :338
+msgid "S\\_TX\\_NEXT : ponteiro para bytes a serem enviados"
+msgstr ""
+
+#. type: itemize
+#: sw-comm.tex :338
+msgid "S\\_TX\\_NEXT\\_ADDR : endereço do dispositivo alvo da transmissão"
+msgstr ""
+
+#. type: itemize
+#: sw-comm.tex :338
+msgid ""
+"S\\_TX\\_STATE : estado da máquina de estados de envio (deve ser colocado em "
+"TX\\_WAIT para iniciar um envio)"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-comm.tex :342
+msgid "A função SERIAL\\_PROCESS\\_TX()"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :344
+msgid ""
+"Esta função empacota um envio pendente, formatando-o ao padrão HBUS e "
+"realizando o envio através da UART do dispositivo."
+msgstr ""
+
+#. type: section{#2}
+#: sw-comm.tex :346
+msgid "Segurança"
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :348
+msgid ""
+"A partir da especificação versão 1.1 é adicionada o conceito opcional de "
+"privacidade de objetos e de autenticação do mestre."
+msgstr ""
+
+#. type: document
+#: sw-comm.tex :350
+msgid ""
+"Estas funcionalidades são opcionais ao dispositivo e incluem etapas "
+"adicionais no processamento dos comandos trafegados no barramento, incluindo "
+"a adição de mais dados no pacote, conforme o necessário."
+msgstr ""
+
+#. type: document
+#: hbus.tex:123
+msgid ""
+"Estes procedimentos são discutidos em maior detalhe num capítulo dedicado. "
+"No entanto, estão inseridos no escopo do protocolo de comunicação HBUS."
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:125
+msgid "Interrupções HBUS"
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :3
+msgid ""
+"Neste capítulo é exposta a definição das operações de interrupção por "
+"dispositivos escravos no barramento HBUS."
+msgstr ""
+
+#. type: section{#2}
+#: sw-interrupt.tex :5
+msgid "Necessidade de interrupções"
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :7
+msgid ""
+"A necessidade da existência de um mecanismo de interrupções no sentido "
+"escravos -> mestres é bem evidente em qualquer sistema computacional que "
+"envolve comunicação num barramento que contém um mestre e vários escravos, "
+"que dividem o canal de comunicação."
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :9
+msgid ""
+"Em especial, o barramento HBUS, tendo como princípio a minimização do uso do "
+"canal de comunicação, atingida através da restrição de início de tráfego no "
+"canal por parte do mestre, necessita de um mecanismo que possibilite os "
+"escravos a iniciar uma comunicação com o mestre em uma ocasião de extrema "
+"necessidade ou exceções encontradas."
+msgstr ""
+
+#. type: section{#2}
+#: sw-interrupt.tex :11
+msgid "O processo de interrupção"
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :13
+msgid ""
+"Utiliza-se o sinal \\textbf{FREEBUS} alocado no barramento exclusivamente "
+"para as operações de interrupção."
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :15
+msgid "O processo de interrupção ocorre na sequência exibida a seguir:"
+msgstr ""
+
+#. type: enumerate
+#: sw-interrupt.tex :19
+msgid ""
+"O escravo leva o sinal FREEBUS ao valor lógico 0. Isto sinaliza aos demais "
+"escravos que as transmissões devem terminar o mais rápido possível."
+msgstr ""
+
+#. type: enumerate
+#: sw-interrupt.tex :21
+msgid ""
+"O escravo escuta o canal de comunicação e assim que estiver livre, emite o "
+"comando de interrupção no barramento INT, identificando-se no processo."
+msgstr ""
+
+#. type: enumerate
+#: sw-interrupt.tex :23
+msgid ""
+"O mestre emite um comando BUSLOCK, direcionado ao escravo emissor da "
+"interrupção. O barramento é travado exclusivamente para comunicação do "
+"mestre com o escravo."
+msgstr ""
+
+#. type: enumerate
+#: sw-interrupt.tex :25
+msgid ""
+"Ao confirmar o travamento do barramento, o escravo libera o sinal FREEBUS, "
+"colocando-o em alta impedância."
+msgstr ""
+
+#. type: enumerate
+#: sw-interrupt.tex :27
+msgid ""
+"São transferidas informações específicas à interrupção e suas consequências."
+msgstr ""
+
+#. type: enumerate
+#: sw-interrupt.tex :29
+msgid ""
+"Ao fim das transmissões específicas, o mestre emite o comando BUSUNLOCK e "
+"libera o barramento para outras comunicações."
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :34
+msgid ""
+"Não é requerido que as interrupções sejam detectadas por hardware exclusivo. "
+"A implementação utilizada como padrão é a detecção da interrupção por "
+"software."
+msgstr ""
+
+#. type: section{#2}
+#: sw-interrupt.tex :36
+msgid "Autenticação de interrupções"
+msgstr ""
+
+#. type: document
+#: sw-interrupt.tex :38
+msgid ""
+"As interrupções são eventos muitas vezes urgentes e importantes que "
+"provavelmente deflagrarão ações pré-programadas. É muito interessante que "
+"esse mecanismo também tenha possibilidade de ser seguro."
+msgstr ""
+
+#. type: document
+#: hbus.tex:127
+msgid ""
+"Surge então o conceito de autenticação de interrupções, que é uma "
+"funcionalidade futura do HBUS. Este sistema envolve o processo de "
+"interrupção já descrito e o sistema de autenticação de escravo."
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:129
+msgid "Microcódigo HBUS"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :2
+msgid ""
+"Neste capítulo é discutida a utilidade da unidade de microcódigo, de "
+"implementação opcional."
+msgstr ""
+
+#. type: section{#2}
+#: sw-ucode.tex :4
+msgid "Motivação"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :6
+msgid ""
+"Em sistemas de automação simples, como é o caso do HBUS, os dispositivos da "
+"rede disponibilizam muitas informações a serem coletadas e processadas de "
+"forma a produzir outras informações de controle."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :8
+msgid ""
+"Muitas vezes um dispositivo disponibiliza uma entrada e é necessário "
+"controlar uma saída sua a partir do valor desta entrada. Neste caso, é "
+"necessário que o mestre leia continuamente o valor desta entrada, processe "
+"esse dado de acordo com o desejado pelo usuário e envie um novo valor para "
+"ser escrito naquela saída do escravo. Este procedimento tem alguns custos, "
+"entre eles:"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :13
+msgid ""
+"Ocupação de banda do canal de comunicação, principalmente se os ajustes "
+"forem constantes"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :13
+msgid ""
+"A transferência através do canal de comunicação pode penalizar os processos "
+"simultâneos no escravo, que tem baixo poder de processamento."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :15
+msgid ""
+"Por quê não poderia o próprio dispositivo realizar este processamento, no "
+"caso de ele ser de baixa complexidade? Isto seria muito benéfico, já que não "
+"seria necessária o oneroso tráfego de e ida e volta até o mestre. Note que "
+"muitas vezes esse processamento deve ser realizado muitas vezes por minuto, "
+"o que acarretará um canal de comunicação constantemente ocupado. A solução é "
+"baseada neste novo paradigma de micro-automação local."
+msgstr ""
+
+#. type: section{#2}
+#: sw-ucode.tex :17
+msgid "Solução"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :19
+msgid ""
+"A solução escolhida utiliza um processador implementado por software que "
+"roda em cima das camadas mais baixas do sistema. Esta solução permite uma "
+"flexibilidade muito grande, além de prover um nível de automação local, não "
+"dependente do mestre do sistema, como discutido na seção anterior."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :21
+msgid ""
+"O suporte a esta funcionalidade é opcional e pode ser desativado no momento "
+"da compilação, através da diretiva contida no arquivo \\textit{setup.h}."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :24
+msgid "Benefícios"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :24
+msgid ""
+"Os benefícios desta escolha são maiores ainda do que podem parecer a "
+"primeira vista. Além de obter algum nível de micro-automação local, também é "
+"explorada a possibilidade de este microcódigo, rodado pelo processador, ser "
+"atualizado pelo usuário do sistema, através do mestre, on-line e "
+"remotamente, não interferindo com a operação do dispositivo escravo."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :26
+msgid "Custos"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :28
+msgid ""
+"Os custos de implementação não são tão altos quando se utiliza de um modelo "
+"de processador RISC, com pouquíssimas instruções e poucos elementos de "
+"memória. As tarefas a serem realizadas pela \\textit{soft-cpu} em baixo "
+"nível são operações que não geram muito esforço para o microcontrolador "
+"hospedeiro."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :30
+msgid "Execução"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :32
+msgid ""
+"A solução final é a implementação de uma versão soft 8-bits do processador "
+"ANEM, rodando em cima do sistema. O código é escrito em C como as demais "
+"partes da pilha HBUS. Esta \\textit{soft-cpu} lê as instruções de uma "
+"memória de instruções local e tem acesso aos objetos HBUS através de uma "
+"memória virtual mapeada."
+msgstr ""
+
+#. type: section{#2}
+#: sw-ucode.tex :34
+msgid "O ANEM"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :36
+msgid ""
+"O ANEM (\\textbf{A}nem \\textbf{n}ão \\textbf{é} \\textbf{M}IPS) é um "
+"processador baseado em MIPS, com um conjunto muito reduzido de instruções. "
+"Este processador e algumas variações já foram implementados e testados com "
+"sucesso em hardware, através de FPGA anteriormente."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :38
+msgid ""
+"O ANEM utiliza arquitetura Harvard e tradicionalmente suas palavras tem um "
+"tamanho de 16 bits. Suas instruções também tem tamanho de 16 bits."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :40
+msgid ""
+"Este processador foi inicialmente desenvolvido por alunos do curso de "
+"Engenharia Eletrônica da universidade federal de pernambuco, guiados pelo "
+"professor João Paulo Cerquinho Cajueiro, como atividade acadêmica."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :48
+msgid "O ANEM-HBUS"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :50
+msgid ""
+"A variação ANEM-HBUS, visa a simplicidade e economia de código, uma vez que "
+"os microcontroladores utilizados preferencialmente nos dispositivos HBUS são "
+"escolhidos para ter baixo custo e por consequência tem memórias pequenas."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :52
+msgid ""
+"O ANEM-HBUS utiliza palavras de 8-bits. As instruções ainda são de 16-bits. "
+"O banco de registradores é composto por 16 registradores de 8 bits e o "
+"contador de programa é de 16 bits. O registrador final do banco é fixo no "
+"valor zero e é somente para leitura."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :54
+msgid ""
+"Além do banco de registradores, o ANEM-HBUS conta com dois registradores "
+"auxiliares, \\textbf{HI} e \\textbf{LO}."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :56
+msgid "Memória de instrução"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :58
+msgid ""
+"A memória de instrução é um vetor de palavras armazenado em espaço de "
+"código, ou seja, é localizado na memória FLASH do microcontrolador. Através "
+"de manipulação é possível apagar e re-escrever este conteúdo em tempo de "
+"execução. Isto possibilita o \\textit{upload} de nova programação com o "
+"dispositivo em funcionamento."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :60
+msgid ""
+"O procedimento de \\textit{upload} para a execução do microcódigo e re-"
+"escreve a memória de instruções. Após isto ser executado com sucesso, o novo "
+"microcódigo começa a ser executado. Efetivamente, a \\textit{soft-cpu} sofre "
+"um RESET."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :62
+msgid ""
+"O upload é conseguido utilizando-se de um \\textit{Endpoint} HBUS, conceito "
+"já explicado em capítulo anterior. Este endpoint contém a função que realiza "
+"a escrita na memória constante de instrução."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :64 :122
+msgid "Instruções disponíveis no microcódigo"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :66
+msgid ""
+"São listadas e discutidas as instruções disponíveis ao usuário. O conjunto "
+"de instruções é dividido em tipos, sendo eles:"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :75
+msgid "R: Instruções aritméticas"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :75
+msgid "S: Instruções de deslocamento"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :75
+msgid "J: Instruções de salto incondicional"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :75
+msgid "W: Instruções de memória e saltos condicionais"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :75
+msgid "L: Instrução para carregamento imediato de valor"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :75
+msgid "I: Instrução para geração de interrupções"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :79
+msgid ""
+"Cada tipo tem um padrão diferente de divisão e utilização dos bits na "
+"palavra de instrução. A tabela \\ref{tab:inst} detalha as instruções."
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :278 :329 :385
+msgid "Instrução"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Tipo"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :178
+msgid "AND"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 sample-pwmctl.tex :38 hbus-units.tex :22
+msgid "R"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Operação lógica"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :178
+msgid "OR"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :178
+msgid "NOT"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :178
+msgid "XOR"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "ADD"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Adição"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "SUB"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Subtração"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "MULT"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Multiplicação"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "SLT"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Compara dois valores"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "DIV"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Divisão"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "SHR"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "S"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Deslocamento para a direita"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "SHL"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Deslocamento para a esquerda"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "ROR"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Rotação no sentido da direita"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "ROL"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Rotação no sentido da esquerda"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :278
+msgid "J"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Salto incondicional"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :278
+msgid "JAL"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Jump-and-link: salva PC atual nos registradores 13 e 14 e pula"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :329
+msgid "LW"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 sample-pwmctl.tex :38 hbus-units.tex :22
+msgid "W"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Carrega byte da memória virtual"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :329
+msgid "SW"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Escreve byte na memória virtual"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :329
+msgid "BEQ"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Salta em caso de igualdade"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :329
+msgid "JR"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Salta para endereço contido em registrador"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "LIW"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "L"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Carrega valor em registrador imediatamente"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "INT"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "I"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Gera interrupção"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :385
+msgid "MFHI"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 hbus.tex:150
+msgid "M"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Copia conteúdo do registrador HI"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :385
+msgid "MFLO"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Copia conteúdo do registrador LO"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :401
+msgid "LHL"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "M (M1)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Carrega registradores HI e LO"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :401
+msgid "LIH"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Carrega registrador HI imediatamente"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :401
+msgid "LIL"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Carrega registrador LO imediatamente"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122 :401
+msgid "AIS"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :122
+msgid "Adiciona valor imediato em HI:LO (com sinal)"
+msgstr ""
+
+#. Tabela 1.2 contendo a divisao da palavra de instrucao
+#. type: document
+#: sw-ucode.tex :125
+msgid ""
+"A divisão das palavras de instrução dependendo do tipo de instrução é "
+"mostrada a seguir."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :127
+msgid "Instruções tipo R"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :129
+msgid "As instruções tipo R tem estrutura como mostrada a seguir:"
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :138
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{4}{REGA} & \\bitbox{4}{REGB} & \\bitbox{4}"
+"{FUNC}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :138
+msgid "Instrução tipo R"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :140
+msgid ""
+"Estas instruções são operações aritméticas e seus campos são explorados "
+"detalhadamente na tabela \\ref{tab:ir}. O Opcode das instruções tipo R é 0x0."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :145
+msgid "Campos da instrução tipo R"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157 :228 :310
+msgid "Função"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157 :228 :278 :310 :329 :385
+msgid "OPCODE"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157 :228 :310 sample-pwmctl.tex :38 :168
+msgid "4"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157
+msgid "Informa ao processador o tipo de instrução (R)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157
+msgid "REGA"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157
+msgid ""
+"Endereço no banco de registradores do operando 1. Também é o destino do "
+"resultado"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157
+msgid "REGB"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157
+msgid "Endereço no banco de registradores do operando 2"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157 :228
+msgid "FUNC"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :157
+msgid "Código que descreve a operação aritmética/lógica a ser realizada"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :159
+msgid ""
+"O campo FUNC varia de acordo com a operação a ser realizada. Os valores "
+"possíveis e suas correspondentes operações são vistos na tabela \\ref{tab:"
+"rfunc}."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :164
+msgid "Instruções tipo R: o campo FUNC"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :242 :401
+msgid "Operação"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :242 :401
+msgid "0x0"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178
+msgid "ADD (adição)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :242 :401
+msgid "0x1"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178
+msgid "SUB (subtração)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :242 :401
+msgid "0x2"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :242 :401
+msgid "0x3"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :329
+msgid "0x4"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :329
+msgid "0x5"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :329
+msgid "0x6"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178
+msgid "MULT (multiplicação)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :329
+msgid "0x7"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178
+msgid "SLT (= 1 se B > A, = 0, c.c.)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178 :278
+msgid "0x8"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :178
+msgid "DIV (divisão)"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :184
+msgid "As operações aritméticas tratam os operandos como números sem sinal."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :186
+msgid ""
+"Todas as operações exceto \\textbf{DIV} e \\textbf{MULT} salvam o resultado "
+"da operação no próprio registrador A."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :188
+msgid ""
+"As funções \\textbf{DIV} e \\textbf{MULT} utilizam os registradores "
+"\\textbf{HI} e \\textbf{LO} da seguinte maneira:"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :192
+msgid "\\textbf{MULT}: \\textbf{HI:LO} = \\textbf{REGA} * \\textbf{REGB}"
+msgstr ""
+
+#. type: itemize
+#: sw-ucode.tex :194
+msgid ""
+"\\textbf{DIV}: \\textbf{REGA} = \\textbf{HI:LO} \\% \\textbf{REGB}; "
+"\\textbf{REGB} = \\textbf{HI:LO} / \\textbf{REGB};"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :198
+msgid "Instruções tipo S"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :200
+msgid ""
+"As instruções do tipo S são instruções de deslocamento. A estrutura da "
+"palavra de instrução é mostrada:"
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :209
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{4}{REG} & \\bitbox{4}{SHAMT} & \\bitbox{4}"
+"{FUNC}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :209
+msgid "Instrução tipo S"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :211
+msgid ""
+"O Opcode destas instruções tem valor 0x1 e seus campos são detalhados a "
+"seguir."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :216
+msgid "Campos da instrução tipo S"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :228 :310
+msgid "Informa ao processador o tipo de instrução (S)"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :228
+msgid "REG"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :228
+msgid ""
+"Endereço no banco de registradores do operando. Também é o destino do "
+"resultado"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :228
+msgid "SHAMT"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :228
+msgid "Quantidade de deslocamentos realizados"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :228
+msgid "Código que descreve a operação de deslocamento a ser realizada"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :233
+msgid "Instruções tipo S: o campo FUNC"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :242
+msgid "SHR --- deslocamento a direita"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :242
+msgid "SHL --- deslocamento a esquerda"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :242
+msgid "ROR --- rotação a direita"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :242
+msgid "ROL --- rotação a esquerda"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :248
+msgid ""
+"As instruções tipo S salvam o resultado das operações no próprio registrador "
+"do operando"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :250
+msgid "Instruções tipo J"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :252
+msgid ""
+"Estas instruções são instruções para a realização de saltos incondicionais. "
+"A estrutura da palavra de instrução é mostrada em detalhe:"
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :261
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{12}{ADDRESS}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :261
+msgid "Instrução tipo J"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :263
+msgid ""
+"O campo OPCODE é responsável pela identificação da função da instrução, como "
+"já sabido. O campo ADDRESS é o endereço na memória de instrução para qual o "
+"processador irá saltar. Em outras palavras esse será o novo valor do "
+"\\textit{program counter} no próximo ciclo."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :265
+msgid "As duas instruções utilizadas são descritas:"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :278
+msgid "Descrição das instruções tipo J"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :278
+msgid "Salta imediatamente para o endereço dado"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :278
+msgid "0x9"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :278
+msgid ""
+"Jump-and-Link: grava nos registradores 13 e 14 o valor do \\textit{program "
+"counter} e salta imediatamente para o endereço dado"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :280
+msgid "Instruções tipo W"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :282
+msgid ""
+"As instruções do tipo W são instruções de salto condicional ou de acesso a "
+"memória de programa."
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :291
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{4}{REGS} & \\bitbox{4}{REGD} & \\bitbox{4}"
+"{OFFSET}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :291
+msgid "Instrução tipo W"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :293
+msgid "Uma análise dos campos da instrução segue:"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :298
+msgid "Campos da instrução tipo W"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :310
+msgid "REGS"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :310
+msgid "Endereço no banco de registradores do registrador fonte"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :310
+msgid "REGD"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :310
+msgid "Endereço no banco de registradores do registrador destino"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :310
+msgid "OFFSET"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :310
+msgid "Offset para salto ou para ser somado ao endereço de leitura na memória"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :312
+msgid ""
+"A terminologia de registrador fonte e registrador destino foi criada para "
+"iluminar a operação das instruções."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :314
+msgid ""
+"O registrador \\textbf{fonte} é aquele de onde é retirada a informação para "
+"a operação de salto ou acesso a memória. No caso das instruções LW e SW, o "
+"valor contido no registrador indicado pelo campo da instrução será o "
+"endereço da memória a ser lido ou escrito. O registrador destino, no caso da "
+"operação de leitura (LW) identifica o registrador no qual será escrito o "
+"byte lido da memória. Já para a instrução de escrita (SW), o registrador "
+"destino é o registrador que contém o valor a ser escrito na memória virtual. "
+"O valor do campo OFFSET é somado ao conteúdo dos registradores que contém os "
+"endereços de memória."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :316
+msgid ""
+"Para a operação JR, o registrador de destino perde o sentido e é ignorado, "
+"importando apenas o campo de registrador fonte, que deve conter o endereço "
+"para onde se deseja saltar. Note que devido a uma limitação das palavras no "
+"banco de registrador do ANEM-HBUS, só é possível saltar até a posição 255 da "
+"memória de instrução. Esta limitação é relevada, uma vez que o microcódigo "
+"não pretende realizar tarefas altamente complexas e por uma questão de "
+"limitação em espaço disponível na memória FLASH dos microcontroladores "
+"escolhidos, a memória de instrução só é alocada até o tamanho máximo de 256 "
+"instruções. O campo OFFSET é somado ao valor do registrador com o endereço "
+"da instrução alvo do salto."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :318
+msgid ""
+"Na operação tipo BEQ, os valores contidos nos registradores fonte e destino "
+"são comparados, e quando iguais, ocorre o salto para a posição atual do PC "
+"mais OFFSET instruções. Mais uma vez, percebe-se uma limitação, já que tendo "
+"apenas 4 bits disponíveis, o BEQ é capaz de saltar até apenas 15 instruções "
+"a frente da atual. Recomenda-se o uso combinado de uma instrução BEQ que "
+"salta para uma instrução tipo J no caso de ser necessário um salto para uma "
+"posição mais distante."
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :329
+msgid "Descrição das instruções tipo W"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :329
+msgid "Carrega dados da memória virtual"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :329
+msgid "Salva dados na memória virtual"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :329
+msgid "Salta para posição indicada por registrador"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :329
+msgid "Salto condicional dependendo do valor dos registradores"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :336 :347
+msgid "Instrução tipo L"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :338
+msgid "A instrução do tipo L é a instrução LIW. Os seus campos são mostrados:"
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :347
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{4}{REG} & \\bitbox{8}{DATA}"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :349
+msgid ""
+"Esta instrução realiza o carregamento imediato de um byte, contido no campo "
+"DATA no registrador indicado pelo endereço no campo REG."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :351
+msgid "Instrução tipo I"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :353
+msgid ""
+"A instrução do tipo I é a instrução INT. Esta instrução deflagra uma "
+"interrupção do barramento HBUS."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :355
+msgid "Instruções tipo M"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :357
+msgid ""
+"As instruções do tipo M são destinadas a movimentação e manipulação de dados "
+"dos registradores \\textbf{HI} e \\textbf{LO}. Este tipo de instrução tem "
+"alguns subtipos:"
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :366
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{8}{---} & \\bitbox{4}{REG}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :366
+msgid "Instrução tipo M"
+msgstr ""
+
+#. type: bytefield
+#: sw-ucode.tex :375
+msgid ""
+"[endianness=big,bitwidth=0.035\\linewidth]{16} \\bitheader{0-15}\\\\ "
+"\\bitbox{4}{OPCODE} & \\bitbox{4}{MOP} & \\bitbox{8}{DATA}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :375
+msgid "Instrução subtipo M1"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :385
+msgid "Descrição das instruções tipo M"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "0xA"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "Copia conteúdo do registrador HI para REG"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "0xB"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "Copia conteúdo do registrador LO para REG"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "Subtipo M1"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "0xD"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :385
+msgid "Ver tabela abaixo"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-ucode.tex :401
+msgid "Descrição das instruções subtipo M1"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :401
+msgid "MOP"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :401
+msgid "Carrega registradores HI e LO de DATA[7..4],DATA[3..0]"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :401
+msgid "Carrega registrador HI imediatamente com DATA"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :401
+msgid "Carrega registrador LO imediatamente com DATA"
+msgstr ""
+
+#. type: tabular
+#: sw-ucode.tex :401
+msgid "Adiciona valor imediatamente em HI:LO (com sinal)"
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :409
+msgid "A memória virtual"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :409
+msgid ""
+"A memória de dados é mapeada virtualmente a partir dos objetos HBUS "
+"declarados pelo dispositivo. Isto dá acesso de leitura e escrita aos "
+"objetos. O usuário não tem acesso a memória RAM do microcontrolador, sendo "
+"obrigado a limitar-se ao banco de registradores para realizar suas tarefas."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :411
+msgid ""
+"Com o intuito de simplificar a implementação e não impor grandes "
+"dificuldades ao processador hóspede (microcontrolador), é assumido que cada "
+"objeto HBUS tem um tamanho de 4 bytes."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :413
+msgid ""
+"É uma limitação da especificação HBUS que o objeto tenha no máximo 4 bytes, "
+"então não haverá problemas de objetos maiores que os 4 bytes para "
+"endereçamento. No caso de o objeto possuir menos de 4 bytes, as tentativas "
+"de operações fora deste espaço são simplesmente ignoradas."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :415
+msgid ""
+"Observe que o usuário tem apenas 8 bits para endereçar os objetos, o que dá "
+"um total de $\\frac{2^8}{4} = 64$ objetos no máximo. Não é esperado que o "
+"dispositivo possua essa quantidade de objetos, devido a natureza da "
+"especificação HBUS."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-ucode.tex :417
+msgid "A operação da máquina virtual"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :419
+msgid ""
+"Um outro termo muito usado para o processador emulado em software é "
+"\\textit{máquina virtual}."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :421
+msgid ""
+"A máquina virtual que emula o ANEM-HBUS é implementada nos arquivos "
+"\\textit{microcode.h} e \\textit{microcode.c}."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :423
+msgid ""
+"As funções e estruturas de dados que controlam a operação e o fluxo de dados "
+"são descritos brevemente a seguir."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :425
+msgid ""
+"A estrutura de execução é basicamente dividida em duas funções, sendo uma de "
+"inicialização e outra que executa um ciclo da máquina virtual."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :427
+msgid "Máquina virtual: registradores, estruturas de dados e funções"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :429
+msgid ""
+"Os registradores de dados e também de status do processador são "
+"implementados através da estrutura que é mostrada a seguir:"
+msgstr ""
+
+#. type: minted
+#: sw-ucode.tex :445
+msgid ""
+"typedef struct CPUEMU_S { //registradores word PC;\t\t\t//program counter "
+"byte BANK[16];\t//banco de registradores byte ALUREG; \t//emula a saida da "
+"ULA byte STATUS;\t\t//registrador de status UCODE_INSTRUCTION INST; //"
+"registrador de instrução } UCODE_CPUDATA;"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :449
+msgid ""
+"O processo de inicialização é realizado pela função UCODE\\_STARTUP() e os "
+"ciclos são gerados pela função UCODE\\_CYCLE()."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :451
+msgid "A função UCODE\\_STARTUP()"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :453
+msgid ""
+"Esta função é chamada na inicialização do código do processador hospedeiro. "
+"Ela é responsável pela inicialização de todos os registradores da máquina "
+"virtual."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :455
+msgid ""
+"Esta função também é chamada no caso de o microcódigo ser atualizado de "
+"forma on-line. A máquina virtual é então re-inicializada."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :457
+msgid "A função UCODE\\_CYCLE()"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :459
+msgid ""
+"Esta função simula os ciclos do processador ANEM-HBUS. Dentro dela são "
+"simuladas as etapas de FETCH, DECODE e as operações resultantes,dependendo "
+"da instrução que for interpretada no ciclo."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :461
+msgid ""
+"A etapa de FETCH é simulada copiando-se uma palavra de instrução da memória "
+"de instrução implementada, em acordo com o valor atual do registrador PC."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :463
+msgid ""
+"A etapa de decode é simulada facilmente e as operações instruídas são "
+"realizadas em seguida. Estas operações são realizadas utilizando-se de "
+"operadores básicos da linguagem C, no caso de instruções que não envolvam "
+"acesso à memória virtual."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :465
+msgid ""
+"No caso de acesso à memória virtual, outras funções, que simulam o acesso de "
+"leitura e escrita, são chamadas. Estas funções serão discutidas a seguir."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :467
+msgid "A função UCODE\\_PAUSE\\_()"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :469
+msgid ""
+"Esta função seta um flag no registrador de status que faz com que a operação "
+"da máquina virtual cesse. Isto é muito útil no caso de o processador "
+"hospedeiro necessitar parar a operação por algum motivo qualquer e é também "
+"necessário no caso de ocorrer um update on-line do microcódigo, onde a "
+"máquina virtual deve parar para que a memória de instrução possa ser re-"
+"escrita."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :471
+msgid "A função UCODE\\_UNPAUSE()"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :473
+msgid ""
+"Esta função é complementar à anterior, restaurando a operação da máquina "
+"virtual."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-ucode.tex :475
+msgid "As funções UCODE\\_LOAD\\_DATA() e UCODE\\_SAVE\\_DATA()"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :477
+msgid ""
+"Estas funções simulam o acesso a memória de programa do ANEM-HBUS, que é a "
+"memória virtual onde estão mapeados os dados dos objetos, organizada no "
+"esquema já explicado."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :479
+msgid ""
+"Dentro destas funções são chamados os métodos de leitura e escrita "
+"especificados pelo próprio objeto, de maneira que a leitura e escrita "
+"realizadas pela máquina virtual não diferem de uma leitura/escrita realizada "
+"através do barramento HBUS."
+msgstr ""
+
+#. type: section{#2}
+#: sw-ucode.tex :481
+msgid "O acesso à memória de instrução"
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :484
+msgid ""
+"A memória de instrução é por definição alocada em uma parte reservada na "
+"FLASH do microcontrolador.  É possível a escrita nesta porção da memória "
+"mesmo em tempo de execução."
+msgstr ""
+
+#. type: document
+#: sw-ucode.tex :486
+msgid ""
+"O acesso neste caso é de escrita e é realizado através de um "
+"\\textit{endpoint} registrado no dicionário de \\textit{endpoints} do "
+"dispositivo. Os dados para a memória de instruções são enviados em blocos de "
+"64 bytes conforme a necessidade."
+msgstr ""
+
+#. type: document
+#: hbus.tex:131
+msgid ""
+"A operação pode ser realizada sem a necessidade de reinicialização do "
+"dispositivo, possibilitando a atualização sob demanda do microcódigo, com "
+"efeito imediato, através dos procedimentos descritos neste capítulo."
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:133
+msgid "Segurança HBUS"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :2
+msgid ""
+"A partir da revisão 1.1 são adicionados mecanismos opcionais para garantir a "
+"segurança dos dados trafegados no barramento, incluindo privacidade de "
+"objetos e também verificação de identidade do mestre."
+msgstr ""
+
+#. type: section{#2}
+#: sw-secure.tex :4
+msgid "Autenticação de mestre"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :6
+msgid ""
+"Este recurso é utilizado para garantir a autenticidade dos comandos enviados "
+"aos dispositivos no barramento. Comandos de RESET e escrita em objetos são "
+"assinados digitalmente, caso o dispositivo suporte a autenticação."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :8
+msgid ""
+"Isto garante que mesmo no caso de um dispositivo malicioso ser conectado ao "
+"barramento, os dispositivos seguros não possam ser instruídos a realizar "
+"operações que possam ser danosas ao sistema."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-secure.tex :10
+msgid "O mecanismo de autenticação"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :12
+msgid ""
+"Se o dispositivo suporta autenticação, o mestre deve inserir um bloco de "
+"dados após os comandos que necessitam da verificação de identidade."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :14
+msgid ""
+"O dispositivo que suporta autenticação é chamado de \\textit{seguro} e o que "
+"não suporta de \\textit{inseguro}."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :16
+msgid ""
+"Os dispositivos seguros só podem executar os comandos que necessitam de "
+"autenticação uma vez que seja verificada a autenticidade da mensagem através "
+"do bloco de assinatura."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :18
+msgid ""
+"Um dispositivo seguro descarta os comandos recebidos se eles não possuem o "
+"bloco de autenticação ou se a verificação de autenticidade falhou."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :20
+msgid ""
+"Da mesma maneira, os dispositivos inseguros devem ser capazes de receber "
+"comandos contendo blocos de autenticação e realizar as tarefas indicadas, "
+"ignorando o bloco de autenticação."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-secure.tex :22
+msgid "O método de autenticação"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :24
+msgid ""
+"Para a autenticação são utilizados conceitos similares ao sistema "
+"criptográfico de chave pública RSA."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :26
+msgid ""
+"No caso do barramento HBUS, é escolhido um sistema com uma menor "
+"complexidade matemática, o sistema criptográfico de Rabin-Williams. Este "
+"sistema é muito similar ao sistema RSA, porém pouco conhecido. Ele é "
+"equivalente a um sistema RSA com expoente público 2."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :28
+msgid "As chaves utilizadas são de 1536 bits."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-secure.tex :30
+msgid "O sistema criptográfico Rabin-Williams"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :32
+msgid ""
+"O sistema criptográfico de Rabin utiliza o seguinte esquema para suas chaves:"
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :36
+msgid ""
+"São escolhidos dois números primos p e q, obedecendo: $p \\equiv 3 \\mod{8}$ "
+"e $q \\equiv 7 \\mod{8}$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :38
+msgid "$\\left({}p,q\\right)$ é a chave privada."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :40
+msgid "Calcula-se $n=p\\cdot{}q$. $n$ é a chave pública."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-secure.tex :44
+msgid "O processo de assinatura"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :46
+msgid ""
+"O mestre realiza este processo todas as vezes que enviar uma mensagem com "
+"autenticação."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :50
+msgid ""
+"O mestre calcula $h = H\\left({}m|r\\right){}$, onde $m$ é a mensagem, $r$ é "
+"um número aleatório e $H\\left({}\\cdot{}\\right){}$ é uma função de "
+"\\textit{hash} pública."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid "Computa-se $U = h^{(q+1)/8} \\mod{q}$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid "Se $U^4 - h \\mod{q} = 0$, $e = 1$, c.c. $e = -1$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid "É calculado $V = \\left({}eh\\right){}^{(p-3)/8} \\mod{p}$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid ""
+"Se $\\left({}V^4\\left({}eh\\right){}^2 - eh\\right){} \\mod{p} = 0, f = 1$, "
+"c.c. $f = 2$"
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid "É pré-calculado $2^{(3q-5)/8} \\mod{q}$. $W = f^{(3q-5)/8}U \\mod{q}$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid ""
+"É pré-calculado $2^{(9p-11)/8} \\mod{p}.$ $X = f^{(9p-11)/8}V^3eh \\mod{p}$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid ""
+"É pré-calculado $q^{p-2} \\mod{p}$. Calcula-se $Y = W + q\\left({}"
+"q^{p-2}\\left({}X - W\\right){} \\mod{p}\\right)$."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :59
+msgid ""
+"Computa-se $s = Y^2 \\mod{pq}$. A assinatura da mensagem é o par $\\left({}e,"
+"f,r,s\\right)$, que é enviado junto a mensagem."
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-secure.tex :63
+msgid "O processo de verificação"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :65
+msgid ""
+"Esse processo é realizado pelo dispositivo toda vez que recebe uma mensagem "
+"com assinatura."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :69
+msgid "O dispositivo recebe a mensagem juntamente com a assinatura."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :71
+msgid ""
+"O dispositivo calcula $efs^2 \\mod{pq}$ e $H\\left({}m|r\\right)$ e verifica "
+"se são iguais. Sendo iguais, a assinatura é comprovada"
+msgstr ""
+
+#. type: subsubsection{#2}
+#: sw-secure.tex :75
+msgid "A função de hash"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :77
+msgid ""
+"A função de hash utilizada é a bem conhecida função SHA-1. A saída da função "
+"SHA-1 tem 160 bits de comprimento."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-secure.tex :79
+msgid "O custo da autenticação"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :81
+msgid ""
+"O custo da autenticação é principalmente refletido na quantidade de memória "
+"ocupada no dispositivo, tanto de programa quando RAM. Além disto, há o tempo "
+"necessário para realizar as verificações, que são baseadas em operações "
+"matemáticas um tanto pesadas para dispositivos de 8bits como é o caso dos "
+"microcontroladores utilizados no desenvolvimento da pilha HBUS."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :83
+msgid ""
+"Utilizando o processo de autenticação, o overhead de autenticação na "
+"mensagem é maior do que a própria mensagem, porém isto é uma questão de "
+"segurança e não se pode fazer nada sem comprometer a segurança do sistema."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :85
+msgid ""
+"O bloco de assinatura tem 193 bytes, onde 1 byte é dedicado ao armazenamento "
+"das variáveis e,f e r e os 192 bytes restantes são o produto do processo de "
+"assinatura realizado pelo mestre (192 bytes = 1536 bits --- tamanho das "
+"chaves)."
+msgstr ""
+
+#. type: section{#2}
+#: sw-secure.tex :87
+msgid "Autenticação de dispositivo"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :89
+msgid ""
+"O caminho inverso é também possível e desejável em casos que o nível de "
+"segurança deve ser maior. No entanto, o sistema de autenticação é "
+"assimétrico e a assinatura é muito mais custosa que a verificação. Devido a "
+"este fator limitante, a autenticação de dispositivos é possível apenas para "
+"dispositivos que utilizem-se de outras soluções mais poderosas que "
+"microcontroladores de 8 bits."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :91
+msgid "Esta é uma funcionalidade futura da especificação HBUS."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-secure.tex :93
+msgid "Requisitos e guia de implementação"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :95
+msgid ""
+"Nesta modalidade de autenticação, cada dispositivo que possuir a capacidade "
+"deve ter um par de chaves próprio. Os comandos \\hbuscommand{KEYSET} e "
+"\\hbuscommand{KEYRESET} são utilizados apenas pelo mestre. O dispositivo "
+"deve expor sua chave pública através de um objeto invisível contendo o campo "
+"PUBKEY."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :97
+msgid ""
+"O mestre, ao realizar a enumeração dos dispositivos, deve verificar as "
+"capacidades do mesmo e se ele possuir capacidade de autenticação reversa "
+"(autenticação de dispositivo), prosseguir com a obtenção da chave pública."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :99
+msgid ""
+"No entanto, é recomendada a implantação de um esquema de segurança para "
+"evitar ataques. O mestre deve ter uma memória permanente de todos os "
+"dispositivos e as suas chaves, ou seja, uma vez que um dispositivo se "
+"identifica, a chave dele deve ser associada permanentemente ao seu ID único, "
+"de forma que se um outro dispositivo tentar emular o ID único e fornecer "
+"outra chave pública, o mestre detecte essa irregularidade e tome "
+"providências."
+msgstr ""
+
+#. type: section{#2}
+#: sw-secure.tex :101
+msgid "Privacidade de objetos"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :103
+msgid ""
+"Este é um mecanismo que permite que os dados relativos aos valores de um "
+"objeto, tanto na escrita quando na leitura realizadas pelo mestre sejam "
+"criptografados e transmitidos, não permitindo a demais dispositivos que "
+"escutam o barramento obter informações sobre o valor do objeto trafegado."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :105
+msgid ""
+"Esta criptografia utiliza a cifra XTEA para simplicidade e as chaves devem "
+"ser pré-estabelecidas entre o mestre e o dispositivo. O tamanho de bloco "
+"neste processo é de 8 bytes, o que significa que qualquer transmissão de "
+"objeto vai ter 8 bytes independente do tamanho do valor contido no objeto."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :107
+msgid ""
+"O mecanismo de codificação e decodificação provê uma verificação automática "
+"de validade no caso de recepção de dados e um empacotamento automático no "
+"caso de envio de dados."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-secure.tex :109
+msgid "A codificação e decodificação na comunicação"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :111
+msgid ""
+"A máquina de estados de comunicação, ao receber um pacote de escrita ou "
+"leitura em um objeto (comandos \\hbuscommand{GETCH} ou "
+"\\hbuscommand{SETCH}), atua normalmente, verificando a validade do comando "
+"em questão. Após isto, é verificado se o objeto contém o flag "
+"\\textit{HBUSOBJ\\_CRYPTO}, que informa se o tráfego do valor deste objeto é "
+"criptografado ou não. Caso sim ocorre o seguinte procedimento (para escrita):"
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :118
+msgid "É verificado se o bloco de dados recebido tem o tamanho correto."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :118
+msgid "Caso o tamanho esteja correto, é realizada a decodificação do bloco."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :118
+msgid "A validade do bloco decodificado é verificada."
+msgstr ""
+
+#. type: enumerate
+#: sw-secure.tex :118
+msgid ""
+"A função de escrita no objeto é chamada ou os dados são escritos diretamente "
+"no ponteiro contido na descrição do objeto, se a verificação teve sucesso"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :122
+msgid ""
+"No caso da leitura, o dispositivo é que envia os dados e o procedimento é "
+"muito similar ao de escrita e o dispositivo monta o pacote com os dados para "
+"verificação na recepção seguindo o padrão."
+msgstr ""
+
+#. type: subsection{#2}
+#: sw-secure.tex :124
+msgid "O padrão de verificação de dados"
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :126
+msgid "O padrão de verificação é definido pelo uso de um checksum CRC16."
+msgstr ""
+
+#. type: document
+#: sw-secure.tex :128
+msgid ""
+"A estrutura do bloco contendo os dados do objeto e os dados de verificação é "
+"vista:"
+msgstr ""
+
+#. fazer figura
+#. type: figure
+#: sw-secure.tex :135
+msgid "\\dtinput{../media/datablock}"
+msgstr ""
+
+#. type: caption{#2}
+#: sw-secure.tex :135
+msgid "Bloco de dados para codificação"
+msgstr ""
+
+#. type: document
+#: hbus.tex:135
+msgid ""
+"No caso de o objeto não ter o número total de bytes (4), os bytes faltantes "
+"devem ser preenchidos com zeros."
+msgstr ""
+
+#. type: part{#2}
+#: hbus.tex:137
+msgid "Exemplos de implementação e uso"
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:139
+msgid "Dispositivos projetados e aplicações"
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :2
+msgid ""
+"Neste capítulo são apresentados alguns dispositivos experimentais que foram "
+"projetados e sua possível utilização."
+msgstr ""
+
+#. type: section{#2}
+#: sample-dev.tex :4
+msgid "Controlador de PWM de 2 canais"
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :6
+msgid ""
+"Este é um dos dispositivos sobre o qual foi realizado boa parte do "
+"desenvolvimento de todas as especificações HBUS."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :8
+msgid ""
+"O controlador de PWM de 2 canais foi concebido para realizar o controle de "
+"intensidade de até 2 fitas de LEDs de comprimento pequeno (até 1m), sendo "
+"possíveis as opções de controle por tensão constante ou corrente constante."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :10
+msgid ""
+"Além dos dois canais de saída, o dispositivo possui como entrada um LDR para "
+"detecção do nível de luminosidade na região vizinha a placa de circuito "
+"impresso e também três chaves de duas posições para uso livre."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :12
+msgid "O dispositivo é analisado a fundo num capítulo dedicado."
+msgstr ""
+
+#. type: section{#2}
+#: sample-dev.tex :14
+msgid "Controlador de PWM com TLC5940"
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :16
+msgid ""
+"Este controlador foi desenvolvido juntamente ao controlador de PWM de 2 "
+"canais. Sua função é controlar leds ou fitas de leds individuais ou RGB, "
+"possibilitando a formação de cores arbitrárias."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :18
+msgid ""
+"O TLC5940 é um circuito integrado fabricado pela Texas Instruments. Ele "
+"possui uma interface serial similar à SPI para controle, porém com alguns "
+"sinais a mais, sendo necessária a geração de um clock no microcontrolador "
+"que implementa a pilha HBUS."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :20
+msgid ""
+"São, no total, 12 saídas de PWM utilizando controle de corrente constante "
+"gerenciadas pelo TLC5940."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :22
+msgid ""
+"O software específico a este dispositivo implementa algumas funções "
+"interessantes, como controle absoluto ou relativo da luminosidade dos leds e "
+"também suporte a mudanças de luminosidades graduais programadas pelo usuário."
+msgstr ""
+
+#. type: section{#2}
+#: sample-dev.tex :24
+msgid "Array de sensores"
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :26
+msgid ""
+"O dispositivo array de sensores é pertencente a segunda rodada de "
+"desenvolvimento. Este dispositivo já incorpora algumas modificações "
+"estéticas no desenho da placa de circuito."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :28
+msgid ""
+"O seu objetivo é a captação de variáveis do ambiente em que está localizado "
+"para disponibilização ao barramento. Isto pode ser muito interessante e até "
+"vital para a automação de um ambiente."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :30
+msgid ""
+"O array de sensores é constituído de sensores de luminosidade ambiente, "
+"temperatura e umidade relativa do ar."
+msgstr ""
+
+#. type: section{#2}
+#: sample-dev.tex :32
+msgid "Ponte HUB HBUS"
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :34
+msgid ""
+"Este é um dispositivo que funciona como ponte entre uma conexão serial comum "
+"e o barramento HBUS. É altamente recomendado o uso do mesmo conectado a um "
+"computador como o mestre do sistema."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :36
+msgid ""
+"Além da interface de ponte, também é um dispositivo, sendo acessível. Possui "
+"algumas entradas e saídas digitais e analógicas."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :38
+msgid ""
+"Na sua segunda versão, o dispositivo é implementado de forma a facilitar a "
+"conexão com um computador Raspberry Pi servindo como mestre do barramento "
+"HBUS."
+msgstr ""
+
+#. type: document
+#: sample-dev.tex :40
+msgid ""
+"As entradas e saídas disponíveis ao mestre do barramento são: 8 entradas/"
+"saídas digitais (5 V), 3 entradas analógicas e 4 saídas de PWM. Além disso, "
+"através do dispositivo é possível acessar portas de expansão I2C e SPI, para "
+"comunicação com dispositivos externos."
+msgstr ""
+
+#. type: document
+#: hbus.tex:141
+msgid ""
+"A segunda versão do dispositivo contém também um circuito integrado de "
+"relógio em tempo real, com bateria para backup, além de monitoramento do "
+"consumo do barramento e circuito de proteção e limitação de corrente de "
+"saída."
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:143
+msgid "Análise detalhada do Controlador de PWM de 2 canais"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :2
+msgid ""
+"Aqui será discutido a fundo o funcionamento deste dispositivo experimental "
+"que foi utilizado para o desenvolvimento das especificações HBUS."
+msgstr ""
+
+#. type: section{#2}
+#: sample-pwmctl.tex :4
+msgid "Firmware"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :6
+msgid ""
+"O firmware implementa a pilha HBUS com todas as funcionalidades. O código "
+"específico do dispositivo controla as funções de geração de PWM no "
+"microcontrolador, para acionar o circuito de controle mostrado no "
+"esquemático."
+msgstr ""
+
+#. type: subsection{#2}
+#: sample-pwmctl.tex :8
+msgid "Os objetos do dispositivo"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :10
+msgid ""
+"O código de declaração dos objetos é mostrado para exemplificar uma "
+"implementação."
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :18
+msgid ""
+"const HBUSOBJ PWM_CHANNEL_0 = {{HBUSOBJ_WRITE,2,12,\"PWM CANAL 00\"},0x00,"
+"GET_PWM0,SET_PWM0}; const HBUSOBJ PWM_CHANNEL_1 = {{HBUSOBJ_WRITE,2,12,\"PWM "
+"CANAL 01\"},0x00,GET_PWM1,SET_PWM1}; const HBUSOBJ DIP_SWITCH = "
+"{{HBUSOBJ_READ,1,6,\"DIP SW\"},0x00,GET_SW101,0x00}; const HBUSOBJ LDR_SENS "
+"= {{HBUSOBJ_READ,2,10,\"LDR SENSOR\"},0x00,GET_LDR,0x00}; const HBUSOBJ "
+"FADE_INOUT\t= {{HBUSOBJ_WRITE,4,11,\"FADE IN/OUT\"},0x00,GET_FADEBYTES,"
+"SET_FADEBYTES};"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :22
+msgid "A tabela descreve os objetos em detalhe."
+msgstr ""
+
+#. type: caption{#2}
+#: sample-pwmctl.tex :38
+msgid "Objetos do controlador de PWM de 2 canais"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Objeto"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Permissão"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "PWM\\_CHANNEL\\_0"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38 :168
+msgid "2"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Valor relativo do canal de PWM 1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "PWM\\_CHANNEL\\_1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Valor relativo do canal de PWM 2"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "DIP\\_SWITCH"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38 :168
+msgid "1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Valor das chaves 1,2,3"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "LDR\\_SENS"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Valor da leitura de luminosidade no LDR"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "FADE\\_INOUT"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :38
+msgid "Realiza fade-in / fade-out programável"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :40
+msgid "A declaração dos objetos de dispositivo:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :50
+msgid ""
+"const HBUSOBJ * MCU_OBJECTS[HBUS_OBJECT_COUNT] = {&UNIT_INFO, //obrigatorio "
+"&PWM_CHANNEL_0, &PWM_CHANNEL_1, &DIP_SWITCH, &LDR_SENS, &FADE_INOUT };"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :56
+msgid ""
+"A declaração do objeto zero e sua estrutura HBUSOBJINFO, que identifica o "
+"dispositivo é mostrada:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :61
+msgid "#define S_FAMILY 0x02000000 #define S_NUM 0x00000001"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :66
+msgid ""
+"const HBUSOBJLISTINFO OBJECT_INFO = {HBUS_OBJECT_COUNT, HBUS_EP_COUNT, "
+"HBUS_INT_COUNT, ((dword)(S_FAMILY) | (dword)(S_NUM))}; const HBUSOBJ "
+"UNIT_INFO = {{HBUSOBJ_READ,sizeof(HBUSOBJLISTINFO),12,\"PWM CTRL 2CH\"}, "
+"&OBJECT_INFO,0x00,0x00};"
+msgstr ""
+
+#. type: subsection{#2}
+#: sample-pwmctl.tex :70
+msgid "Os endpoints do dispositivo"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :72
+msgid ""
+"O dispositivo contém apenas um endpoint, que serve para o carregamento do "
+"microcódigo HBUS."
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :77
+msgid ""
+"const HBUSEP EP_UCODE = {{HBUSEP_WRITE,64,9,\"UCODE EP\"},UCODE_IMEM,0x00, "
+"UCODE_WRITE_IMEM_BYTE,UCODE_IMEM_WRITE_START,UCODE_IMEM_WRITE_END,0x00,0x00};"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :79
+msgid "Do código fonte é possível inferir que:"
+msgstr ""
+
+#. type: itemize
+#: sample-pwmctl.tex :86
+msgid "O endpoint é de escrita apenas"
+msgstr ""
+
+#. type: itemize
+#: sample-pwmctl.tex :86
+msgid "O tamanho de bloco é 64 bytes"
+msgstr ""
+
+#. type: itemize
+#: sample-pwmctl.tex :86
+msgid "O nome do endpoint é \"UCODE EP\""
+msgstr ""
+
+#. type: itemize
+#: sample-pwmctl.tex :86
+msgid ""
+"O endpoint tem funções associadas aos eventos de começo e fim de escrita"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :90
+msgid "A declaração dos objetos de endpoints:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :94
+msgid "const HBUSEP * MCU_ENDPOINTS[HBUS_EP_COUNT] = {&EP_UCODE,};"
+msgstr ""
+
+#. type: subsection{#2}
+#: sample-pwmctl.tex :98
+msgid "As interrupções do dispositivo"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :100
+msgid ""
+"O controlador de PWM de 2 canais possui apenas a interrupção básica de erro "
+"fatal:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :104
+msgid "const HBUSINT INT_FATAL = {{0x00,5,\"FATAL\"},0x00};"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :108
+msgid "A interrupção é gerada em um caso de erro fatal (erro de hardware)."
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :110
+msgid "A declaração dos objetos de interrupção:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :114
+msgid "const HBUSINT * MCU_INTERRUPTS[HBUS_INT_COUNT] = {&INT_FATAL,\t};"
+msgstr ""
+
+#. type: subsection{#2}
+#: sample-pwmctl.tex :118
+msgid "Exemplo de uso do microcódigo HBUS"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :120
+msgid ""
+"Para melhor ilustrar o uso do microcódigo HBUS, é mostrado um exemplo "
+"utilizado no controlador PWM com sucesso."
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :122
+msgid ""
+"Este programa é muito simples e funciona na inicialização do dispositivo. "
+"Durante a execução normal, o mesmo fica preso num loop infinito e não "
+"executa nenhuma ação."
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :124
+msgid ""
+"O propósito deste programa é ler as chaves disponíveis na placa do "
+"dispositivo e caso as chaves 1 ou 2 estiverem na posição ligado, o canal de "
+"PWM 1 ou 2, respectivamente é ativado com valor máximo. Caso as chaves "
+"estejam na posição desligado, o dispositivo é inicializado com o respectivo "
+"canal PWM no valor mínimo."
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :126
+msgid "O código fonte mostrado apenas cobre a chave e canal número 1."
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :128
+msgid ""
+"O programa em ANEM-assembly contém apenas 10 instruções e é mostrado a "
+"seguir:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :142
+msgid ""
+"LIW\t0,\t0x0C LW\t$0,\t1 LIW\t2,\t0x01 NOT\t$1 AND\t$1,\t$2 BEQ\t$1,\t$2,\t"
+"\t2 J\t0x00A LIW\t0,\t0x05 LIW\t1,\t0xFF SW\t$1,\t$0 J\t0x00A"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :146
+msgid "Este código mostrado resulta nas instruções mostradas abaixo:"
+msgstr ""
+
+#. type: caption{#2}
+#: sample-pwmctl.tex :168
+msgid "Instruções no programa exemplo (microcódigo)"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Posição"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Palavra"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0xC00C"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid ""
+"Carrega o endereço do objeto correspondente as chaves de seleção no reg. 0"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0x5100"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Copia o valor do objeto no endereço (valor do reg. 0) para o reg. 1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0xC201"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Carrega a máscara da chave de interesse (0x01) no reg. 2"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "3"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0x0105"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Inverte o conteúdo do registrador 1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0x0122"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid ""
+"Realiza AND com os conteúdos dos registradores 1 e 2 e coloca o resultado no "
+"reg 1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "5"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0x6122"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Pula para a posição 5+2=7 se o conteúdo do reg. 1 = reg 2"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "6"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0x800A"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Pula para a posição 0x00A (se a condição anterior falhou)"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "7"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0xC005"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Carrega endereço do objeto de PWM 1 no reg. 0"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "8"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0xC1FF"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Carrega valor para escrever no byte (0xFF) no reg. 1"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "9"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "0x4010"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Grava valor no byte do objeto"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168 hbus-units.tex :22
+msgid "A"
+msgstr ""
+
+#. type: tabular
+#: sample-pwmctl.tex :168
+msgid "Pula para 0x00A (loop infinito)"
+msgstr ""
+
+#. type: subsection{#2}
+#: sample-pwmctl.tex :170
+msgid "O conteúdo do arquivo de código específico"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :172
+msgid ""
+"Este arquivo contém o código específico ao dispositivo que implementa as "
+"funções de escrita e leitura dos objetos do dispositivo referenciadas na "
+"declaração dos mesmos. Ele é simples e é mostrado na íntegra a seguir:"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :178
+msgid ""
+"#include \"ledctl/ledctl.h\" #include \"serial/serial.h\" #include <string.h>"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :182
+msgid ""
+"dword TIMECOUNTER = 0; dword LED_LASTCYCLE = 0; dword LAST_DEBOUNCE = 0;"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :185
+msgid "static word PWM0_VALUE = 0x0000; static word PWM1_VALUE = 0x0000;"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :187
+msgid "static byte SWSTATE = 0x00;"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :189
+msgid "word LDR_LAST = 0x0000;"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :198
+msgid ""
+"typedef struct { byte FADESTATUS; union{ word w; byte b[2]; } FADETO; byte "
+"FADEINCR; } FADES;"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :200
+msgid "FADES FADE;"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :202
+msgid "#pragma MESSAGE DISABLE C5703"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :208
+msgid ""
+"static void PWM_REFRESH(void)  { TPMC1V = PWM0_VALUE; TPMC0V = PWM1_VALUE; }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :230
+msgid ""
+"void LEDCTL_STARTUP(void)  { //PWM SETUP TPMSC = 0x00; TPMC1SC = 0x3C; "
+"TPMC0SC = 0x3C; PWM0_VALUE = 0xFFFF; PWM1_VALUE = 0xFFFF; TPMMOD = 0x1F3F; "
+"PWM_REFRESH(); TPMSC = 0x08; FADE.FADESTATUS = 0; FADE.FADETO.w = 0; FADE."
+"FADEINCR = LEDCTL_FADE_INCR; SWSTATE = SW101; }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :292
+msgid ""
+"void LEDCTL_CYCLE(void)  { static byte LAST_SWSTATE = 0x00; if "
+"((LED_LASTCYCLE + LEDCTL_CYCLE_T) > TIMECOUNTER) return; if (!(FADE."
+"FADESTATUS & FADESTATUS_FADERUN)) return; if (FADE.FADESTATUS & "
+"FADESTATUS_FADEIN)  { if (FADE.FADESTATUS & FADESTATUS_FADE0)  if (FADE."
+"FADETO.w <= PWM0_VALUE) { if (PWM0_VALUE >= (FADE.FADETO.w + FADE.FADEINCR)) "
+"PWM0_VALUE -= FADE.FADEINCR; else PWM0_VALUE = FADE.FADETO.w; } if (FADE."
+"FADESTATUS & FADESTATUS_FADE1)  if (FADE.FADETO.w <= PWM1_VALUE) { if "
+"(PWM1_VALUE >= (FADE.FADETO.w + FADE.FADEINCR)) PWM1_VALUE -= FADE.FADEINCR; "
+"else PWM1_VALUE = FADE.FADETO.w; } }else if (FADE.FADESTATUS & "
+"FADESTATUS_FADEOUT)  { if (FADE.FADESTATUS & FADESTATUS_FADE0)  if (FADE."
+"FADETO.w <= PWM0_VALUE) { if (PWM0_VALUE <= (FADE.FADETO.w - FADE.FADEINCR)) "
+"PWM0_VALUE += FADE.FADEINCR; else PWM0_VALUE = FADE.FADETO.w; } if (FADE."
+"FADESTATUS & FADESTATUS_FADE1)  if (FADE.FADETO.w <= PWM1_VALUE) { if "
+"(PWM1_VALUE <= (FADE.FADETO.w - FADE.FADEINCR)) PWM1_VALUE += FADE.FADEINCR; "
+"else PWM1_VALUE = FADE.FADETO.w; } } PWM_REFRESH(); if ((PWM1_VALUE == FADE."
+"FADETO.w) || (PWM0_VALUE == FADE.FADETO.w))  FADE.FADESTATUS &= "
+"~FADESTATUS_FADERUN; //DEBOUNCE if (SW101 != SWSTATE)  { if ((LAST_DEBOUNCE "
+"+ LEDCTL_DEBOUNCE_T) > TIMECOUNTER)  { SWSTATE = SW101; LAST_DEBOUNCE = "
+"TIMECOUNTER; } } }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :301
+msgid ""
+"void SET_PWM0(void * data, int size)  { PWM0_VALUE = ~(*(word*)(data)); "
+"PWM_REFRESH(); }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :310
+msgid ""
+"void SET_PWM1(void * data, int size)  { PWM1_VALUE = ~(*(word*)(data)); "
+"PWM_REFRESH(); }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :322
+msgid ""
+"void SET_FADEBYTES(void * data, int size)  { FADE.FADESTATUS = "
+"(*(byte*)data); FADE.FADETO.b[0] = ~(*((byte*)data+1)); FADE.FADETO.b[1] = "
+"~(*((byte*)data+2)); FADE.FADEINCR = (*((byte*)data+3)); if (!FADE.FADEINCR) "
+"FADE.FADEINCR = LEDCTL_FADE_INCR; }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :333
+msgid ""
+"void * GET_FADEBYTES(void)  { static FADES fret; (void)memcpy(&fret,"
+"&FADE,4); fret.FADETO.w = ~fret.FADETO.w; return (void*)&fret; }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :340
+msgid "void * GET_SW101(void)  { return (void*)(&SWSTATE); }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :347
+msgid "void * GET_PWM0(void)  { return &PWM0_VALUE; }"
+msgstr ""
+
+#. type: minted
+#: sample-pwmctl.tex :354
+msgid "void * GET_PWM1(void)  { return &PWM1_VALUE; }"
+msgstr ""
+
+#. type: section{#2}
+#: sample-pwmctl.tex :358
+msgid "Hardware"
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :360
+msgid ""
+"O hardware deste dispositivo é composto apenas do básico para a "
+"implementação da pilha HBUS e as funções de hardware requeridas nesse caso "
+"(controle PWM)."
+msgstr ""
+
+#. type: document
+#: sample-pwmctl.tex :362
+msgid ""
+"O bloco de controle PWM é configurado no momento da montagem da placa e pode "
+"ser utilizado como um controle de tensão constante ou corrente constante, "
+"dependendo da configuração."
+msgstr ""
+
+#. type: caption{#2}
+#: hbus.tex:145
+msgid "Esquemático Controlador PWM 2 canais"
+msgstr ""
+
+#. type: chapter{#2}
+#: hbus.tex:148
+msgid "Unidades padrão no HBUS"
+msgstr ""
+
+#. type: document
+#: hbus-units.tex :2
+msgid ""
+"A especificação HBUS, através do uso de objetos invisíveis e utilizando a "
+"sintaxe da seção \\ref{sec:hiddenobj}, através do campo UNIT, implementa "
+"algumas unidades padrão do SI, para melhor visualização dos dados "
+"disponibilizados pelos dispositivos."
+msgstr ""
+
+#. type: section{#2}
+#: hbus-units.tex :4
+msgid "Unidades de medidas"
+msgstr ""
+
+#. type: document
+#: hbus-units.tex :6
+msgid ""
+"As unidades suportadas pelo sistema são um conjunto de reduzido de unidades "
+"comuns utilizadas no SI."
+msgstr ""
+
+#. type: caption{#2}
+#: hbus-units.tex :22
+msgid "unidades padrão no HBUS"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "Unidade"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22 hbus.tex:150
+msgid "Símbolo SI"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "String HBUS"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "\\textit{volt}"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "V"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "\\textit{ampère}"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "\\textit{watt}"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "\\textit{pascal}"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "Pa"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "\\textit{graus Celsius}"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "$^{\\circ} C$"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "C"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "\\textit{ohm}"
+msgstr ""
+
+#. type: tabular
+#: hbus-units.tex :22
+msgid "$\\Omega$"
+msgstr ""
+
+#. type: section{#2}
+#: hbus-units.tex :24
+msgid "Prefixos suportados"
+msgstr ""
+
+#. type: document
+#: hbus-units.tex :26
+msgid ""
+"Vários prefixos são suportados para uso conjunto com as unidades. Estes "
+"prefixos devem vir antes da unidade, sem espaços."
+msgstr ""
+
+#. type: document
+#: hbus-units.tex :28
+msgid ""
+"A tabela abaixo lista os prefixos suportados e o caractere para uso nos "
+"dispositivos."
+msgstr ""
+
+#. type: caption{#2}
+#: hbus.tex:150
+msgid "prefixos suportados no HBUS"
+msgstr ""
+
+#. pico			&	p			&	p				&	$10^{-12}$\#. nano			&	n			&	n				&	$10^{-9}$\#. type: tabular
+#: hbus.tex:150
+msgid "Prefixo"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "Caractere HBUS"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "Potência"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "micro"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "$\\mu$"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "u"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "$10^{-6}$"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "mili"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "m"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "$10^{-3}$"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "kilo"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "k"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "$10^3$"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "mega"
+msgstr ""
+
+#. type: tabular
+#: hbus.tex:150
+msgid "$10^6$"
+msgstr ""

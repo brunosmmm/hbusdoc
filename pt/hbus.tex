@@ -20,6 +20,15 @@
 \usepackage{listings}
 \usepackage{minted}
 
+%translation hacks
+% po4a: environment tikzpicture
+% po4a: environment minted []{}
+% po4a: verbatim environment minted
+% po4a: environment bytefield
+
+%trick po4a into not including standalone files as translatable part
+\newcommand{\dtinput}[1]{\input{#1}}
+
 \begin{document}
 
 \newcommand{\hbus}[1]{\includegraphics[scale=#1]{../media/hbus}}
